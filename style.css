@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+/* Color variables; use to change site colors quickly */
+:root {
+  --border: #EA428B;
+  --bordergradient: rgba(255, 122, 255,0.25);
+  --fancylineleft: #8D5DA4;
+  --fancylineright: #EA428B;
+  --url: white;
+  --urlclicked: lightskyblue;
+}
+
+body {
+    background-image: url(/images/background.jpg);
+    background-size: cover;
+    font-family: 'VT323', monospace;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-size: 24px;
+}
+
+.logo{
+  width: 500px;
+  height: auto;
+  display: block;
+  margin: auto;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  image-rendering: pixelated;
+}
+
+
+section.main{
+    display:flex;
+    justify-content: center;
+    justify-content: space-around;
+    width: 900px;
+    margin: auto;
+  }
+  
+  section.navContent{
+    border: 5px solid lightgray;
+    border-color: var(--border);
+    border-style: outset;
+    background-color: rgba(0, 0, 0, 0.507);
+    width: 25%;
+    height: auto;
+    margin-right: 1%;
+    /* putting height to 100% herew ill cause it to be the same height as the partent container, which is Main.*/
+  }
+  
+  article.mainText{
+    width: 70%;
+    margin-left: 1%; /*because i want a nice division between page content and nav*/
+    border: 5px solid lightgray;
+    border-color: var(--border);
+    border-style: outset;
+    background-color: rgba(0, 0, 0, 0.507);
+    color: white;
+  }
+  
+  
+  h1 {
+  background-image: linear-gradient(to right, var(--border), var(--bordergradient), rgba(255, 122, 255, 0));
+  background-color: transparent;
+  text-shadow: 2px 2px 2px black;
+  }
+  
+  
+  /* decorations! */
+  
+  .fancyline{
+    background: linear-gradient(to right, var(--fancylineleft), var(--fancylineright));
+    height: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .gayaf {
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 1px 1px 1px white;
+  }
+    
+  /* center stuff! */
+  .center {
+    text-align: center;
+    margin: auto;
+    display: block;
+  }
+  
+  /* padding for main-text elements */
+  .mainText p { 
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .mainText h1{
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .mainText span{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .spanlist {
+    font-size: 20px;
+    padding-bottom: 10px;
+    color: lightgray;
+    font-style: italic;
+    display: inline-block;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+iframe {
+  width: 220px;
+  height: 600px;
+  overflow: hidden;
+  border: none;
+}
+
+a {
+  color: var(--url);
+}
+
+a:visited {
+  color: var(--urlclicked);
+}
+
+.blogImg { 
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.reviewimg {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gameImg { 
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  border: 3px solid #EA428B;
+  border-color: var(--border);
+  border-style: outset;
+}
