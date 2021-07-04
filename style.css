@@ -152,3 +152,29 @@ a:visited {
   border-color: var(--border);
   border-style: outset;
 }
+
+/* guestbook hiding CSS */
+
+.home-desc {
+  display: none;
+}
+
+#HCB_comment_box h3 {
+  display: none;
+}
+
+.hcb-icon {
+  display: none;
+}
+
+.commentbox {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#HCB_comment_box {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:600px;
+}
