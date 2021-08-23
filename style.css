@@ -2,7 +2,7 @@
 
 /* Color variables; use to change site colors quickly */
 :root {
-  --border: #EA428B;
+  --border: #ffbefd;
   --bordergradient: rgba(255, 122, 255,0.25);
   --fancylineleft: #8D5DA4;
   --fancylineright: #EA428B;
@@ -11,7 +11,7 @@
 }
 
 body {
-    background-image: url(/images/background.jpg);
+    background-image: url(/images/background_old.jpg);
     background-size: cover;
     font-family: 'VT323', monospace;
     background-repeat: no-repeat;
@@ -42,7 +42,7 @@ section.main{
     border: 5px solid lightgray;
     border-color: var(--border);
     border-style: outset;
-    background-color: rgba(0, 0, 0, 0.507);
+    background-color: rgba(0, 0, 0, 0.850);
     width: 25%;
     height: auto;
     margin-right: 1%;
@@ -55,7 +55,7 @@ section.main{
     border: 5px solid lightgray;
     border-color: var(--border);
     border-style: outset;
-    background-color: rgba(0, 0, 0, 0.507);
+    background-color: rgba(0, 0, 0, 0.850);
     color: white;
   }
   
