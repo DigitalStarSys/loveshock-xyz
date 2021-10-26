@@ -178,3 +178,7 @@ a:visited {
   margin-right: auto;
   width:600px;
 }
+
+.hideobj {
+  visibility: hidden; height: 20px; width: 0%;
+  }
