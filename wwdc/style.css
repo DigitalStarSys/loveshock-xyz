@@ -1,9 +1,10 @@
 @import url(//db.onlinewebfonts.com/c/7797f6229b01fd22c7f0d6a5410db009?family=Munro);
+@import url('http://fonts.cdnfonts.com/css/sf-pro-display');
 
 /* Color variables; use to change site colors quickly */
 :root {
-  --border: rgb(81, 78, 226);
-  --bordergradient: rgba(255, 122, 255,0.25);
+  --border: #304c8b;
+  --bordergradient: rgba(172, 254, 255, 0.25);
   --fancylineleft: #8D5DA4;
   --fancylineright: #0066ff;
   --url: white;
@@ -11,16 +12,16 @@
 }
 
 body {
-    background-image: url(https://media.discordapp.net/attachments/765796503381213256/926553863882960946/unknown.png);
+    background-image: url("/wwdc/images/bg.png");
     background-size: cover;
-    background-color: #6084E0;
-    font-family: 'Munro', monospace;
+    font-family: 'SF Pro Display', monospace;
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-size: 22px;
     animation: fadeInAnimation ease 1s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+    background-color: #080808;
 }
 
 .logo{
@@ -30,7 +31,6 @@ body {
   margin: auto;
   padding-top: 1%;
   padding-bottom: 1%;
-  image-rendering: pixelated;
 }
 
 
@@ -79,6 +79,7 @@ section.main{
   background-color: transparent;
   text-shadow: 2px 2px 2px black;
   text-align: center;
+  font-weight: 800;
   }
   
   p {
