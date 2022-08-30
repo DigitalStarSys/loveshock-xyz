@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-@import url(//db.onlinewebfonts.com/c/7797f6229b01fd22c7f0d6a5410db009?family=Munro);
+@font-face {
+  font-family: 'Munro';
+  src: url('/fonts/Munro.woff2') format('woff2');
+  src: url('/fonts/Munro.woff') format('woff');
+  src: url('/fonts/Munro.ttf') format('truetype');
+  font-display: swap;
+}
 
 h1 {
     background-clip: text;
