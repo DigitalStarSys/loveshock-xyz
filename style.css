@@ -1,4 +1,10 @@
-@import url(//db.onlinewebfonts.com/c/7797f6229b01fd22c7f0d6a5410db009?family=Munro);
+@font-face {
+  font-family: 'Munro';
+  src: url('/fonts/7797f6229b01fd22c7f0d6a5410db009.woff2') format('woff2');
+  src: url('/fonts/7797f6229b01fd22c7f0d6a5410db009.woff') format('woff');
+  src: url('/fonts/7797f6229b01fd22c7f0d6a5410db009.ttf') format('truetype');
+  font-display: swap;
+}
 
 /* Color variables; use to change site colors quickly */
 :root {
@@ -11,7 +17,8 @@
 }
 
 body {
-    background-image: url(https://media.discordapp.net/attachments/765796503381213256/926553863882960946/unknown.png);
+    background-image: url('images/bg_v3.png');
+    background-position: center;
     background-size: cover;
     background-color: #6084E0;
     font-family: 'Munro', monospace;
@@ -123,8 +130,8 @@ section.main{
   }
 
   .mainText span{
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .spanlist {
@@ -174,6 +181,7 @@ a:visited {
 .gameImg { 
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 10px;
   display: block;
   border: 3px solid #EA428B;
   border-color: var(--border);
@@ -205,6 +213,31 @@ a:visited {
   margin-right: auto;
   width:450px;
 }
+
+#HCB_comment_box p {
+  font-family: 'Munro';
+}
+
+#HCB_comment_box textarea {
+  font-family: 'Munro';
+}
+
+#HCB_comment_box #hcb_form_content,
+  #HCB_comment_box #hcb_form_email,
+  #HCB_comment_box #hcb_form_name,
+  #HCB_comment_box #hcb_form_website {
+    background-color:rgba(0, 0, 0, 0);
+    outline: white;
+    color: white;
+    font-family: 'Munro';
+  }
+
+  #HCB_comment_box .submit {
+    background:none; /* Clear twitter bootstrap style. */
+    background-color:green;
+    border:1px solid darkgreen;
+    color: white;
+  }
 
 .hideobj {
   visibility: hidden; height: 20px; width: 0%;
