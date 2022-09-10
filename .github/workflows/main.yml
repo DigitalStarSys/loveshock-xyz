@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: kognise/neocities-deploy-action@v1
+      - uses: aderickson/neocities-upload@master
         with:
           neocities_token: ${{ secrets.NEOCITIES_API_KEY }}
           directory: '.'
