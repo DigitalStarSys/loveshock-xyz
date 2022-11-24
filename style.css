@@ -101,6 +101,7 @@ section.main{
     height: 5px;
     margin-left: 10px;
     margin-right: 10px;
+    border: none;
   }
 
   .gayaf {
@@ -188,6 +189,11 @@ a:visited {
   border-style: outset;
 }
 
+strong {
+  text-decoration: underline dashed;
+  font-style: italic;
+}
+
 /* guestbook hiding CSS */
 
 .home-desc {
@@ -230,7 +236,7 @@ a:visited {
     background-color:rgba(0, 0, 0, 0);
     outline: white;
     color: white;
-    font-family: 'Munro';
+    font-family: 'Munro' !important;
   }
 
   #HCB_comment_box .submit {
@@ -238,6 +244,7 @@ a:visited {
     background-color:green;
     border:1px solid darkgreen;
     color: white;
+    font-family: 'Munro'
   }
 
 .hideobj {

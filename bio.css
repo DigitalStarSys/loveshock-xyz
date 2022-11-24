@@ -34,8 +34,8 @@
 
   hr {
     background: linear-gradient(to right, #8D5DA4, #0066ff);
-    height: 1px;
+    height: 2px;
     margin-left: 5px;
     margin-right: 5px;
-    border-color: rgba(255,255,255,0);
+    border: none;
   }
