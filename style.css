@@ -1,11 +1,3 @@
-@font-face {
-  font-family: 'Munro';
-  src: url('/fonts/Munro.woff2') format('woff2');
-  src: url('/fonts/Munro.woff') format('woff');
-  src: url('/fonts/Munro.ttf') format('truetype');
-  font-display: swap;
-}
-
 /* Color variables; use to change site colors quickly */
 :root {
   --border: rgb(81, 78, 226);
@@ -14,87 +6,166 @@
   --fancylineright: #0066ff;
   --url: white;
   --urlclicked: lightskyblue;
+  --layout-inmargin: 10px;
+  --padding: 15px;
 }
 
+/* Font declaration */
+@font-face {
+    font-family: 'Munro';
+    src: url('/fonts/Munro.woff2') format('woff2');
+    src: url('/fonts/Munro.woff') format('woff');
+    src: url('/fonts/Munro.ttf') format('truetype');
+    font-display: swap;
+}
+
+/* Border theming */
+section.viewport > nav, section.leftsb, section.rightsb, section.body > article {
+    border: 5px solid lightgray;
+    border-color: var(--border);
+    border-style: outset;
+    background-color: rgba(0, 0, 0, 0.750);
+    box-sizing: border-box;
+}
+
+/* Background CSS */
 body {
-    background-image: url('images/bg_v3.png');
-    background-position: center;
-    background-size: cover;
-    background-color: #6084E0;
-    font-family: 'Munro', monospace;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    font-size: 22px;
-    animation: fadeInAnimation ease 1s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+background-image: url('images/bg_v3.png');
+background-position: center;
+background-size: cover;
+background-color: #6084E0;
+background-repeat: no-repeat;
+background-attachment: fixed;
+font-family: 'Munro', monospace;
+font-size: 20px;
 }
 
-.logo{
-  width: 500px;
-  height: auto;
-  display: block;
-  margin: auto;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  image-rendering: pixelated;
-}
+/* Entire viewport */
+section.viewport {
+    display: flex;
+    width: 1024px;
+    height: 768px;
+    flex-direction: column;
+    max-width: 100vw;
+    max-height: 100vh;
+    margin: 0 auto;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 20px;
+    padding-bottom: 10px;
+  }
 
+  /* Logo flexbox */
+  section.viewport > img {
+    height: 80px;
+    margin-bottom: 10px;
+  }
 
-section.main{
-    display:flex;
+  /* Nav flexbox */
+  section.viewport > nav {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 35px;
     justify-content: center;
-    justify-content: space-around;
-    width: 1000px;
-    margin: auto;
+    align-items: center;
+    margin-bottom: var(--layout-inmargin);
   }
-  
-  section.navContent{
-    border: 5px solid lightgray;
-    border-color: var(--border);
-    border-style: outset;
-    background-color: rgba(0, 0, 0, 0.850);
-    width: 25%;
-    height: auto;
-    /* putting height to 100% herew ill cause it to be the same height as the partent container, which is Main.*/
-  }
-  
-  article.mainText{
-    width: 70%;
-    margin-left: 1%; /*because i want a nice division between page content and nav*/
-    margin-right: 1%;
-    border: 5px solid lightgray;
-    border-color: var(--border);
-    border-style: outset;
-    background-color: rgba(0, 0, 0, 0.850);
+
+  section.viewport > nav a {
+    margin: 0 25px;
     color: white;
   }
 
-  section.aboutMe{
-    border: 5px solid lightgray;
-    border-color: var(--border);
-    border-style: outset;
-    background-color: rgba(0, 0, 0, 0.850);
-    width: 25%;
-    height: auto;
-    margin-left: 1%;
-    /* putting height to 100% herew ill cause it to be the same height as the partent container, which is Main.*/
+  section.viewport > nav a:visited {
+    color: white;
   }
   
-  h1 {
-  background-image: linear-gradient(to right, var(--border), var(--bordergradient), rgba(255, 122, 255, 0));
-  background-color: transparent;
-  text-shadow: 2px 2px 2px black;
-  text-align: center;
+
+  /* Main flexbox */
+  section.body {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    width: 100%;
+    min-height: 1px;
+  }
+
+  /* Sidebars */
+  section.leftsb, section.rightsb {
+    width: 190px;
+    height: 100%;
+  }
+
+  section.leftsb {
+    order: 1;
+  }
+
+  section.rightsb {
+    order: 3;
   }
   
-  p {
+  /* Left sidebar flexbox */
+    section.leftsb > iframe {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        padding: var(--layout-inmargin);
+        box-sizing: border-box;
+    }
+
+    /* Right sidebar flexbox */
+    section.rightsb > iframe {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        padding: var(--layout-inmargin);
+        box-sizing: border-box;
+    }
+
+  /* Actual content window */
+  section.body article {
+    flex: 1;
+    order: 2;
+    margin: 0 var(--layout-inmargin);
+    overflow-y: auto;
+    padding: var(--padding);
+    color: white;
+  }
+
+
+  /* Header theming */
+  section.body article h1 {
+    background-image: linear-gradient(to right, var(--border), var(--bordergradient));
+    background-color: transparent;
+    text-shadow: 2px 2px 2px black;
     text-align: center;
-    margin-left: 1%;
-    margin-right: 1%;
+    border: 3px solid lightgray;
+    font-size: 28px;
+    font-style: italic;
+    color: white;
+    text-transform: uppercase;
+    margin-top: 12px;
+    margin-bottom: 30px;
+    }
+
+  /* Footer CSS */
+  section.viewport > footer {
+    margin-top: var(--layout-inmargin);
+    color: darkgray;
+    font-style: italic;
+    font-size: 18px;
   }
-  
-  /* decorations! */
+
+  /* Decoration stuff */
   
   .fancyline{
     background: linear-gradient(to right, var(--fancylineleft), var(--fancylineright));
@@ -104,158 +175,70 @@ section.main{
     border: none;
   }
 
-  .gayaf {
-    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-shadow: 1px 1px 1px white;
+  a {
+    color: var(--url);
   }
-    
-  /* center stuff! */
+
+  a:visited {
+    color: var(--urlclicked);
+  }
+
   .center {
-    text-align: center;
-    margin: auto;
     display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+  /* stupid guestbook CSS we can't wait to get rid of this fucker */
+
+  .home-desc {
+    display: none;
   }
   
-  /* padding for main-text elements */
-  .mainText p { 
-    padding-left: 10px;
-    padding-right: 10px;
+  #HCB_comment_box h3 {
+    display: none;
   }
-
-  .mainText h1{
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
+  
+  .hcb-icon {
+    display: none;
   }
-
-  .mainText span{
-    padding-left: 20px;
-    padding-right: 20px;
+  
+  .commentbox {
+    margin-left: auto;
+    margin-right: auto;
   }
-
-  .spanlist {
-    font-size: 20px;
-    padding-bottom: 10px;
-    color: lightgray;
-    font-style: italic;
-    display: inline-block;
-    padding-right: 30px;
-    padding-left: 30px;
-}
-
-.spotify {
-  width: 490px;
-  margin-left: 10px;
-  margin-right: 10px;
-  text-align: center;
-}
-
-iframe {
-  width: 220px;
-  height: 950px;
-  overflow: hidden;
-  border: none;
-}
-
-a {
-  color: var(--url);
-}
-
-a:visited {
-  color: var(--urlclicked);
-}
-
-.blogImg { 
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-}
-
-.reviewimg {
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.gameImg { 
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 10px;
-  display: block;
-  border: 3px solid #EA428B;
-  border-color: var(--border);
-  border-style: outset;
-}
-
-strong {
-  text-decoration: underline dashed;
-  font-style: italic;
-}
-
-/* guestbook hiding CSS */
-
-.home-desc {
-  display: none;
-}
-
-#HCB_comment_box h3 {
-  display: none;
-}
-
-.hcb-icon {
-  display: none;
-}
-
-.commentbox {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#HCB_comment_box {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width:450px;
-}
-
-#HCB_comment_box p {
-  font-family: 'Munro';
-  font-size: 16px;
-}
-
-#HCB_comment_box textarea {
-  font-family: 'Munro';
-}
-
-#HCB_comment_box #hcb_form_content,
-  #HCB_comment_box #hcb_form_email,
-  #HCB_comment_box #hcb_form_name,
-  #HCB_comment_box #hcb_form_website {
-    background-color:rgba(0, 0, 0, 0);
-    outline: white;
-    color: white;
-    font-family: 'Munro' !important;
+  
+  #HCB_comment_box {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:auto;
   }
-
-  #HCB_comment_box .submit {
-    background:none; /* Clear twitter bootstrap style. */
-    background-color:green;
-    border:1px solid darkgreen;
-    color: white;
-    font-family: 'Munro'
+  
+  #HCB_comment_box p {
+    font-family: 'Munro';
+    font-size: 16px;
   }
-
-.hideobj {
-  visibility: hidden; height: 20px; width: 0%;
+  
+  #HCB_comment_box textarea {
+    font-family: 'Munro';
   }
-
-  @keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
+  
+  #HCB_comment_box #hcb_form_content,
+    #HCB_comment_box #hcb_form_email,
+    #HCB_comment_box #hcb_form_name,
+    #HCB_comment_box #hcb_form_website {
+      background-color:rgba(0, 0, 0, 0);
+      outline: white;
+      color: white;
+      font-family: 'Munro' !important;
     }
-    100% {
-        opacity: 1;
-     }
-}
+  
+    #HCB_comment_box .submit {
+      background:none; /* Clear twitter bootstrap style. */
+      background-color:green;
+      border:1px solid darkgreen;
+      color: white;
+      font-family: 'Munro'
+    }   

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Jukebox @ Loveshock.xyz</title>
+        <link rel="stylesheet" href="bio.css">
+    </head>
+    <main>
+        <p>Presented by...</p>
+        <hr>
+        <p><img style="width: 80%;text-align: center;" src="images/kohakuicon.png"></p>
+        <span class="pronouns">
+        <p><u>K.O.D.A.</u><br>
+        The cutest supercomputer you've ever seen - now writing about Apple's products. For...some reason.<br>
+    </p>
+    </span>
+    <hr>
+    <span class="pronouns"><p>
+    <a href="https://twitter.com/KODA_VT" target="_parent"><img style="height: 20px;" src="/images/social/twitter.png"></a> &nbsp;&nbsp; <a href="https://twitch.tv/KODA_VT" target="_parent"><img style="height:20px;" src="/images/social/twitch.png"></a> &nbsp; <a href="https://www.youtube.com/channel/UCGSpN9JYuwHRHjsVfeZoc6w" target="_parent"><img style="height: 20px;" src="/images/social/youtube.png"></a>
+    <hr>
+<script>
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      var site_data = JSON.parse(this.responseText);
+      var num_arr = site_data.info.views.toString().split("");
+      var num_str = "";
+      for (i = 0; i < num_arr.length; i++) {
+        num_str += num_arr[i];
+        if ( (num_arr.length-1 - i) % 3 == 0 && (num_arr.length-1 - i) != 0 ) {num_str += ",";}
+      }
+      document.getElementById("hitcount").innerHTML = num_str;
+    }
+  };
+  xhttp.open("GET", "https://weirdscifi.ratiosemper.com/neocities.php?sitename=loveshock", true);
+  xhttp.send();
+</script>
+    </main>
+</html>

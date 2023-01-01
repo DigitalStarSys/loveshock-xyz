@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@font-face {
+  font-family: 'Munro';
+  src: url('/fonts/Munro.woff2') format('woff2');
+  src: url('/fonts/Munro.woff') format('woff');
+  src: url('/fonts/Munro.ttf') format('truetype');
+  font-display: swap;
+}
+  
+  p {
+    font-family: Munro;
+    color: white;
+    text-align: center
+  }
+
+  .pronouns {
+    line-height: 23px;
+    font-family: Munro;
+    color: white;
+    text-align: center
+  }
+
+  .pronouns img {
+    margin-top: 5px;
+  }
+
+  span {
+    font-family: Munro;
+    color: white;
+    text-align: center;
+    display: inline;
+  }
+
+  hr {
+    background: linear-gradient(to right, #8D5DA4, #0066ff);
+    height: 2px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: none;
+  }
