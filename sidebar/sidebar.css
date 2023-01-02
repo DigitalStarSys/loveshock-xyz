@@ -101,3 +101,18 @@ section.fullsidebar {
   .buttons img {
     width: 77px;;
   }
+
+  /* Status.Cafe */
+  #statuscafe {
+    color: white;
+    font-family: 'Munro';
+}
+
+#statuscafe-username {
+    margin-bottom: 20px;
+}
+
+#statuscafe-username a {
+    margin-bottom: 20px;
+    color: lightblue;
+}
