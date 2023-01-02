@@ -109,10 +109,16 @@ section.fullsidebar {
 }
 
 #statuscafe-username {
-    margin-bottom: 20px;
+    color: darkgray;
+    font-size: 12px;
 }
 
 #statuscafe-username a {
     margin-bottom: 20px;
-    color: lightblue;
+    color: lightgray;
+    display: none;
+}
+
+#statuscafe-content {
+  font-size: 15px;
 }
