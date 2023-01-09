@@ -38,6 +38,7 @@ background-repeat: no-repeat;
 background-attachment: fixed;
 font-family: 'Munro', monospace;
 font-size: 20px;
+margin: 0;
 }
 
 /* Entire viewport */
@@ -53,6 +54,7 @@ section.viewport {
     box-sizing: border-box;
     padding: 20px;
     padding-bottom: 10px;
+    margin-top: max(calc((100vh - 768px) / 7), 0px);
   }
 
   /* Logo flexbox */
@@ -80,6 +82,7 @@ section.viewport {
   section.viewport > nav a:visited {
     color: white;
   }
+
   
 
   /* Main flexbox */
@@ -163,6 +166,7 @@ section.viewport {
     color: darkgray;
     font-style: italic;
     font-size: 18px;
+    text-shadow: 1px 1px 1px black;
   }
 
   /* Decoration stuff */
