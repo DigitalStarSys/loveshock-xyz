@@ -1,4 +1,3 @@
-
 /* Font importing */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
@@ -80,7 +79,7 @@ section.fullsidebar {
   }
 
   span {
-    font-family: 'JetBrains Mono';
+    font-family: 'Munro';
     color: white;
     font-size: 16px;
   }

@@ -1,3 +1,13 @@
+/* Font declaration */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+@font-face {
+  font-family: 'Munro';
+  src: url('/fonts/Munro.woff2') format('woff2');
+  src: url('/fonts/Munro.woff') format('woff');
+  src: url('/fonts/Munro.ttf') format('truetype');
+  font-display: swap;
+}
+
 /* Color variables; use to change site colors quickly */
 :root {
   --border: rgb(81, 78, 226);
@@ -11,17 +21,6 @@
   --padding: 15px;
   --dropdown-width: 200px;
 }
-
-/* Font declaration */
-@font-face {
-    font-family: 'Munro';
-    src: url('/fonts/Munro.woff2') format('woff2');
-    src: url('/fonts/Munro.woff') format('woff');
-    src: url('/fonts/Munro.ttf') format('truetype');
-    font-display: swap;
-}
-@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
 
 /* Border theming */
 section.viewport > nav, section.leftsb, section.rightsb, section.body > article,  .viewport > nav .dropdown {
