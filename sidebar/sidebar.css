@@ -1,6 +1,7 @@
 
 /* Font importing */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
 @font-face {
   font-family: 'Munro';
   src: url('/fonts/Munro.woff2') format('woff2');
@@ -59,12 +60,15 @@ section.fullsidebar {
     display: flex;
     width: 100%;
     height: auto;
-    flex-direction: column;
-    max-width: 100vw;
-    max-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    max-width: 100%;
+    flex-wrap: wrap;
     box-sizing: border-box;
     position: absolute;
     bottom: 0;
+    margin: -8px;
   }
 
 .test {
@@ -76,7 +80,7 @@ section.fullsidebar {
   }
 
   span {
-    font-family: 'Munro';
+    font-family: 'JetBrains Mono';
     color: white;
     font-size: 16px;
   }
@@ -98,8 +102,9 @@ section.fullsidebar {
     color: white;
   }
 
-  .buttons img {
-    width: 77px;;
+  .buttons img, .buttons a {
+    width: 77px;
+    padding: 1px;
   }
 
   /* Status.Cafe */

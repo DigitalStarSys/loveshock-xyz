@@ -19,6 +19,7 @@
     font-display: swap;
 }
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
 
 /* Border theming */
 section.viewport > nav, section.leftsb, section.rightsb, section.body > article {
