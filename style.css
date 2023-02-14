@@ -135,6 +135,8 @@ section.viewport {
     width: var(--dropdown-width);
     left: 50%;
     margin-left: calc(var(--dropdown-width) / -2);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px); /* because safari needs prefix for not-standardized stuff */
   }
 
   /* overrides previous rules *only* on hover */
