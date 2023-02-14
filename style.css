@@ -4,10 +4,12 @@
   --bordergradient: rgba(255, 122, 255,0.25);
   --fancylineleft: #8D5DA4;
   --fancylineright: #0066ff;
+  --dropdown-hover-background: #323166;
   --url: white;
   --urlclicked: lightskyblue;
   --layout-inmargin: 10px;
   --padding: 15px;
+  --dropdown-width: 200px;
 }
 
 /* Font declaration */
@@ -22,7 +24,7 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
 
 /* Border theming */
-section.viewport > nav, section.leftsb, section.rightsb, section.body > article {
+section.viewport > nav, section.leftsb, section.rightsb, section.body > article,  .viewport > nav .dropdown {
     border: 5px solid lightgray;
     border-color: var(--border);
     border-style: outset;
@@ -81,7 +83,80 @@ section.viewport {
     color: white;
   }
 
-  
+  /* outer dropdown box (needed for positioning tricks) */
+  section.viewport > nav .dropdown-outer {
+    position: relative;
+  }
+
+  section.viewport > nav .dropdown-outer > a {
+    position: relative;
+    text-decoration: none;
+
+    /* this fuckery is so there's no gap between hovering
+     * the <a> and the <div class="dropdown"> where
+     * you lose the hover */
+    margin-bottom: -10px;
+    padding-bottom: 10px;
+  }
+
+  /* fake underline for dropdown parent nav */
+  section.viewport > nav .dropdown-outer > a::before {
+    position: absolute;
+    left: 0;
+    right: 20px; /* must be the same as arrow width + arrow's margin */
+    bottom: 10px;
+    height: 1px;
+    content: ' ';
+    background-color: currentColor;
+  }
+
+  /* down arrow for dropdown parent nav */
+  section.viewport > nav .dropdown-outer > a::after {
+    position: relative;
+    margin-left: 4px;
+    top:  -2px;
+    text-decoration: none;
+    content: '🞃'
+  }
+
+  /* visible dropdown box */
+  section.viewport > nav .dropdown-outer .dropdown {
+    height: 0;
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+    right: 0;
+    top: calc(100% + 8px);
+    border-width: 0px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-width: 100px;
+    max-width: 300px;
+    width: var(--dropdown-width);
+    left: 50%;
+    margin-left: calc(var(--dropdown-width) / -2);
+  }
+
+  /* overrides previous rules *only* on hover */
+  section.viewport > nav .dropdown-outer a:hover + .dropdown,
+  section.viewport > nav .dropdown-outer .dropdown:hover{
+    height: auto;
+    border-width: 5px;
+    padding: 8px 0;
+  }
+
+  /* rules for specifically the dropdown items */
+  section.viewport > nav .dropdown-outer .dropdown a {
+    margin: 0;
+    padding: 4px;
+    text-align: center;
+  }
+
+  /* dropdown item background on hover */
+  section.viewport > nav .dropdown-outer .dropdown a:hover {
+    background: var(--dropdown-hover-background);
+  }
 
   /* Main flexbox */
   section.body {
