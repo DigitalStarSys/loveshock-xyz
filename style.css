@@ -184,11 +184,17 @@ section.viewport {
     color: var(--urlclicked);
   }
 
-  .center {
+  .centermiku {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+  }
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   /* stupid guestbook CSS we can't wait to get rid of this fucker */
