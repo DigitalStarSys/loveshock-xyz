@@ -6,7 +6,7 @@ section.systemdir {
     width: 100%;
 }
 
-section.systemdir > section.alter {
+section.systemdir > section.headmate {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -14,7 +14,7 @@ section.systemdir > section.alter {
     margin-bottom: 10px;
 }
 
-section.alter img {
+section.headmate img {
     order: 1;
     width: 20%;
     margin: 3%;
@@ -24,7 +24,7 @@ section.alter img {
 
 }
 
-section.alter span {
+section.headmate span {
     margin: 3%;
     order: 2;
     width: 70%;
