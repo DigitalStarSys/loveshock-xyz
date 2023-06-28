@@ -115,7 +115,7 @@ section.viewport {
     margin-left: 4px;
     top:  -2px;
     text-decoration: none;
-    content: '🞃'
+    content: '⌄'
   }
 
   /* visible dropdown box */
@@ -274,6 +274,9 @@ section.viewport {
     margin-right: auto;
   }
 
+  ul {
+    list-style-type: square;
+  }
   /* device page table */
 
   .specs {
