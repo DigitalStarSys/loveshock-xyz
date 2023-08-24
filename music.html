@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Jukebox @ Loveshock.xyz</title>
+        <link rel="stylesheet" href="/style.css">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <section class="viewport">
+            <img src="/images/logo.png"></img>
+            <nav>
+                <a href="/index.html">HOME</a>
+                <a href="/about.html">ABOUT US</a>
+                <a href="/blog.html">BLOG</a>
+                <span class="dropdown-outer">
+                    <a>INTERESTS</a>
+                    <div class="dropdown">
+                        <a href="/tech.html">OUR TECH</a>
+                        <a href="/music.html">MUSIC PLAYER</a>
+                        <a href="/toolkit.html">SOFTWARE RECS</a>
+                    </div>
+                </span>
+                <a href="/guestbook.html">GUESTBOOK</a>
+                <a href="/system.html">OUR SYSTEM</a>
+                <a href="/netaverse.html">OTHER SITES</a>
+            </nav>
+            <section class="body">
+                <article>
+                        <h1>&starf; Welcome to The Jukebox! &starf;</h1>
+                        <div id="app" style="height: 400px">
+                            <!-- Webamp will attempt to center itself within this div -->
+                        </div>
+                        <script src="https://unpkg.com/webamp@1.4.2/built/webamp.bundle.min.js"></script>
+                        <script>
+                            const Webamp = window.Webamp;
+                            const webamp = new Webamp({
+                                initialTracks: [
+                                    {
+                                        metaData: {
+                                            artist: "LOSTTIME.SYS",
+                                            title: "Vibefest Vol. V DJ Set"
+                                        },
+                                        url: "/music/vibefest.mp3",
+                                    },
+                                    {
+                                        metaData: {
+                                            artist: "Porter Robinson",
+                                            title: "Something Comforting"
+                                        },
+                                        url: "/music/somethingcomforting.mp3",
+                                    },
+                                    {
+                                        metaData: {
+                                            artist: "Jamie Paige",
+                                            title: "People Posture Play Pretend"
+                                        },
+                                        url: "/music/pppp.mp3",
+                                    },
+                                    {
+                                        metaData: {
+                                            artist: "Jin",
+                                            title: "Headphone Actor"
+                                        },
+                                        url: "/music/headphoneactor.mp3",
+                                    },
+                                    {
+                                        metaData: {
+                                            artist: "Calla Soiled",
+                                            title: "Orbital"
+                                        },
+                                        url: "/music/orbital.mp3",
+                                    },
+                                    {
+                                        metaData: {
+                                            artist: "Wavedash",
+                                            title: "Stallions"
+                                        },
+                                        url: "/music/stallions.mp3",
+                                    },
+                                    {
+                                        metaData: {
+                                            artist: "Jack's Mannequin",
+                                            title: "Spinning"
+                                        },
+                                        url: "/music/spinning.mp3",
+                                    },
+                                    {
+                                        metaData: {
+                                            artist: "Anamanaguchi",
+                                            title: "U n ME"
+                                        },
+                                        url: "/music/unme.mp3",
+                                    },
+                                    {
+                                        metaData: {
+                                            artist: "Virtual Self",
+                                            title: "Particle Arts"
+                                        },
+                                        url: "/music/particlearts.mp3",
+                                    },
+                                    {
+                                        metaData: {
+                                            artist: "ClariS",
+                                            title: "Irony"
+                                        },
+                                        url: "/music/irony.mp3",
+                                    },
+                                    {
+                                        metaData: {
+                                            artist: "Anamanaguchi",
+                                            title: "Miku"
+                                        },
+                                        url: "/music/miku.mp3",
+                                    },
+                                    {
+                                        metaData: {
+                                            artist: "Origami Angel",
+                                            title: "Escape Rope"
+                                        },
+                                        url: "/music/escaperope.mp3",
+                                    },
+                                    {
+                                        metaData: {
+                                            artist: "KIRA",
+                                            title: "Digital Girl"
+                                        },
+                                        url: "/music/digitalgirl.mp3",
+                                    },
+                                    {
+                                        metaData: {
+                                            artist: "Anamanaguchi",
+                                            title: "Bosozoku GF"
+                                        },
+                                        url: "/music/bosozokugf.mp3",
+                                    },
+                                    {
+                                        metaData: {
+                                            artist: "LOSTTIME.SYS",
+                                            title: "KODA Anniversary DJ Set"
+                                        },
+                                        url: "/music/hsdx.mp3",
+                                    },
+                                ],
+                            });
+                    
+                            // Returns a promise indicating when it's done loading.
+                            webamp.renderWhenReady(document.getElementById('app'));
+                        </script>
+                </article>
+                <section class="leftsb">
+                    <iframe src=/sidebar/left_sb.html scrolling="no"></iframe>
+                </section>
+                <section class="rightsb">
+                    <iframe src=/sidebar/right_sb.html scrolling="no"></iframe>
+                </section>
+            </section>
+            <footer>Made with love by the Lost Time System. Last updated: 08/20/2023.</footer>
+        </section>
+    </body>
+</html>
