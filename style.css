@@ -1,3 +1,7 @@
+/* import secondary CSS files */
+@import url('/flexboxes.css');
+@import url('/mobile.css');
+
 /* Font declaration */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
 @font-face {
@@ -277,6 +281,20 @@ section.viewport {
   ul {
     list-style-type: square;
   }
+
+  button {
+    background-color: rgba(0, 0, 0, 0);
+    border: 3px;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-family: 'Munro';
+    font-size: 18px;
+    color: white;
+    border: 3px solid lightgray;
+    text-align: center;
+  }
+  
   /* device page table */
 
   .specs {

@@ -30,12 +30,13 @@ section.headmate span {
     width: 70%;
 }
 
-/* tech page */
+/* tech & landing page */
 
 section.techdir {
     display: flex;
     flex-direction: row;
     width: 100%;
+    
 }
 
 section.techdir > section.devicebox {
@@ -44,6 +45,13 @@ section.techdir > section.devicebox {
     width: 100%;
     border: 3px solid lightgray;
     margin-bottom: 10px;
+    align-items: stretch;
+}
+
+@media (max-width: 400px) {
+    section.techdir > section.devicebox {
+        flex-direction: column;
+    }
 }
 
 section.techdir > section.devicebox > section.device{
