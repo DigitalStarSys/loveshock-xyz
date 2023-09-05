@@ -46,6 +46,11 @@ section.techdir > section.devicebox {
     border: 3px solid lightgray;
     margin-bottom: 10px;
     align-items: stretch;
+    margin-right: var(--layout-inmargin);
+}
+
+section.techdir > section.devicebox:last-child {
+    margin-right: 0;
 }
 
 @media (max-width: 400px) {

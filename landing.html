@@ -4,16 +4,18 @@
         <title>The Jukebox @ Loveshock.xyz</title>
         <link rel="stylesheet" href="/style.css">
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
     <body>
         <section class="viewport">
             <img src="/images/logo.png"></img>
             <nav>
+                <a href="javascript:;" onclick="document.querySelector('.viewport > nav').classList.toggle('menuOpen');" id="mobileMenuToggle">MENU</a>
                 <a href="/index.html">HOME</a>
                 <a href="/about.html">ABOUT US</a>
                 <a href="/blog.html">BLOG</a>
                 <span class="dropdown-outer">
-                    <a>INTERESTS</a>
+                    <a href="#">INTERESTS</a>
                     <div class="dropdown">
                         <a href="/tech.html">OUR TECH</a>
                         <a href="/music.html">MUSIC PLAYER</a>
@@ -33,14 +35,14 @@
                         <hr>
                         <p>Here are all the major social media sites where you can find us.</p>
                         <section class="techdir">
-                            <section class="devicebox" style="margin-right: 3%;">
+                            <section class="devicebox">
                                 <a href="https://twitter.com/LostTimeSystem"><section class="device">
                                     <img src="/images/landing/twitter.png">
                                     <p class="name">TWITTER</p>
                                     <p class="subtitle">@LostTimeSystem</p>
                                 </section></a>
                             </section>
-                            <section class="devicebox" style="margin-right: 3%;">
+                            <section class="devicebox">
                                 <a href="https://bsky.app/profile/imouto.pro"><section class="device">
                                     <img src="/images/landing/bluesky.png">
                                     <p class="name">BLUESKY</p>
@@ -54,7 +56,7 @@
                                     <p class="subtitle" style="font-size: 0.7em; margin-top: 7px;">oracle@phantomthieves.net</p>
                                 </section></a>
                             </section>
-                            <section class="devicebox" style="margin-left: 3%;">
+                            <section class="devicebox">
                                 <a href="https://superprettycybergirl.tumblr.com"><section class="device">
                                     <img src="/images/landing/tumblr.png">
                                     <p class="name">TUMBLR</p>

@@ -4,16 +4,18 @@
         <title>The Jukebox @ Loveshock.xyz</title>
         <link rel="stylesheet" href="/style.css">
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
     <body>
         <section class="viewport">
             <img src="/images/logo.png"></img>
             <nav>
+                <a href="javascript:;" onclick="document.querySelector('.viewport > nav').classList.toggle('menuOpen');" id="mobileMenuToggle">MENU</a>
                 <a href="/index.html">HOME</a>
                 <a href="/about.html">ABOUT US</a>
                 <a href="/blog.html">BLOG</a>
                 <span class="dropdown-outer">
-                    <a>INTERESTS</a>
+                    <a href="#">INTERESTS</a>
                     <div class="dropdown">
                         <a href="/tech.html">OUR TECH</a>
                         <a href="/music.html">MUSIC PLAYER</a>
@@ -30,7 +32,7 @@
                         <p>Let us tell you a tale....well, actually, multiple of them. We have three main computers in operation, all named after Personas. Click a button below to see specs, and get the story behind each machine.</p>
                         <p>We recommend starting out with Prometheus, as it details the majority of our setup.</p>
                         <section class="techdir">
-                            <section class="devicebox" style="margin-right: 3%;">
+                            <section class="devicebox">
                                 <a href="/tech/necronomicon.html"><section class="device">
                                     <img src="/images/personas/necronomicon.png">
                                     <p class="name">NECRONOMICON</p>
@@ -44,7 +46,7 @@
                                     <p class="subtitle">Our gaming rig and primary workstation.</p>
                                 </section></a>
                             </section>
-                            <section class="devicebox" style="margin-left: 3%;">
+                            <section class="devicebox">
                                 <a href="/tech/alazif.html"><section class="device">
                                     <img src="/images/personas/alazif.png">
                                     <p class="name">AL AZIF</p>

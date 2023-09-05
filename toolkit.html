@@ -3,18 +3,19 @@
     <head>
         <title>The Jukebox @ Loveshock.xyz</title>
         <link rel="stylesheet" href="/style.css">
-        <link rel="stylesheet" href="/flexboxes.css">
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
     <body>
         <section class="viewport">
             <img src="/images/logo.png"></img>
             <nav>
+                <a href="javascript:;" onclick="document.querySelector('.viewport > nav').classList.toggle('menuOpen');" id="mobileMenuToggle">MENU</a>
                 <a href="/index.html">HOME</a>
                 <a href="/about.html">ABOUT US</a>
                 <a href="/blog.html">BLOG</a>
                 <span class="dropdown-outer">
-                    <a>INTERESTS</a>
+                    <a href="#">INTERESTS</a>
                     <div class="dropdown">
                         <a href="/tech.html">OUR TECH</a>
                         <a href="/music.html">MUSIC PLAYER</a>

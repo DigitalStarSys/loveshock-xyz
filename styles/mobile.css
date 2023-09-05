@@ -1,0 +1,76 @@
+/* Hide menu link on non-mobile */
+@media (min-width: 900px) {
+  section.viewport > nav #mobileMenuToggle {
+    display: none;
+  }
+}
+
+/* Rules for < 900px width */
+@media (max-width: 899px) {
+  .viewport > img:first-child {
+    max-width: 100%;
+  }
+
+  /* Collapsed menu */
+  section.viewport > nav {
+    flex-direction: column;
+    justify-content: start;
+    overflow-y: hidden;
+  }
+
+  /* Toggle button styles */
+  section.viewport > nav #mobileMenuToggle {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+
+  /* When menu is open */
+  section.viewport > nav.menuOpen {
+    overflow: visible;
+    height: auto;
+  }
+
+  /* Move left sidebar */
+  section.body {
+    flex-direction: column;
+  }
+
+  section.body > article, section.body > section {
+    margin: var(--layout-inmargin) 0;
+    width: 100%;
+    min-height: 200px;
+  }
+
+  section.body section.leftsb {
+    order: 3;
+    height: 280px;
+  }
+
+  section.body section.rightsb {
+    height: 280px;
+  }
+}
+
+@media (max-width: 1300px) {
+  section.techdir {
+    flex-direction: column;
+  }
+
+  section.techdir .devicebox a {
+    width: 100%;
+  }
+
+  section.techdir .device {
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
+
+  section.techdir .device img {
+    margin: 0 var(--layout-inmargin);
+    grid-row: 1 / 3;
+    height: 100%;
+  }
+}
+
+

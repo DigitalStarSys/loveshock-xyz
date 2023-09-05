@@ -131,3 +131,40 @@ section.fullsidebar {
 #statuscafe-content {
   font-size: 15px;
 }
+
+@media (min-width: 200px) {
+  section.fullsidebar {
+    flex-direction: row;
+  }
+
+  section.fullsidebar hr {
+    transform: rotate(90deg);
+    margin: 0 -50px;
+  }
+
+  section.fullsidebar.leftsidebar .webrings + hr {
+    display: none;
+  }
+
+  section.fullsidebar.rightsidebar .latestblog img {
+    max-height: 120px;
+    object-fit: contain;
+  }
+
+  section.fullsidebar.rightsidebar .webrings:nth-child(3) {
+    flex-shrink: 2;
+  }
+
+  section.fullsidebar.rightsidebar .webrings:nth-child(3) span {
+    display:flex;
+    flex-direction: column;
+  }
+
+  section.fullsidebar .buttons {
+    width: 100%;
+    grid-template-columns: repeat(5, 1fr);
+    height: 80px;
+    position: absolute;
+    bottom: 0;
+  }
+}
