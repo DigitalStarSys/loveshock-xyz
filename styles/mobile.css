@@ -7,6 +7,7 @@
 
 /* Rules for < 900px width */
 @media (max-width: 899px) {
+
   .viewport > img:first-child {
     max-width: 100%;
   }
@@ -16,6 +17,7 @@
     flex-direction: column;
     justify-content: start;
     overflow-y: hidden;
+    font-size: 18px;
   }
 
   /* Toggle button styles */
@@ -45,10 +47,49 @@
   section.body section.leftsb {
     order: 3;
     height: 280px;
+    margin-bottom: 0px;
   }
 
   section.body section.rightsb {
     height: 280px;
+  }
+
+  /* spacing & sizing tweaks */
+  body {
+  font-size: 15px;
+  }
+  .tab button {
+    font-size: 15px;
+    border: 2px solid lightgray;
+  }
+
+  section.body article h1 {
+    font-size: 20px;
+  }
+  
+  section.body article {
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
+
+  footer {
+    text-align: center;
+  }
+
+  /* system page tweaks */
+  section.systemdir > section.headmate {
+    flex-direction: column;
+    margin-bottom: 8px;
+  }
+
+  section.headmate img {
+    width: 65%;
+  }
+
+section.headmate span {
+    text-align: center;
+    align-self: center;
+    width: 90%;
   }
 }
 
@@ -56,7 +97,7 @@
   section.techdir {
     flex-direction: column;
   }
-
+  
   section.techdir .devicebox a {
     width: 100%;
   }
