@@ -132,6 +132,12 @@ section.fullsidebar {
   font-size: 15px;
 }
 
+@media (max-width: 899px) {
+  span {
+      font-size: 14px;
+  }
+}
+
 @media (min-width: 200px) {
   section.fullsidebar {
     flex-direction: row;

@@ -315,7 +315,6 @@ section.viewport {
 /* Style the buttons that are used to open the tab content */
 .tab button {
   background-color: rgba(0, 0, 0, 0);
-  border: 3px;
   outline: none;
   cursor: pointer;
   padding: 14px 16px;

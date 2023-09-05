@@ -4,16 +4,18 @@
         <title>The Jukebox @ Loveshock.xyz</title>
         <link rel="stylesheet" href="/style.css">
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
     <body>
         <section class="viewport">
             <img src="/images/logo.png"></img>
-            <nav>
+             <nav>
+                <a href="javascript:;" onclick="document.querySelector('.viewport > nav').classList.toggle('menuOpen');" id="mobileMenuToggle">MENU</a>
                 <a href="/index.html">HOME</a>
                 <a href="/about.html">ABOUT US</a>
                 <a href="/blog.html">BLOG</a>
                 <span class="dropdown-outer">
-                    <a>INTERESTS</a>
+                    <a href="#">INTERESTS</a>
                     <div class="dropdown">
                         <a href="/tech.html">OUR TECH</a>
                         <a href="/music.html">MUSIC PLAYER</a>
@@ -51,7 +53,7 @@
                     <iframe src=/sidebar/right_sb.html scrolling="no"></iframe>
                 </section>
             </section>
-            <footer>Made with love by the Lost Time System. Last updated: 09/03/2023.</footer>
+            <footer>Made with love by the Lost Time System. Last updated: 09/05/2023.</footer>
         </section>
     </body>
 </html>
