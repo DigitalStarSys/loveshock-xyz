@@ -104,13 +104,21 @@ section.headmate span {
 
   section.techdir .device {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 100px auto;
   }
 
   section.techdir .device img {
     margin: 0 var(--layout-inmargin);
     grid-row: 1 / 3;
-    height: 100%;
+  }
+
+  section.device p.subtitle {
+    font-size: 13px;
+  }
+
+  section.device p.fedisubtitle {
+    font-size: 12px;
+    margin-top: 0px;
   }
 }
 
