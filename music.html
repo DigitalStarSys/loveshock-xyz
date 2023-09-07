@@ -28,127 +28,468 @@
             </nav>
             <section class="body">
                 <article>
-                        <h1>&starf; Music Player! &starf;</h1>
-                        <div id="app" style="height: 400px">
-                            <!-- Webamp will attempt to center itself within this div -->
+                        <h1>&starf; Music! &starf;</h1>
+                        <section class="sidebyside">
+                            <section class="columnA">
+                                <p>Welcome to our music page!</p>
+                                <p>With our autism, we generally can't function without music in our day-to-day life. The Jukebox was powered by music, as was our love for so many different forms of art and self-expression.</p>
+                                <p>This page serves as our documenting and love letters to all things music - the songs we listen to, the devices that play them, and the stories behind them.</p>
+                                <p>We've also attached Webamp to this page, and loaded it with some of our DJ sets and favorite songs. Feel free to listen while you browse~!</p>
+                            </section>
+                            <section class="columnB">
+                                <div id="app" style="height: 400px;">
+                                    <!-- Webamp will attempt to center itself within this div -->
+                                </div>
+                                <script src="https://unpkg.com/webamp@1.4.2/built/webamp.bundle.min.js"></script>
+                                <script>
+                                    const Webamp = window.Webamp;
+                                    const webamp = new Webamp({
+                                        initialTracks: [
+                                            {
+                                                metaData: {
+                                                    artist: "LOSTTIME.SYS",
+                                                    title: "Vibefest Vol. V DJ Set"
+                                                },
+                                                url: "/music/vibefest.mp3",
+                                            },
+                                            {
+                                                metaData: {
+                                                    artist: "Porter Robinson",
+                                                    title: "Something Comforting"
+                                                },
+                                                url: "/music/somethingcomforting.mp3",
+                                            },
+                                            {
+                                                metaData: {
+                                                    artist: "Jamie Paige",
+                                                    title: "People Posture Play Pretend"
+                                                },
+                                                url: "/music/pppp.mp3",
+                                            },
+                                            {
+                                                metaData: {
+                                                    artist: "Jin",
+                                                    title: "Headphone Actor"
+                                                },
+                                                url: "/music/headphoneactor.mp3",
+                                            },
+                                            {
+                                                metaData: {
+                                                    artist: "Calla Soiled",
+                                                    title: "Orbital"
+                                                },
+                                                url: "/music/orbital.mp3",
+                                            },
+                                            {
+                                                metaData: {
+                                                    artist: "Wavedash",
+                                                    title: "Stallions"
+                                                },
+                                                url: "/music/stallions.mp3",
+                                            },
+                                            {
+                                                metaData: {
+                                                    artist: "Jack's Mannequin",
+                                                    title: "Spinning"
+                                                },
+                                                url: "/music/spinning.mp3",
+                                            },
+                                            {
+                                                metaData: {
+                                                    artist: "Anamanaguchi",
+                                                    title: "U n ME"
+                                                },
+                                                url: "/music/unme.mp3",
+                                            },
+                                            {
+                                                metaData: {
+                                                    artist: "Virtual Self",
+                                                    title: "Particle Arts"
+                                                },
+                                                url: "/music/particlearts.mp3",
+                                            },
+                                            {
+                                                metaData: {
+                                                    artist: "ClariS",
+                                                    title: "Irony"
+                                                },
+                                                url: "/music/irony.mp3",
+                                            },
+                                            {
+                                                metaData: {
+                                                    artist: "Anamanaguchi",
+                                                    title: "Miku"
+                                                },
+                                                url: "/music/miku.mp3",
+                                            },
+                                            {
+                                                metaData: {
+                                                    artist: "Origami Angel",
+                                                    title: "Escape Rope"
+                                                },
+                                                url: "/music/escaperope.mp3",
+                                            },
+                                            {
+                                                metaData: {
+                                                    artist: "KIRA",
+                                                    title: "Digital Girl"
+                                                },
+                                                url: "/music/digitalgirl.mp3",
+                                            },
+                                            {
+                                                metaData: {
+                                                    artist: "Anamanaguchi",
+                                                    title: "Bosozoku GF"
+                                                },
+                                                url: "/music/bosozokugf.mp3",
+                                            },
+                                            {
+                                                metaData: {
+                                                    artist: "LOSTTIME.SYS",
+                                                    title: "KODA Anniversary DJ Set"
+                                                },
+                                                url: "/music/hsdx.mp3",
+                                            },
+                                        ],
+                                    });
+                            
+                                    // Returns a promise indicating when it's done loading.
+                                    webamp.renderWhenReady(document.getElementById('app'));
+                                </script>
+                            </section>
+                        </section>
+                        <h1>Music Profiles</h1>
+                        <section class="techdir">
+                            <section class="devicebox">
+                                <a href="https://last.fm/user/Kiririnnn"><section class="device">
+                                    <img src="/images/icons/lastfm.png">
+                                    <p class="name">LAST.FM</p>
+                                    <p class="subtitle">Our Last.FM account that tracks all of our listening.</p>
+                                </section></a>
+                            </section>
+                            <section class="devicebox">
+                                <a href="https://music.apple.com/profile/Kiririn"><section class="device">
+                                    <img src="/images/icons/applemusic.png">
+                                    <p class="name">APPLE MUSIC</p>
+                                    <p class="subtitle">Our profile on our streaming service of choice.</p>
+                                </section></a>
+                            </section>
+                            <section class="devicebox">
+                                <a href="https://www.mixcloud.com/LostTimeSys/"><section class="device">
+                                    <img src="/images/icons/mixcloud.png">
+                                    <p class="name">MIXCLOUD</p>
+                                    <p class="subtitle">An archive of our DJ sets, with tracklists.</p>
+                                </section></a>
+                            </section>
+                        </section>
+                        <h1>Our Collection</h1>
+                        <p>Although it's not particularly large, we do have a proud collection of albums on vinyl, CD, and cassette tape! We figured we'd document it here.</p>
+                        <div class="tab">
+                            <button class="tablinks" onclick="openGroup(event, 'CDs')">Compact Disc</button>
+                            <button class="tablinks" onclick="openGroup(event, 'Vinyl')">Vinyl</button>
+                            <button class="tablinks" onclick="openGroup(event, 'Tape')">Cassette Tape</button>
+                            <button class="tablinks" onclick="openGroup(event, 'Bandcamp')">Digital (Bandcamp)</button>
                         </div>
-                        <script src="https://unpkg.com/webamp@1.4.2/built/webamp.bundle.min.js"></script>
-                        <script>
-                            const Webamp = window.Webamp;
-                            const webamp = new Webamp({
-                                initialTracks: [
-                                    {
-                                        metaData: {
-                                            artist: "LOSTTIME.SYS",
-                                            title: "Vibefest Vol. V DJ Set"
-                                        },
-                                        url: "/music/vibefest.mp3",
-                                    },
-                                    {
-                                        metaData: {
-                                            artist: "Porter Robinson",
-                                            title: "Something Comforting"
-                                        },
-                                        url: "/music/somethingcomforting.mp3",
-                                    },
-                                    {
-                                        metaData: {
-                                            artist: "Jamie Paige",
-                                            title: "People Posture Play Pretend"
-                                        },
-                                        url: "/music/pppp.mp3",
-                                    },
-                                    {
-                                        metaData: {
-                                            artist: "Jin",
-                                            title: "Headphone Actor"
-                                        },
-                                        url: "/music/headphoneactor.mp3",
-                                    },
-                                    {
-                                        metaData: {
-                                            artist: "Calla Soiled",
-                                            title: "Orbital"
-                                        },
-                                        url: "/music/orbital.mp3",
-                                    },
-                                    {
-                                        metaData: {
-                                            artist: "Wavedash",
-                                            title: "Stallions"
-                                        },
-                                        url: "/music/stallions.mp3",
-                                    },
-                                    {
-                                        metaData: {
-                                            artist: "Jack's Mannequin",
-                                            title: "Spinning"
-                                        },
-                                        url: "/music/spinning.mp3",
-                                    },
-                                    {
-                                        metaData: {
-                                            artist: "Anamanaguchi",
-                                            title: "U n ME"
-                                        },
-                                        url: "/music/unme.mp3",
-                                    },
-                                    {
-                                        metaData: {
-                                            artist: "Virtual Self",
-                                            title: "Particle Arts"
-                                        },
-                                        url: "/music/particlearts.mp3",
-                                    },
-                                    {
-                                        metaData: {
-                                            artist: "ClariS",
-                                            title: "Irony"
-                                        },
-                                        url: "/music/irony.mp3",
-                                    },
-                                    {
-                                        metaData: {
-                                            artist: "Anamanaguchi",
-                                            title: "Miku"
-                                        },
-                                        url: "/music/miku.mp3",
-                                    },
-                                    {
-                                        metaData: {
-                                            artist: "Origami Angel",
-                                            title: "Escape Rope"
-                                        },
-                                        url: "/music/escaperope.mp3",
-                                    },
-                                    {
-                                        metaData: {
-                                            artist: "KIRA",
-                                            title: "Digital Girl"
-                                        },
-                                        url: "/music/digitalgirl.mp3",
-                                    },
-                                    {
-                                        metaData: {
-                                            artist: "Anamanaguchi",
-                                            title: "Bosozoku GF"
-                                        },
-                                        url: "/music/bosozokugf.mp3",
-                                    },
-                                    {
-                                        metaData: {
-                                            artist: "LOSTTIME.SYS",
-                                            title: "KODA Anniversary DJ Set"
-                                        },
-                                        url: "/music/hsdx.mp3",
-                                    },
-                                ],
-                            });
-                    
-                            // Returns a promise indicating when it's done loading.
-                            webamp.renderWhenReady(document.getElementById('app'));
-                        </script>
+                        <br>
+                        <div id="CDs" class="tabcontent">
+                        <table class="specs">
+                            <tr>
+                                <td style="text-decoration: underline; font-weight: bold;">Album Name</td>
+                                <td style="text-decoration: underline; font-weight: bold;">Artist/Label</td>
+                            </tr>
+                            <tr>
+                                <td>Adventure (Deluxe)</td>
+                                <td>Madeon</td>
+                            </tr>
+                            <tr>
+                                <td>The Best of GUMI from Megpoid</td>
+                                <td>Exit Tunes (Compilation)</td>
+                            </tr>
+                            <tr>
+                                <td>Concientia</td>
+                                <td>Crusher-P</td>
+                            </tr>
+                            <tr>
+                                <td>Digital Stars feat. MIKU & GUMI Compilation</td>
+                                <td>KARENT (Compilation)</td>
+                            </tr>
+                            <tr>
+                                <td>DreamDream (Limited Pokemon Edition)</td>
+                                <td>Shoko Nakagawa</td>
+                            </tr>
+                            <tr>
+                                <td>Endless Fantasy</td>
+                                <td>Anamanaguchi</td>
+                            </tr>
+                            <tr>
+                                <td>Exit Tunes Presents GUMish from Megpoid</td>
+                                <td>Exit Tunes (Compilation)</td>
+                            </tr>
+                            <tr>
+                                <td>Exit Tunes Presents GUMitive from Megpoid</td>
+                                <td>Exit Tunes (Compilation)</td>
+                            </tr>
+                            <tr>
+                                <td>Exit Tunes Presents Vocalonation feat. Hatsune Miku</td>
+                                <td>Exit Tunes (Compilation)</td>
+                            </tr>
+                            <tr>
+                                <td>Flight of the Conchords</td>
+                                <td>Flight of the Conchords</td>
+                            </tr>
+                            <tr>
+                                <td>InkRemix 6</td>
+                                <td>Wakaru Records (Compilation)</td>
+                            </tr>
+                            <tr>
+                                <td>Lightning</td>
+                                <td>Matt & Kim</td>
+                            </tr>
+                            <tr>
+                                <td>Manners</td>
+                                <td>Passion Pit</td>
+                            </tr>
+                            <tr>
+                                <td>Hatsune Miku Expo 5th Anniversary EP</td>
+                                <td>KARENT (Compilation)</td>
+                            </tr>
+                            <tr>
+                                <td>Mekakucity Days</td>
+                                <td>Jin</td>
+                            </tr>
+                            <tr>
+                                <td>Mekakucity Records</td>
+                                <td>Jin</td>
+                            </tr>
+                            <tr>
+                                <td>Nurture</td>
+                                <td>Porter Robinson</td>
+                            </tr>
+                            <tr>
+                                <td>Random Access Memories</td>
+                                <td>Daft Punk</td>
+                            </tr>
+                            <tr>
+                                <td>Sesame's Treet</td>
+                                <td>smart e's</td>
+                            </tr>
+                            <tr>
+                                <td>Setsuna Code</td>
+                                <td>Last Note.</td>
+                            </tr>
+                            <tr>
+                                <td>SPACE DIVE!! feat. GUMI from Megpoid</td>
+                                <td>Exit Tunes (Compilation)</td>
+                            </tr>
+                            <tr>
+                                <td>Summer Singles 2010/2020</td>
+                                <td>Anamanaguchi</td>
+                            </tr>
+                            <tr>
+                                <td>Super Mario Galaxy Official Soundtrack</td>
+                                <td>Nintendo</td>
+                            </tr>
+                            <tr>
+                                <td>The First Glass Beach Album</td>
+                                <td>Glass Beach</td>
+                            </tr>
+                            <tr>
+                                <td>Torches</td>
+                                <td>Foster the People</td>
+                            </tr>
+                            <tr>
+                                <td>Unhappy Refrain</td>
+                                <td>Wowaka</td>
+                            </tr>
+                            <tr>
+                                <td>Whenever You Need Somebody</td>
+                                <td>Rick Astley</td>
+                            </tr>
+                            <tr>
+                                <td>Worlds</td>
+                                <td>Porter Robinson</td>
+                            </tr>
+                            <tr>
+                                <td>[U S A]</td>
+                                <td>Anamanaguchi</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="Vinyl" class="tabcontent">
+                        <table id="specs" style="width: 100%">
+                            <tr>
+                                <td style="text-decoration: underline; font-weight: bold;">Album Name</td>
+                                <td style="text-decoration: underline; font-weight: bold;">Artist/Label</td>
+                            </tr>
+                            <tr>
+                                <td>Dawn Metropolis</td>
+                                <td>Anamanaguchi</td>
+                            </tr>
+                            <tr>
+                                <td>Endless Fantasy</td>
+                                <td>Anamanaguchi</td>
+                            </tr>
+                            <tr>
+                                <td>Everything Goes On (Single)</td>
+                                <td>Porter Robinson</td>
+                            </tr>
+                            <tr>
+                                <td>Miku (EP)</td>
+                                <td>Anamanaguchi</td>
+                            </tr>
+                            <tr>
+                                <td>Nurture</td>
+                                <td>Porter Robinson</td>
+                            </tr>
+                            <tr>
+                                <td>Scott Pilgrim vs. The World: The Game: Original Soundtrack</td>
+                                <td>Anamanaguchi</td>
+                            </tr>
+                            <tr>
+                                <td>Sonic Colors Ultimate: Original Soundtrack</td>
+                                <td>Sega Sound Team</td>
+                            </tr>
+                            <tr>
+                                <td>Sonic Frontiers: The Music of Starfall Islands</td>
+                                <td>Sega Sound Team</td>
+                            </tr>
+                            <tr>
+                                <td>Whenever You Need Somebody</td>
+                                <td>Rick Astley</td>
+                            </tr>
+                            <tr>
+                                <td>[U S A]</td>
+                                <td>Anamanaguchi</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="Tape" class="tabcontent">
+                        <table class="specs" style="width: 100%">
+                            <tr>
+                                <td style="text-decoration: underline; font-weight: bold;">Album Name</td>
+                                <td style="text-decoration: underline; font-weight: bold;">Artist/Label</td>
+                            </tr>
+                            <tr>
+                                <td>ENCORE, or, an incomplete and contradictory history of jaylen hotdogfingers, her trials and tribulations</td>
+                                <td>The Garages</td>
+                            </tr>
+                            <tr>
+                                <td>Even Worse</td>
+                                <td>Weird Al Yankovic</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="Bandcamp" class="tabcontent">
+                        <p>These are ONLY songs we've bought on Bandcamp! Our larger collection of digital music obtained through other sources isn't listed here. :3</p>
+                        <table class="specs" style="width: 100%">
+                            <tr>
+                                <td style="text-decoration: underline; font-weight: bold;">Album Name</td>
+                                <td style="text-decoration: underline; font-weight: bold;">Artist/Label</td>
+                            </tr>
+                            <tr>
+                                <td>Airbrushed (Single)</td>
+                                <td>Anamanaguchi</td>
+                            </tr>
+                            <tr>
+                                <td>ALIBABA</td>
+                                <td>jiai</td>
+                            </tr>
+                            <tr>
+                                <td>ALIBABA_BETA</td>
+                                <td>jiai</td>
+                            </tr>
+                            <tr>
+                                <td>Aurora (Meet Me in the Stars)</td>
+                                <td>Anamanaguchi</td>
+                            </tr>
+                            <tr>
+                                <td>Autumn Every Day</td>
+                                <td>Jamie Paige</td>
+                            </tr>
+                            <tr>
+                                <td>Bittersweet</td>
+                                <td>Jamie Paige</td>
+                            </tr>
+                            <tr>
+                                <td>Dawn Metropolis</td>
+                                <td>Anamanaguchi</td>
+                            </tr>
+                            <tr>
+                                <td>Digital Girl (Single)</td>
+                                <td>KIRA</td>
+                            </tr>
+                            <tr>
+                                <td>Dreams (Single)</td>
+                                <td>Anamanaguchi & Flux Pavillion</td>
+                            </tr>
+                            <tr>
+                                <td>ENCORE, or, an incomplete and contradictory history of jaylen hotdogfingers, her trials and tribulations</td>
+                                <td>The Garages</td>
+                            </tr>
+                            <tr>
+                                <td>Endless Fantasy</td>
+                                <td>Anamanaguchi</td>
+                            </tr>
+                            <tr>
+                                <td>Expedition (Single)</td>
+                                <td>Hyper Potions & Nokae</td>
+                            </tr>
+                            <tr>
+                                <td>Fading Wind (Single)</td>
+                                <td>Feint</td>
+                            </tr>
+                            <tr>
+                                <td>Hopes and Dreams (Single)</td>
+                                <td>Anamanaguchi</td>
+                            </tr>
+                            <tr>
+                                <td>Mess (Single)</td>
+                                <td>Anamanaguchi</td>
+                            </tr>
+                            <tr>
+                                <td>Miku (Single)</td>
+                                <td>Anamanaguchi</td>
+                            </tr>
+                            <tr>
+                                <td>PHANTOM</td>
+                                <td>jiai</td>
+                            </tr>
+                            <tr>
+                                <td>PSYcoLogy</td>
+                                <td>Osanzi</td>
+                            </tr>
+                            <tr>
+                                <td>People Posture Play Pretend (Single)</td>
+                                <td>Jamie Paige</td>
+                            </tr>
+                            <tr>
+                                <td>Pop It (Single)</td>
+                                <td>Anamanaguchi</td>
+                            </tr>
+                            <tr>
+                                <td>Summer Singles 2010/2020</td>
+                                <td>Anamanaguchi</td>
+                            </tr>
+                            <tr>
+                                <td>S/S17 (EP)</td>
+                                <td>Anamanaguchi</td>
+                            </tr>
+                            <tr>
+                                <td>Queen of Misfits</td>
+                                <td>Vylet Pony</td>
+                            </tr>
+                            <tr>
+                                <td>VOCALOID SLAM JAM</td>
+                                <td>Kuoke</td>
+                            </tr>
+                            <tr>
+                                <td>Water Resistant (Single)</td>
+                                <td>Anamanaguchi</td>
+                            </tr>
+                        </table>
+                    </div>
                 </article>
+                <script src="/scripts/buttons.js"></script>
                 <section class="leftsb">
                     <iframe src=/sidebar/left_sb.html scrolling="no"></iframe>
                 </section>
@@ -156,7 +497,7 @@
                     <iframe src=/sidebar/right_sb.html scrolling="no"></iframe>
                 </section>
             </section>
-            <footer>Made with love by the Lost Time System. Last updated: 09/05/2023.</footer>
+            <footer>Made with love by the Lost Time System. Last updated: 09/07/2023.</footer>
         </section>
     </body>
 </html>

@@ -91,6 +91,19 @@ section.headmate span {
     align-self: center;
     width: 90%;
   }
+
+  /* fix sidebyside */
+  section.sidebyside {
+    flex-direction: column;
+  }
+
+  section.sidebyside > section.columnA {
+    width: 100%;
+  }
+
+  section.sidebyside > section.columnB {
+    width: 100%;
+  }
 }
 
 @media (max-width: 1300px) {

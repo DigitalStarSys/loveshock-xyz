@@ -53,6 +53,25 @@ section.techdir > section.devicebox:last-child {
     margin-right: 0;
 }
 
+/* side-by-side columns */
+
+section.sidebyside {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+section.sidebyside > section.columnA {
+    width: 50%;
+    order: 0;
+}
+
+section.sidebyside > section.columnB {
+    width: 50%;
+    order: 1;
+}
+
+
 @media (max-width: 400px) {
     section.techdir > section.devicebox {
         flex-direction: column;
