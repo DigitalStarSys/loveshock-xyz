@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Jukebox @ Loveshock.xyz</title>
+        <link rel="stylesheet" href="/hoarding/style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+    <body>
+        <section class="viewport">
+            <img src="/hoarding/images/logo.png"></img>
+            <nav>
+                <a href="javascript:;" onclick="document.querySelector('.viewport > nav').classList.toggle('menuOpen');" id="mobileMenuToggle">MENU</a>
+                <a href="/index.html">GO BACK</a>
+                <a href="index.html">INTRO</a>
+                <span class="dropdown-outer">
+                    <a href="#">GAMING</a>
+                    <div class="dropdown">
+                        <a href="gaming/3ds.html">Nintendo 3DS</a>
+                    </div>
+                </span>
+            </nav>
+            <section class="body">
+                <article>
+                        <h1>&starf; NINTENDO 3DS &starf;</h1>
+                        <p>The Nintendo eShop is long gone. 3DS physical game prices are skyrocketing. Luckily, getting games for the 3DS is incredibly, stupidly easy, whether you're playing on real hardware or on an emulator.</p>
+                        <p>We firmly believe 3DS games are best played on real hardware, and most people have a Nintendo 3DS system of some kind laying around. Shitposting aside, it really is pretty easy to hack your 3DS, as long as you can follow a guide, so <a href="https://3ds.hacks.guide">we recommend following this guide to hack your 3DS</a>. The 'real hardware' sections of this page assume you've followed the guide.</p>
+                        <br>
+                        <h1>OBTAINING GAMES</h1>
+                        <p>Thanks to the great work of preservationists and pirates, it's really easy to find 3DS games. The most common format for 3DS games are CIA files, which are files for installables. Digital games, updates, and DLC take the form of CIA files. CIA files are the only format usable on real hardware. .3DS files are dumps of cartridge ROMs, and are only useful on 3DS emulators like Citra, as they cannot be played on real hardware.</p>
+                        <p><a href="https://hshop.erista.me/"><b>Erista hShop</b></a> - An archive of nearly every digital thing released on the Nintendo eShop, in every region. Can be used to download CIA files directly, or generate QR codes to use with FBI's Remote Install function.</p>
+                        <p><a href="https://www.ziperto.com/home/"><b>Ziperto</b></a> - A good place to find decrypted 3DS ROMs for Citra. We still generally recommend using hShop over this, however, as Citra can install CIA files.</p>
+                        <br>
+                        <h1>INSTALLING GAMES ON REAL HARDWARE</h1>
+                        <p>Installing games on a hacked 3DS is incredibly easy.</p>
+                        <p>Open FBI on your 3DS, and select Remote Install. <a href="https://hshop.erista.me/3hs">Visit the 3hs download page, and scan the QR code.</a> Confirm the installation, and let it run.</p>
+                        <p>When it's done, head back to the home screen and unwrap 3hs.</p>
+                        <p>Open 3hs, and you're done. You can now search through games, updates, DLC, Virtual Console, and more, and install them directly through 3hs. If you already have games installed, you can run even use 3hs to scan for missing updates and DLC for those games.</p>
+                        <hr>
+                        <p>If you're installing <i>lots</i> of CIA files at once, you can also check out <a href="https://github.com/ihaveamac/custom-install">custom-install</a>, a program for Windows, macOS, and Linux that makes installing games directly to the SD card significantly faster. You'll need to download CIAs to your PC first, though, and setup is a bit more involved. It's a bit of a hassle, but exponentially faster than downloading games from 3hs!</p>
+                        <h1>CITRA</h1>
+                        <p>Citra is an emulator for the Nintendo 3DS that runs on PC, Linux, macOS, and Android.</p>
+                        <p>Citra can run decrypted 3DS ROMs, as well as install and run CIA files.</p>
+                        <p>If you get errors or are having issues, you might want to install user data and shared fonts. These are normally dumped from a hacked 3DS, but <a href="https://megaup.net/50iq/user.rar">they can also be downloaded from here</a>. Extract the RAR file, and copy 'sysdata' and 'nand' to <a href="https://citra-emu.org/wiki/user-directory/">the Citra user directory.</a></p>
+                        <p><a href="https://citra-emu.org/wiki/faq/">Check the Citra FAQ if you're having other issues.</a></p>
+                </article>
+                <section class="leftsb">
+                    <iframe src=/hoarding/sidebar/left_sb.html scrolling="no"></iframe>
+                </section>
+                <section class="rightsb">
+                    <iframe src=/hoarding/sidebar/right_sb.html scrolling="no"></iframe>
+                </section>
+            </section>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,386 @@
+/* Font declaration */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+@font-face {
+  font-family: 'Munro';
+  src: url('/fonts/Munro.woff2') format('woff2');
+  src: url('/fonts/Munro.woff') format('woff');
+  src: url('/fonts/Munro.ttf') format('truetype');
+  font-display: swap;
+}
+
+/* Color variables; use to change site colors quickly */
+:root {
+  --border: rgb(196, 0, 0);
+  --bordergradient: rgb(64, 0, 0);
+  --fancylineleft: #8D5DA4;
+  --fancylineright: #0066ff;
+  --dropdown-hover-background: #5d00009e;
+  --url: white;
+  --urlclicked: lightskyblue;
+  --layout-inmargin: 10px;
+  --padding: 15px;
+  --dropdown-width: 200px;
+}
+
+/* Border theming */
+section.viewport > nav, section.leftsb, section.rightsb, section.body > article,  .viewport > nav .dropdown {
+    border: 5px solid lightgray;
+    border-color: var(--border);
+    border-style: outset;
+    background-color: rgba(0, 0, 0, 0.750);
+    box-sizing: border-box;
+}
+
+/* Background CSS */
+body {
+background-image: url('../images/background.png');
+background-position: center;
+background-size: cover;
+background-color: #000000;
+background-repeat: no-repeat;
+background-attachment: fixed;
+font-family: 'JetBrains Mono', monospace;
+font-size: 18px;
+margin: 0;
+}
+
+/* Entire viewport */
+section.viewport {
+    display: flex;
+    flex-direction: column;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 20px;
+    min-height: 768px;
+  }
+
+  /* Logo flexbox */
+  section.viewport > img {
+    height: 80px;
+    margin-bottom: 10px;
+  }
+
+  /* Nav flexbox */
+  section.viewport > nav {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 35px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: var(--layout-inmargin);
+  }
+
+  section.viewport > nav a {
+    margin: 0 25px;
+    color: white;
+  }
+
+  section.viewport > nav a:visited {
+    color: white;
+  }
+
+  /* outer dropdown box (needed for positioning tricks) */
+  section.viewport > nav .dropdown-outer {
+    position: relative;
+  }
+
+  section.viewport > nav .dropdown-outer > a {
+    position: relative;
+    text-decoration: none;
+
+    /* this fuckery is so there's no gap between hovering
+     * the <a> and the <div class="dropdown"> where
+     * you lose the hover */
+    margin-bottom: -10px;
+    padding-bottom: 10px;
+  }
+
+  /* fake underline for dropdown parent nav */
+  section.viewport > nav .dropdown-outer > a::before {
+    position: absolute;
+    left: 0;
+    right: 20px; /* must be the same as arrow width + arrow's margin */
+    bottom: 10px;
+    height: 1px;
+    content: ' ';
+    background-color: currentColor;
+  }
+
+  /* down arrow for dropdown parent nav */
+  section.viewport > nav .dropdown-outer > a::after {
+    position: relative;
+    margin-left: 4px;
+    top:  -2px;
+    text-decoration: none;
+    content: '⌄'
+  }
+
+  /* visible dropdown box */
+  section.viewport > nav .dropdown-outer .dropdown {
+    height: 0;
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+    right: 0;
+    top: calc(100% + 8px);
+    border-width: 0px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-width: 100px;
+    max-width: 300px;
+    width: var(--dropdown-width);
+    left: 50%;
+    margin-left: calc(var(--dropdown-width) / -2);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px); /* because safari needs prefix for not-standardized stuff */
+  }
+
+  /* overrides previous rules *only* on hover */
+  section.viewport > nav .dropdown-outer a:focus-within + .dropdown,
+  section.viewport > nav .dropdown-outer .dropdown:focus-within,
+  section.viewport > nav .dropdown-outer a:hover + .dropdown,
+  section.viewport > nav .dropdown-outer .dropdown:hover{
+    height: auto;
+    border-width: 5px;
+    padding: 8px 0;
+  }
+
+  /* rules for specifically the dropdown items */
+  section.viewport > nav .dropdown-outer .dropdown a {
+    margin: 0;
+    padding: 4px;
+    text-align: center;
+  }
+
+  /* dropdown item background on hover */
+  section.viewport > nav .dropdown-outer .dropdown a:hover {
+    background: var(--dropdown-hover-background);
+  }
+
+  /* Main flexbox */
+  section.body {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    width: 100%;
+    min-height: 1px;
+  }
+
+  /* Sidebars */
+  section.leftsb, section.rightsb {
+    width: 190px;
+    height: auto;
+  }
+
+  section.leftsb {
+    order: 1;
+  }
+
+  section.rightsb {
+    order: 3;
+  }
+  
+  /* Left sidebar flexbox */
+    section.leftsb > iframe {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        padding: var(--layout-inmargin);
+        box-sizing: border-box;
+    }
+
+    /* Right sidebar flexbox */
+    section.rightsb > iframe {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        padding: var(--layout-inmargin);
+        box-sizing: border-box;
+    }
+
+  /* Actual content window */
+  section.body article {
+    flex: 1;
+    order: 2;
+    margin: 0 var(--layout-inmargin);
+    overflow-y: auto;
+    padding: var(--padding);
+    color: white;
+  }
+
+
+  /* Header theming */
+  section.body article h1 {
+    background-image: linear-gradient(to right, var(--border), var(--bordergradient));
+    background-color: transparent;
+    text-shadow: 2px 2px 2px black;
+    text-align: center;
+    border: 3px solid lightgray;
+    font-size: 28px;
+    font-style: italic;
+    color: white;
+    text-transform: uppercase;
+    margin-top: 12px;
+    margin-bottom: 30px;
+    }
+
+  /* Footer CSS */
+  section.viewport > footer {
+    margin-top: var(--layout-inmargin);
+    color: darkgray;
+    font-style: italic;
+    font-size: 18px;
+    text-shadow: 1px 1px 1px black;
+  }
+
+  /* Decoration stuff */
+  
+  .fancyline{
+    background: linear-gradient(to right, var(--fancylineleft), var(--fancylineright));
+    height: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: none;
+  }
+
+  a {
+    color: var(--url);
+  }
+
+  a:visited {
+    color: var(--urlclicked);
+  }
+
+  .centermiku {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  ul {
+    list-style-type: square;
+  }
+
+  button {
+    background-color: rgba(0, 0, 0, 0);
+    border: 3px;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-family: 'Munro';
+    font-size: 18px;
+    color: white;
+    border: 3px solid lightgray;
+    text-align: center;
+  }
+  
+  /* device page table */
+
+  .specs {
+    width: 100%;
+  }
+
+  .specs table, th, td {
+    border: 1px dotted;
+  }
+
+  /* tabs CSS */
+.tab {
+  overflow: hidden;
+  font-family: 'Munro';
+  text-align: center;
+}
+
+.tab button {
+  background-color: rgba(0, 0, 0, 0);
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-family: 'Munro';
+  font-size: 18px;
+  color: white;
+  border: 3px solid lightgray;
+}
+
+.tab button.active {
+  background-color: white;
+  color:black
+}
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+}
+
+  /* stupid guestbook CSS we can't wait to get rid of this fucker */
+
+  .home-desc {
+    display: none;
+  }
+  
+  #HCB_comment_box h3 {
+    display: none;
+  }
+  
+  .hcb-icon {
+    display: none;
+  }
+  
+  .commentbox {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #HCB_comment_box {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:auto;
+  }
+  
+  #HCB_comment_box p {
+    font-family: 'Munro';
+    font-size: 16px;
+  }
+  
+  #HCB_comment_box textarea {
+    font-family: 'Munro';
+  }
+  
+  #HCB_comment_box #hcb_form_content,
+    #HCB_comment_box #hcb_form_email,
+    #HCB_comment_box #hcb_form_name,
+    #HCB_comment_box #hcb_form_website {
+      background-color:rgba(0, 0, 0, 0);
+      outline: white;
+      color: white;
+      font-family: 'Munro' !important;
+    }
+  
+    #HCB_comment_box .submit {
+      background:none; /* Clear twitter bootstrap style. */
+      background-color:green;
+      border:1px solid darkgreen;
+      color: white;
+      font-family: 'Munro'
+    }   
