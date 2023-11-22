@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: ashen-dawn/neocities-upload@master
+      - uses: eritbh/neocities-upload@master
         with:
           neocities_token: ${{ secrets.NEOCITIES_API_KEY }}
           directory: '.'
