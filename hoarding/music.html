@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Jukebox @ Loveshock.xyz</title>
+        <link rel="stylesheet" href="/hoarding/style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+    <body>
+        <section class="viewport">
+            <img src="/hoarding/images/logo.png"></img>
+            <nav>
+                <a href="javascript:;" onclick="document.querySelector('.viewport > nav').classList.toggle('menuOpen');" id="mobileMenuToggle">MENU</a>
+                <a href="/index.html">GO BACK</a>
+                <a href="index.html">INTRO</a>
+                <a href="music.html">MUSIC</a>
+                <span class="dropdown-outer">
+                    <a href="#">GAMING</a>
+                    <div class="dropdown">
+                        <a href="gaming/3ds.html">Nintendo 3DS</a>
+                    </div>
+                </span>
+            </nav>
+            <section class="body">
+                <article>
+                        <h1>&starf; MUSIC &starf;</h1>
+                        <p>Piracy and music go hand-in-hand. From cassettes rips to YouTube rips, music has long since been one of the easiest and yet most important things to have copies of. With streaming catalogs limited by license-holders, your favorite songs can get taken away at any given notice, so it can prove very useful to have local copies of your own music. On top of this, building your own personal library is honestly just a super fun and rewarding experience.</p>
+                        <h1>AUDIO QUALITY</h1>
+                        <p>Audio quality is a contentious topic for a lot of people. Your average user doesn't typically bother to care, although if you're reading this guide, we suspect you care at least a little bit. In our opinion, there are certain things to avoid when looking for music to keep for a local copy.</p>
+                        <p>Generally speaking, there are two formats you can keep your library in - MP3 and FLAC. MP3 files are smaller in size, but FLACs hold more data. MP3s are 'lossy', meaning some sound data is lost when the file is compressed. FLAC is 'lossless', meaning that the file contained isn't compressed. These don't <i>inherently</i> mean the audio quality is higher - there are edge cases - but it's generally a good rule of thumb.</p>
+                        <p>If you have the disk space to spare, FLAC is generally the easier option. It does cost significantly more space - what might be an 8MB MP3 can often take up 40MB as FLAC - but the audio quality is higher. If you are short on space, or need better compatibility with devices like iPods or MP3 players, then MP3 <i>can</i> suffice. However, make sure the bitrate of that MP3 is 320kbps. Anything lower and you'll start to hear noticable artifacting.</p>
+                        <h1>OBTAINING MUSIC</h1>
+                        <p>This is the fun part! You're gonna want to get your music. There are multiple ways to get it, both new-school and old-school.</p>
+                        <p>We'll start with the new-school method first.</p>
+                        <h1>NEW-SCHOOL: RIPPING FROM STREAMING</h1>
+                        <p>The easiest way to do this is to rip from a streaming service. This means, generally, if it's on Spotify, you can get it in FLAC. Not <i>every</i> song is available, but the amount of songs that are are pretty astounding.</p>
+                        <p>You're going to want to use <a href="https://archive.org/details/deemix">Deemix</a>, which as of right now is the easiest way to do this. The catch is that you'll need a paid subscription to Deezer, and your <a href="https://github.com/nathom/streamrip/wiki/Finding-Your-Deezer-ARL-Cookie">Deezer ARL</a>. If you don't have a Deezer account, you may find publicly-shared ARLs at the bottom of this page.</p>
+                        <p>You'll want to set up Deemix to use the token, and to download the highest-quality audio. Open the Settings tab, and in the Login category, expand the 'ARL' section. Paste your ARL, and then click 'Force Update ARL'. IF your ARL was valid, you'll see it take a moment, and then show your account name and subscription status. Once that shows up, you're logged in!</p>
+                        <p>To make sure the music downloads in the right quality, scroll down to the Downloads category, and set 'Preferred Bitrate' to 'FLAC 1411kbps', or 'MP3 320kbps' if you weant to conserve storage. If you'd like to change where music downloads to, scroll up and change the folder in the Download Path section.</p>
+                        <p>After that's all configured, you're done! Adjust any other settings you might want to, and you can start downloading to your heart's content.</p>
+                        <h1>OLD-SCHOOL: PEER-TO-PEER</h1>
+                        <p>Napster and LimeWire may not be with us anymore, but peer-to-peer file sharing is alive and well in the form of the Soulseek network. You can search through a publicly-accessible list of other people's files, and they can find yours - a network designed around sharing. Soulseek is a lot less convenient than just getting FLACs directly from the streaming source, but it makes up for it by having a nearly endless selection of songs.</p>
+                        <p>The best way to interact with the Soulseek network is <a href="https://nicotine-plus.org/">Nicotine+</a>, a cross-platform client. SoulseekQt is also an option, but we've found Nicotine+ to generally be more reliable and performant.</p>
+                        <p>Once you've installed Nicotine+, it's as easy as setting a username and password, and then setting your music folder. You should then be all set to start searching the Soulseek network.</p>
+                        <p>It's worth mentioning, however, that Soulseek is more of a community. It's considered somewhat bad manners to leech without sharing music of your own, so make sure you have at least <i>some</i> semblance of a music library before starting with Soulseek. Some users will auto-refuse your downloads if you're not sharing anything, so be warned.</p>
+                        <p>Also, by default, Nicotine+ downloads the files directly to the music folder you specified. You might want to change that, in Settings -> Downloads -> Finished Downloads.</p>
+                        <h1>EXTRA TOOLS</h1>
+                        <ul><p><a href="https://www.blisshq.com/">Bliss</a>: A great tool for managing metadata and file organization with powerful customization.</p></ul>
+                        <ul><p><a href="https://rentry.org/firehawk52">Firehawk52</a>: A site with lots of useful links and info, including donated ARLs, links to other tools, and Telegram bots for downloading from other services like Apple Music.</p></ul>
+                </article>
+                <section class="leftsb">
+                    <iframe src=/hoarding/sidebar/left_sb.html scrolling="no"></iframe>
+                </section>
+                <section class="rightsb">
+                    <iframe src=/hoarding/sidebar/right_sb.html scrolling="no"></iframe>
+                </section>
+            </section>
+        </section>
+    </body>
+</html>
