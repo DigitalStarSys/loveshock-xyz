@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>The Jukebox Blog @ Loveshock.xyz</title>
+  <description>Blog posts from The Jukebox.</description>
+  <link>https://loveshock.xyz/blog</link>
+  <atom:link href="https://loveshock.xyz/blog/rss.xml" rel="self" type="application/rss+xml" />
+  <lastBuildDate>
+    Wed, 20 Mar 2024 01:00:00 -0700 
+  </lastBuildDate>
+  <ttl>5000</ttl>
+
+  <item>
+    <title>No Boilerplate Has A Laptop Problem</title>
+    <description>
+      A response to No Boilerplate's "Developers Have A Laptop Problem".
+    </description>
+    <link>https://loveshock.xyz/blog/2024/03-20.html</link>
+    <pubDate>
+      Wed, 20 Mar 2024 00:50:00 -0700 
+    </pubDate>
+    <guid>https://loveshock.xyz/blog/2024/03-20.html</guid>
+  </item>
+
+  <item>
+    <title>Apple Music vs. Spotify: Welcome to the Social</title>
+    <description>
+      An evaluation and comparison of Apple Music and Spotify as competing products, from the lens of social features.
+    </description>
+    <link>https://loveshock.xyz/blog/2023/12-04</link>
+    <pubDate>
+      Mon, 04 Dec 2023 12:00:00 -0700 
+    </pubDate>
+    <guid>https://loveshock.xyz/blog/2023/12-04</guid>
+  </item>
+
+  <item>
+    <title>Graduation: Thank You, Kilobytes</title>
+    <description>
+      Saying good-bye to KODA, one final time.
+    </description>
+    <link>https://loveshock.xyz/blog/2023/08-04</link>
+    <pubDate>
+      Fri, 04 Aug 2023 12:00:00 -0700 
+    </pubDate>
+    <guid>https://loveshock.xyz/blog/2023/08-04</guid>
+  </item>
+
+  <item>
+    <title>Streaming Service Showdown</title>
+    <description>
+      Throwing a bunch of streaming services into the ring to find out who takes the crown (and our money).
+    </description>
+    <link>https://loveshock.xyz/blog/2022/11-24</link>
+    <pubDate>
+      Thu, 24 Nov 2022 12:00:00 -0700 
+    </pubDate>
+    <guid>https://loveshock.xyz/blog/2022/11-24</guid>
+  </item>
+
+  <item>
+    <title>VRChat: Easy Anti-Consumer</title>
+    <description>
+      Tackling VRChat's addition of Easy Anti-Cheat to its client.
+    </description>
+    <link>https://loveshock.xyz/blog/2022/07-29</link>
+    <pubDate>
+      Fri, 29 Jul 2022 12:00:00 -0700 
+    </pubDate>
+    <guid>https://loveshock.xyz/blog/2022/07-29</guid>
+  </item>
+
+</channel>
+</rss>
