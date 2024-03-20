@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Jukebox @ Loveshock.xyz</title>
+        <link rel="stylesheet" href="/style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+    <body>
+        <section class="viewport">
+            <img src="/images/logo.png"></img>
+             <nav>
+                <a href="javascript:;" onclick="document.querySelector('.viewport > nav').classList.toggle('menuOpen');" id="mobileMenuToggle">MENU</a>
+                <a href="/index.html">HOME</a>
+                <a href="/about.html">ABOUT US</a>
+                <a href="/blog.html">BLOG</a>
+                <span class="dropdown-outer">
+                    <a href="#">INTERESTS</a>
+                    <div class="dropdown">
+                        <a href="/tech.html">OUR TECH</a>
+                        <a href="/music.html">OUR MUSIC</a>
+                        <a href="https://backloggd.com/u/Kiririnshi/">BACKLOGGD</a>
+                    </div>
+                </span>
+                <span class="dropdown-outer">
+                    <a href="#">DIRECTORY</a>
+                    <div class="dropdown">
+                        <a href="/directory/netaverse.html">NEOCITIES & LINK BACK</a>
+                        <a href="/directory/everyday-software.html">EVERYDAY SOFTWARE</a>
+                        <a href="/directory/apple-specific.html">APPLE-SPECIFIC</a>
+                        <a href="/directory/gaming-vr.html">GAMING & VR</a>
+                        <a href="/directory/misc.html">MISC.</a>
+                    </div>
+                </span>
+                <a href="/guestbook.html">GUESTBOOK</a>
+                <a href="/system.html">OUR SYSTEM</a>
+            </nav>
+            <section class="body">
+                <article>
+                    <h1>No Boilerplate Has A Laptop Problem</h1>
+                    <p>Alternate title: A Response to No Boilerplate's "Developers Have A Laptop Problem"</p>
+                    <P>This isn't intended as an attack on NBP. I love No Boilerplate a lot, despite not actually being a programmer, but something about this video specifically didn't sit right with me, so I wanted to write about it. This was initially formatted as a Discord message, so sorry for the unusual format.</P>
+                    <hr>
+                    <p>I was rewatching the <a href="https://www.youtube.com/watch?v=bq9O99TgFv4"><em>Developers Have A Laptop Problem</em></a> video by No Boilerplate recently. I generally love NBP&#39;s content, but this video specifically felt...a bit off.</p>
+                    <p>I&#39;m not an expert in this field so if I&#39;m grossly off the mark, I would love to hear about it, but this video didn&#39;t sit right with me for a few reasons. If you'd like to correct me, ping me @oracle@phantomthieves.net on the Fediverse.</p>
+                    <p>There&#39;s a few claims that irk me a little bit because they don&#39;t feel &#39;true&#39;. I think the most egregious one is &quot;Cheap desktop machines from five years ago are much faster compared to even the latest high-powered laptops&quot; (6:13 in). I did a bit of digging, because this claim sounded kind of absurd.</p>
+                    <p>The first thing I tried to do was figure out what a &quot;cheap desktop machine from five years ago&quot; would look like. I thought the most influential aspect was going to be CPU performance, since even most recent laptop GPUs match or outperform the GTX 10XX series, so CPU is mainly what I focused on. Assuming that said five-year-old desktop had a mid/high-end CPU, and it was &#39;five years ago&#39; as of the video&#39;s release time (December 2023), I figured the best representation of that was the Intel Core i7-8700K, which has a <a href="https://browser.geekbench.com/processors/intel-core-i7-8700k">GeekBench score of 1582 in single-core, and 6444 in multi-core.</a> I&#39;m not sure how much I&#39;d rely on GeekBench for objective performance measurements, but it <em>was</em> used as a basis of comparison in the <a href="https://github.com/0atman/noboilerplate/blob/main/scripts/36-Linux-Workstations.md">video&#39;s markdown document</a>, so I think it&#39;s somewhat applicable here.</p>
+                    <p>I then went and checked the 8700K&#39;s score against newer laptop CPUs, choosing especially to focus on the mid-lower end. My first instinct was the Intel Core i5-1240P, a CPU that&#39;s a bit older and was mid-range for it&#39;s time when it released in early 2022. It was prominently used in a lot of ultrabooks. Although GeekBench&#39;s CPU page is weirdly broken for this CPU, the <a href="https://browser.geekbench.com/search?q=i5-1240P">search page</a> indicates that it generally outperforms the i7-8700K, at least in burst workloads. Going a step down, to the Intel Core i5-1235U, we can see it <em>does</em> have a GeekBench page, where it <a href="https://browser.geekbench.com/processors/intel-core-i5-1235u">achieves a single-core score of 1854 and a multi-core score of 5722.</a> Considering this is a lower-end CPU from two years ago that was optimized for low-power usage, it does perform a little worse than the 8700K, especially at sustained workloads. </p>
+                    <p>Jumping up to a mid-range, performance-focused CPU from the next generation, however, I feel like the claim that &quot;an old machine will perform better&quot; starts to fall apart. I looked at the Core i5-13500H, which again doesn&#39;t have a CPU page, but <em>does</em> have pretty strong results in <a href="https://browser.geekbench.com/search?q=Core+i5-13500H">the search results</a>. In pretty much every configuration (minus the ASUS Vivobook line and some QEMU results), it has a single-core score of around 2200, and a multi-core score of around 9000 in sub-optimal conditions. By this metric, any jump further than this to an even higher-end CPU, like a 13th gen i7 or i9, will almost certainly see higher performance than a five-year-old machine. This is especially noticable if you compare an older MacBook, where <a href="https://browser.geekbench.com/macs/macbook-pro-13-inch-late-2020">the base-model M1 on a MacBook Pro 2020 still outperforms the i7-8700K, with a single-core of 2330, and a multi-core of 8231</a>. </p>
+                    <p>Obviously this does not account for sustained workloads - in any case, the 8700K will see much less of a dip in performance over time given sufficient cooling. I would assume most machines bought used would need a bit of maintenaince before reaching that point (i.e. a dusting or thermal paste replacement), but yes, this is true and fair. However, I still think that CPUs (and modern laptops in general) are generally much more performant than the video lets on, and the performance difference is grossly misrepresented in the video.</p>
+                    <p>The other thing that came into my head was the price-to-performance assessment. I do think it is, generally, true that laptops are often priced higher than their desktop counterparts, but again, the way it&#39;s presented feels like a misrepresentation of this fact. Notably, I think that laptops have gotten to a point that the price is starting to look pretty justified given the options.</p>
+                    <p>I bought my gaming laptop on December 25, 2023, two days after the No Boilerplate video released. It&#39;s a Lenovo Legion Pro 5 16IRX8. It&#39;s got an Intel Core i9-13900HX, a laptop RTX 4070, 32GB of DDR5-5600 RAM, and a 1TB Samsung NVMe SSD. I paid, in total, $1,609 USD for this machine <em>after tax</em>. It has great build quality, is very easy to carry around, and has a great 2560x1600 IPS panel with 240Hz refresh rate and NVIDIA G-Sync. I travel a lot, and having a small computer with a lot of power that I can bring with me is great.</p>
+                    <p>I wanted to try and see what an equivalently-powered, new PC would cost if I were to build it. In keeping it equivalent, I made sure to build it in a small-form-factor case for portability, using a mid-range motherboard with WiFi built-in, and, most notably, with a nearly-equal display (1440p, 240Hz, G-Sync-capable). I picked the <a href="https://browser.geekbench.com/processors/intel-core-i9-12900k">Intel Core i9-12900K</a>, as it performs <em>very similarly</em> to my Core i9-13900HX, according to <a href="https://browser.geekbench.com/v6/cpu/5386630">the results of a GeekBench run that I personally performed</a>. I also picked a desktop RTX 4060 as an equivalent to the laptop 4070. I picked a Samsung SSD to best match the Samsung OEM SSD in my machine, picked a &quot;cheap but good enough&quot; CPU cooler to match most laptop cooling solutions, and then got the cheapest RAM, reputable PSU, and display I could. <a href="https://pcpartpicker.com/user/Loveshock/saved/JLcBrH">The PCPartPicker list is here</a>, and even still, it costs $20 <em>more</em> than my gaming laptop, and that&#39;s before tax.</p>
+                    <p>It&#39;s worth noting that if a mid/high-range laptop Core i9 can keep pace with a modern desktop Core i9, it&#39;s very hard to make the case that a &quot;desktop machine from five years ago&quot; could hope to keep up.</p>
+                    <p>My conclusion is this - I agree that laptop pricing is notably worse than desktop pricing. NVIDIA&#39;s naming scheme for laptop GPUs is stupid. Older desktop chips are still <em>good value</em>, but I think the way the information in the video is presented is incredibly disingenuous and fairly misinformed. It feels very vague, doesnt&#39; go into specifics, and honestly feels rather under-researched. It feels like outdated knowledge that hasn&#39;t been re-checked in a hot minute; a lot of the claims <em>would</em> make more sense if they were made a few years ago, like during 2017 or 2018, but not so much in 2023 or 2024. I love No Boilerplate content a lot, but this video especially feels rather misleading.</p>
+                    <p>Until next time.</p>
+                    <p>Lost Time System out.</p>
+                </article>
+                <section class="leftsb">
+                    <iframe src=/sidebar/left_sb.html scrolling="no"></iframe>
+                </section>
+                <section class="rightsb">
+                    <iframe src=/sidebar/right_sb.html scrolling="no"></iframe>
+                </section>
+            </section>
+            <footer>Made with love by the Lost Time System. The site was last updated on <span id="lastupdate"></span>.</footer>
+        </section>
+        <script>
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var site_data = JSON.parse(this.responseText);
+                    var num_arr = site_data.info.views.toString().split("");
+                    var num_str = "";
+                    for (i = 0; i < num_arr.length; i++) {
+                        num_str += num_arr[i];
+                        if ( (num_arr.length-1 - i) % 3 == 0 && (num_arr.length-1 - i) != 0 ) {num_str += ",";}
+                        var date_str = site_data.info.last_updated;
+                        var date_obj = new Date(site_data.info.last_updated);
+                        document.getElementById("lastupdate").innerHTML = (date_obj.getMonth()+1) + "/" + date_obj.getDate() + "/" + date_obj.getFullYear();
+                    }
+                    document.getElementById("hitcount").innerHTML = num_str;
+                }
+            };
+            xhttp.open("GET", "https://weirdscifi.ratiosemper.com/neocities.php?sitename=loveshock", true);
+            xhttp.send();
+        </script>
+    </body>
+</html>
