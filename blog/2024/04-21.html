@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Jukebox @ Loveshock.xyz</title>
+        <link rel="stylesheet" href="/style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+    <body>
+        <section class="viewport">
+            <img src="/images/logo.png"></img>
+             <nav>
+                <a href="javascript:;" onclick="document.querySelector('.viewport > nav').classList.toggle('menuOpen');" id="mobileMenuToggle">MENU</a>
+                <a href="/index.html">HOME</a>
+                <a href="/about.html">ABOUT US</a>
+                <a href="/blog.html">BLOG</a>
+                <span class="dropdown-outer">
+                    <a href="#">INTERESTS</a>
+                    <div class="dropdown">
+                        <a href="/tech.html">OUR TECH</a>
+                        <a href="/music.html">OUR MUSIC</a>
+                        <a href="https://backloggd.com/u/Kiririnshi/">BACKLOGGD</a>
+                    </div>
+                </span>
+                <span class="dropdown-outer">
+                    <a href="#">DIRECTORY</a>
+                    <div class="dropdown">
+                        <a href="/directory/netaverse.html">NEOCITIES & LINK BACK</a>
+                        <a href="/directory/everyday-software.html">EVERYDAY SOFTWARE</a>
+                        <a href="/directory/apple-specific.html">APPLE-SPECIFIC</a>
+                        <a href="/directory/gaming-vr.html">GAMING & VR</a>
+                        <a href="/directory/misc.html">MISC.</a>
+                    </div>
+                </span>
+                <a href="/guestbook.html">GUESTBOOK</a>
+                <a href="/system.html">OUR SYSTEM</a>
+            </nav>
+            <section class="body">
+                <article>
+                    <h1>The Lost Time System's Guide to Fixing Windows 11</h1>
+                    <p>This was originally written for a few friends on Discord who asked for some tips to make Windows 11 better, and we decided it might be useful here, too!</p>
+                    <hr>
+                    <p>So, you&#39;ve decided to install Windows 11. Welcome! Whether you&#39;re here because you had to be, or because you&#39;re (weird) like us and like a lot of 11&#39;s new features, we hope this guide will help you.</p>
+                    <h2 id="the-number-one-thing-you-want-to-do-is-start-from-a-fresh-install-">THE NUMBER-ONE THING YOU WANT TO DO IS START FROM A FRESH INSTALL.</h2>
+                    <p>Download Windows 11 <a href="https://www.microsoft.com/software-download/windows11">from Microsoft directly</a>, put it on a flash drive using either <a href="https://rufus.ie/en/">Rufus</a> or <a href="https://www.ventoy.net/en/index.html">Ventoy</a>, and do a fresh install. Trying to run some tweaks on a system that&#39;s been operating for a while can cause instability, so make sure you&#39;re running fresh.</p>
+                    <p>When installing, <em>unplug your ethernet</em>, and don&#39;t connect to Wi-Fi! This is the only way to create a local account on 11. If that doesn&#39;t work, follow <a href="https://www.windowscentral.com/how-set-windows-11-without-microsoft-account">this guide from Windows Central.</a>.</p>
+                    <p>Assuming you&#39;ve started from a fresh install, you&#39;re all set! <strong><em>We highly recommend installing Windows 11 Pro!</em></strong> This gives you access to more rigid group policy editing, which in turn allows for a lot more control over your system (like, for instance, disabling Copilot).</p>
+                    <p>The first thing you&#39;ll want to do is <em>never pay for Windows</em>. Use the <a href="https://massgrave.dev/">Microsoft Activation Scripts</a> to activate your copy of Windows. Using a trick from the Windows 7/8 -&gt; 10 upgrade process, it can generate <em>entirely authentic</em> Windows HWID (hardware ID) licenses. It&#39;s a god-send, and because they&#39;re tied to your HWID, you only ever have to run this <em>once</em> and the license will stay good for every install of Windows 10 or 11 you put on that machine.</p>
+                    <p>The Microsoft Activation Scripts also include a way to <a href="https://massgrave.dev/change_edition">change your Windows edition</a> (i.e. Windows 11 Home -&gt; 11 Pro), but that may be a bit more hands-on. YMMV.</p>
+                    <p><strong>LENOVO USERS</strong> - if you have a Lenovo laptop, <em>do not use any official Lenovo software.</em> It sucks, it&#39;s slow, and it pops up when it shouldn&#39;t. Use <a href="https://github.com/BartoszCichecki/LenovoLegionToolkit">Lenovo Legion Toolkit</a>. It implements almost every feature that the official app has, including battery management modes, RGB controls, performance settings, and more. It can also batch-download drivers by auto-detecting your system model. It&#39;s pretty useful!</p>
+                    <p>We&#39;re almost there! Once you&#39;ve got drivers installed, there&#39;s just one thing left to do...</p>
+                    <h3 id="-make-sure-you-run-windows-update-"><em>MAKE SURE YOU RUN WINDOWS UPDATE.</em></h3>
+                    <p>Yes, it sucks. Yes, I&#39;m sorry. But it always helps to have the most up-to-date Windows install you can. Trust me, it&#39;s easier to do it now than it is later.</p>
+                    <p>LENOVO USERS - if you have a Lenovo laptop, <em>do not use any official Lenovo software.</em> It sucks, it&#39;s slow, and it pops up when it shouldn&#39;t. Use <a href="https://github.com/BartoszCichecki/LenovoLegionToolkit">Lenovo Legion Toolkit</a>. It implements almost every feature that the official app has, including battery management modes, RGB controls, performance settings, and more. It can also batch-download drivers by auto-detecting your system model. It&#39;s pretty useful!</p>
+                    <h1 id="okay-let-s-get-tweaking-">Okay! Let&#39;s get tweaking!</h1>
+                    <p>The best tweak tool, in our experience, is ChrisTitusTech&#39;s <a href="https://github.com/ChrisTitusTech/winutil">winutil</a>. It&#39;s incredibly powerful, and is in our opinion a must-have. We run it on every single Windows box we have as soon as we can.</p>
+                    <p><strong><em>If you&#39;d like to do more things manually, and aren&#39;t interested in &#39;debloating&#39; Windows 11, then use WinAero Tweaker, linked below this section.</em></strong></p>
+                    <p>Here are our tips for getting the most out of winutil.</p>
+                    <ul>
+                    <li><strong><em>DOUBLE CHECK EVERYTHING BEFORE COMMITTING TO IT.</em></strong> We do not agree with every single default, and it&#39;s likely that you won&#39;t either! Even if you use one of the recommended presets, there may be some tweaks you don&#39;t want to make, or some that you do. Make sure you comb over everything and toggle what you want and don&#39;t want.</li>
+                    <li>IMPORTANT TWEAK: In the Tweaks section (under the Config tab), <strong><em>ENABLE</em></strong> &quot;Set Classic Right-Click Menu&quot;. The new right-click menu in Windows 11 sucks, and this restores it to the older Windows 10 style right-click menu.</li>
+                    <li>Do not use it to install apps. There&#39;s a very tempting category that offers to install lots of apps for you. Sometimes it works, often not. If you really want to batch-install things like that, use <a href="https://ninite.com/">Ninite</a>. </li>
+                    </ul>
+                    <p><strong><em>At present, winutil does not disable Microsoft Copilot.</em></strong> Use WInAero Tweaker (below) for this.</p>
+                    <h1 id="winaero-tweaker">WinAero Tweaker</h1>
+                    <p>Another useful tool is <a href="https://winaero.com/winaero-tweaker/">WinAero Tweaker</a>. It&#39;s not our go-to, but if you want to more easily <em>do things yourself</em> and the idea of letting a Powershell script run amok on your system makes you anxious, it&#39;s a very useful tool. </p>
+                    <h4 id="winaero-tweaker-is-the-easiest-way-to-disable-copilot-">WinAero Tweaker is the easiest way to disable Copilot.</h4>
+                    <p>No one wants Microsoft&#39;s shitty AI on their computer, and WinAero Tweaker has an option to very easily disable it. You can do it <a href="https://www.tomsguide.com/computing/software/how-disable-copilot-in-windows-11&gt;">manually via Group Policy</a>, but this is the easiest way to do it.</p>
+                    <p>We recommend <em>avoiding</em> WinAero Tweaker&#39;s options to mess with the Taskbar, Start Menu, or Explorer. They&#39;re kind of wonky, and inconsistent at best, so we recommend using a different program if you want to restore classic functionality in these areas, as seen below.</p>
+                    <h1 id="startallback">StartAllBack</h1>
+                    <p>The Windows 11 Start menu is kinda weird. Both an improvement and regression from Windows 10, it could use a little fixing, and by fixing, I mean replacing. In ye olden days, you&#39;d use ClassicShell (now known as OpenShell), but OpenShell is really buggy on 11.</p>
+                    <p>Fear not, though!</p>
+                    <p><a href="https://www.startallback.com/">StartAllBack</a> is a very useful utility to restore old Windows shell elements. It focuses on three things - the Start menu, the taskbar, and Explorer.</p>
+                    <p>The first obvious change is the Start menu. It replaces the Windows 11 menu with a replica of the beloved Windows 7 Start menu, themed and animated to perfectly match 11&#39;s aesthetics. It also replaces 11&#39;s terrible search with a slightly faster but still terrible search. (Windows Search is just kind of bad across the board.)</p>
+                    <p>It also lets you restore the Windows 10 taskbar (they call it &#39;enhanced classic taskbar&#39;), which <em>also</em> lets you reposition the taskbar! No more bottom-only taskbars. Left, right, and top taskbar enjoyers rejoice.</p>
+                    <p>If the new Windows Explorer also isn&#39;t your thing, there&#39;s an option to restore the Windows 10 ribbon-UI Explorer as well. </p>
+                    <p>StartAllBack is insanely useful, and makes a lot of Windows 11&#39;s annoying UI much less annoying. It is, unfortunately, paid, at $5 per license. You can choose to pay it, if you so wish...</p>
+                    <p>...or you can run <a href="https://github.com/iandiv/StartAllBack-Cleanup">this Powershell script that resets the free trial.</a>. </p>
+                    <h1 id="conclusion">Conclusion</h1>
+                    <p>Making Windows 11 good can be a bit of a labor of love, but in almost every situation, it&#39;s always been worth it. Underneath the <em>layers</em> of BS that Microsoft has added to the OS, there are a lot of genuinely useful improvements, and hopefully these tweaks will prove useful to anyone trying to set up Windows 11 for the first time. Although not everyone may agree with them, these have been <em>the most reliable, stable, and consistent methods</em> <strong><em>for us</em></strong>. If you have criticisms or questions, hit us up on fedi at @oracle@phantomthieves.net!</p>
+                    <p>Until next time.</p>
+                    <p>Lost Time System out.</p>
+                </article>
+                <section class="leftsb">
+                    <iframe src=/sidebar/left_sb.html scrolling="no"></iframe>
+                </section>
+                <section class="rightsb">
+                    <iframe src=/sidebar/right_sb.html scrolling="no"></iframe>
+                </section>
+            </section>
+            <footer>Made with love by the Lost Time System. The site was last updated on <span id="lastupdate"></span>.</footer>
+        </section>
+        <script>
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var site_data = JSON.parse(this.responseText);
+                    var num_arr = site_data.info.views.toString().split("");
+                    var num_str = "";
+                    for (i = 0; i < num_arr.length; i++) {
+                        num_str += num_arr[i];
+                        if ( (num_arr.length-1 - i) % 3 == 0 && (num_arr.length-1 - i) != 0 ) {num_str += ",";}
+                        var date_str = site_data.info.last_updated;
+                        var date_obj = new Date(site_data.info.last_updated);
+                        document.getElementById("lastupdate").innerHTML = (date_obj.getMonth()+1) + "/" + date_obj.getDate() + "/" + date_obj.getFullYear();
+                    }
+                    document.getElementById("hitcount").innerHTML = num_str;
+                }
+            };
+            xhttp.open("GET", "https://weirdscifi.ratiosemper.com/neocities.php?sitename=loveshock", true);
+            xhttp.send();
+        </script>
+    </body>
+</html>
