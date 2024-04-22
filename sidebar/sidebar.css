@@ -11,9 +11,9 @@
 
 /* Variable colors */
 :root {
-    --border: #E18DDE;
-    --bordergradient: rgba(255, 122, 255,0.25);
-    --fancylineleft: #8D5DA4;
+    --border: rgb(81, 78, 226);
+    --bordergradient: #E18DDE;
+    --fancylineleft: rgb(81, 78, 226);
     --fancylineright: #E18DDE;
     --url: white;
     --urlclicked: lightskyblue;

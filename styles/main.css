@@ -10,11 +10,11 @@
 
 /* Color variables; use to change site colors quickly */
 :root {
-  --border: #E18DDE;
-  --bordergradient: rgba(255, 122, 255,0.25);
-  --fancylineleft: #8D5DA4;
+  --border: rgb(81, 78, 226);
+  --bordergradient: #E18DDE;
+  --fancylineleft: rgb(81, 78, 226);
   --fancylineright: #E18DDE;
-  --dropdown-hover-background: #66315b;
+  --dropdown-hover-background: #5E30C1;
   --url: white;
   --urlclicked: lightskyblue;
   --layout-inmargin: 10px;
@@ -33,7 +33,7 @@ section.viewport > nav, section.leftsb, section.rightsb, section.body > article,
 
 /* Background CSS */
 body {
-background-image: url('/images/dg_bg_resized.png');
+background-image: url('/images/bg_fusion.png');
 background-position: center;
 background-size: cover;
 background-color: #000000;
