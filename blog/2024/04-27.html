@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Jukebox @ Loveshock.xyz</title>
+        <link rel="stylesheet" href="/style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+    <body>
+        <section class="viewport">
+            <img src="/images/logo.png"></img>
+             <nav>
+                <a href="javascript:;" onclick="document.querySelector('.viewport > nav').classList.toggle('menuOpen');" id="mobileMenuToggle">MENU</a>
+                <a href="/index.html">HOME</a>
+                <a href="/about.html">ABOUT US</a>
+                <a href="/blog.html">BLOG</a>
+                <span class="dropdown-outer">
+                    <a href="#">INTERESTS</a>
+                    <div class="dropdown">
+                        <a href="/tech.html">OUR TECH</a>
+                        <a href="/music.html">OUR MUSIC</a>
+                        <a href="https://backloggd.com/u/Kiririnshi/">BACKLOGGD</a>
+                    </div>
+                </span>
+                <span class="dropdown-outer">
+                    <a href="#">DIRECTORY</a>
+                    <div class="dropdown">
+                        <a href="/directory/netaverse.html">NEOCITIES & LINK BACK</a>
+                        <a href="/directory/everyday-software.html">EVERYDAY SOFTWARE</a>
+                        <a href="/directory/apple-specific.html">APPLE-SPECIFIC</a>
+                        <a href="/directory/gaming-vr.html">GAMING & VR</a>
+                        <a href="/directory/misc.html">MISC.</a>
+                    </div>
+                </span>
+                <a href="/guestbook.html">GUESTBOOK</a>
+                <a href="/system.html">OUR SYSTEM</a>
+            </nav>
+            <section class="body">
+                <article>
+                    <h1>How to Build a Local Music Library</h1>
+                    <p><em>This post was written by <a href="https://pronouns.cc/@LostTimeSystem/Ichika">Ichika</a>.</em></p>
+                    <p>There are very few things as gratifying as building a personal, offline collection of your favorite music.</p>
+                    <p>Part of it is probably the satisfaction of watching a large collection of neatly-organized files fill up a drive, but in a world of streaming and convenience, it also serves as a comforting reminder that if the internet went down tomorrow, we&#39;d be able to enjoy every song we love all the same, without Spotify or Apple or YouTube.</p>
+                    <p>This post is the first in a series about music collecting and listening in the modern era. In this post, we&#39;ll talk about why we like building a library, how we keep it organized, and our favorite ways to listen to it.</p>
+                    <h1 id="why-should-i-build-a-music-library-">Why should I build a music library?</h1>
+                    <p>There&#39;s a few good reasons, although a big one is that it&#39;s very easy to become disillusioned with streaming.</p>
+                    <p>Music is something that&#39;s very personal. Everyone has their own tastes, their own favorites, their own list of songs or albums they&#39;d consider special. This is something that&#39;s somewhat lost in the streaming era - you can build playlists and share them, yes, but the art of building a collection just isn&#39;t the same as it used to be. This is emphasized by how many services seem to put playlists and algorithms over something as simple as a library tab.</p>
+                    <p>In a similar vein, having a smaller collection of hand-picked music makes it a lot easier to enjoy your music. No more being overwhelmed by choice - your options are now finite, and with no algorithms to suggest things to you constantly, you get to personally decide what music you decide to listen to or give a try.</p>
+                    <p>You also get a few benefits outside of just library management, too. The FLAC files you use in a local library will be higher-quality than what most streaming services offer, and you&#39;re no longer trapped if your service doesn&#39;t have a song you like. I listen to a lot of Hatsune Miku music, and a lot of streaming services are pretty lacking in terms of selection. With a local library, I can have <em>any</em> song I want.</p>
+                    <h1 id="how-should-i-build-my-library-">How should I build my library?</h1>
+                    <p>The first step in deciding how you should build a library is to decide your primary reason for wanting one. In our case, we like having an offline collection of our favorite music in high quality, so we keep a big folder of FLAC files that are very meticulously organized.</p>
+                    <p>Everyone&#39;s use case is different. The first major factor in starting a collection is deciding what file format to use. The two &#39;big&#39; ones are MP3 and FLAC. If you aren&#39;t worried about taking too much space, I&#39;d pretty much universally recommend FLAC over MP3. However, if you&#39;re conscious about how much space your collection takes up on a hard drive, or you want the most <em>compatibility</em> with as many devices as possible, then go with MP3.</p>
+                    <p>Other people can explain it better than me, but the watered-down explanation is that MP3 is &quot;lossy&quot; - some smaller, hard-to-hear parts of the sound gets cut off to save precious space. FLAC is &quot;lossless&quot; - nothing gets cut or removed, but in turn, the file size is a lot bigger.</p>
+                    <p>In my personal opinion, a 320kbps MP3 file is about 90% as good as a FLAC file, while taking up 25-35% of the space. For reference, our 320kbps MP3 version of &quot;Unhappy Refrain&quot; by Wowaka takes up 9.3MB. The FLAC version takes up 33MB. Our total FLAC library, which consists of ~8,300 songs and ~680 albums, takes up 168GB of space.</p>
+                    <p>320kbps MP3 is probably fine for most people, but it&#39;s up to you to figure out if you can tell the difference (we recommend asking a friend to help you do a blind test), especially if your sound equipment (i.e., headphones) aren&#39;t particularly mid- or high-end.</p>
+                    <p>Once you&#39;ve settled on a file format, the next step is to decide what music you want to save, and then, the hardest part of the collection process begins - obtaining your music.</p>
+                    <p>The best way to obtain music, when possible, is to purchase directly through something like <a href="https://bandcamp.com/">Bandcamp</a>, <a href="https://www.beatport.com">Beatport</a>, or <a href="https://www.qobuz.com/us-en/shop">Qobuz</a>. Purchasing through these sites will net you a regular, DRM-free file (usually FLAC with options for other formats like MP3), and as much money as possible goes to the artists.</p>
+                    <p>When digital purchases aren&#39;t an option, you can oftentimes buy CDs for the music you want. CDs are all inherently lossless (so much so that most FLAC is referred to as &quot;CD quality&quot;), so when ripping a CD, you can either rip it in lossless, or re-encode down to MP3. If you do choose to rip a CD, we recommend using <a href="https://captainrookie.com/how-to-setup-exact-audio-copy-for-flac-ripping/">ExactAudioCopy</a>.</p>
+                    <p>The easiest way to amass is a big collection quickly is piracy. We&#39;re not going to advocate against it - we think it&#39;s not only useful, but necessary, although you should always support your favorite artists directly if you can. We still think it&#39;s more ethical than streaming in the long-term, however. I won&#39;t get into detail on how to do it in this blog post, but if you&#39;d like to learn how to do it <em>now</em>, you can find a guide on this site somewhere.</p>
+                    <p>Once you&#39;ve got the music files, you get to do what I think is the most rewarding part of building a collection.</p>
+                    <h1 id="how-should-i-organize-my-library-">How should I organize my library?</h1>
+                    <p>This is entirely up to you, and your personal preference.</p>
+                    <p>Many people like to organize their library by artist. One common organization method we&#39;ve seen usually goes &quot;Artist -&gt; Album (Year) -&gt; XX. Song&quot;. In this example, a folder labelled &quot;DECO27&quot; would have folders named &quot;Undead Alice (2020)&quot;, &quot;GHOST (2016)&quot;, and &quot;Conti New (2014)&quot;, and then in &quot;Undead Alice (2020)&quot;, the song files would be labeled &quot;01. Neo-Neon.flac&quot;, &quot;02. Undead Alice.flac&quot;, &quot;03. Fake Actor.flac&quot;, and so forth. </p>
+                    <p>However you organize your library&#39;s folders generally comes down to how easy you think it&#39;ll be to find something. Some people organize based on genres, or year of release, but we prefer to organize things via album. An average album in our music folder looks like &quot;(Album) - (Album Artist) [Year] -&gt; 1-01. Song&quot;. (The 1- is for disc number, which helps us a lot since we have a lot of soundtracks.) In practice, this looks something like &quot;Undead Alice - DECO27 [2020] -&gt; 1-01. Neo-Neon.flac&quot;. This is our preferred method of doing this.</p>
+                    <p>You <em>can</em> do this by hand, if you like. However, that can become really difficult with big libraries, so we use a tool to automate it - <a href="https://www.blisshq.com/">Bliss</a>.  You can set rules for how you want it to organize your library, and it can automatically scan it, and make sure everything is to compliance. For file organization, the important flag here is the &quot;File paths&quot; rule. In our setup, we have this rule set to Automatic instead of Manual, and the string we use for organization is:</p>
+                    <p><code>&lt;album name&gt; - &lt;album artist&gt;&lt;year&gt;?| [&lt;year&gt;]|/&lt;discnumber&gt;?|&lt;discnumber&gt;-|&lt;tracknumber&gt;?|&lt;tracknumber:auto&gt;. |&lt;track name&gt;</code></p>
+                    <p>This means, that if your track metadata is complete, it will fill everything in accordance with our format (i.e. &quot;41m - 40mP [2014]/1-02. Love Trial.flac&quot;). If it&#39;s missing certain information like year, disc number, or track number, it will ignore them. I recommend experimenting and figuring out what you like best.</p>
+                    <p>Metadata (information like track name, artist name, album name, album artwork, etc.) is key, and can be hard to mangle. Bliss uses it to determine how to organize files, many players like iTunes, MusicBee, or Rhythmbox use it to make a library easier to browse, and it&#39;s generally good to have. Bliss can be configured to automatically find and fix metadata and album artwork. If you prefer a more hands-on approach, <a href="https://picard.musicbrainz.org/">MusicBrainz Picard</a> is very powerful, can do automatic lookups, and still has very versatile options for manual metadata correction.</p>
+                    <p>That&#39;s the hard part of library management, though, and once this is all complete, you&#39;re ready to just listen to your music.</p>
+                    <h1 id="conclusion">Conclusion</h1>
+                    <p>Building a library is tedious, sometimes boring, but I&#39;ve found it to be really rewarding, and kind of therapeutic at times. Once you have a collection of files, it can be moved and used practically anywhere - an MP3 player, countless different kinds of software on a computer or your phone, even hooked up to a game console and a TV. In future posts, we&#39;ll tell you about some ways we like keeping our library accessible (like the iPod). </p>
+                    <p>I hope this post inspired you to build a library of your own. Please let me know if you have any questions! If you contact us via the socials on this page, address them to Ichika and I&#39;ll try to get back to them.</p>
+                    <p>Thank you for reading.</p>
+                    <p> - Ichika, Lost Time System</p>
+                </article>
+                <section class="leftsb">
+                    <iframe src=/sidebar/left_sb.html scrolling="no"></iframe>
+                </section>
+                <section class="rightsb">
+                    <iframe src=/sidebar/right_sb.html scrolling="no"></iframe>
+                </section>
+            </section>
+            <footer>Made with love by the Lost Time System. The site was last updated on <span id="lastupdate"></span>.</footer>
+        </section>
+        <script>
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var site_data = JSON.parse(this.responseText);
+                    var num_arr = site_data.info.views.toString().split("");
+                    var num_str = "";
+                    for (i = 0; i < num_arr.length; i++) {
+                        num_str += num_arr[i];
+                        if ( (num_arr.length-1 - i) % 3 == 0 && (num_arr.length-1 - i) != 0 ) {num_str += ",";}
+                        var date_str = site_data.info.last_updated;
+                        var date_obj = new Date(site_data.info.last_updated);
+                        document.getElementById("lastupdate").innerHTML = (date_obj.getMonth()+1) + "/" + date_obj.getDate() + "/" + date_obj.getFullYear();
+                    }
+                    document.getElementById("hitcount").innerHTML = num_str;
+                }
+            };
+            xhttp.open("GET", "https://weirdscifi.ratiosemper.com/neocities.php?sitename=loveshock", true);
+            xhttp.send();
+        </script>
+    </body>
+</html>

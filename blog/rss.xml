@@ -6,9 +6,21 @@
   <link>https://loveshock.xyz/blog</link>
   <atom:link href="https://loveshock.xyz/blog/rss.xml" rel="self" type="application/rss+xml" />
   <lastBuildDate>
-    Wed, 20 Mar 2024 01:00:00 -0700 
+    Sat, 27 Apr 2024 19:00:00 -0700 
   </lastBuildDate>
   <ttl>5000</ttl>
+
+  <item>
+    <title>How To Build A Local Music Library</title>
+    <description>
+      You should build a local collection of your favorite music - here's how.
+    </description>
+    <link>https://loveshock.xyz/blog/2024/04-27.html</link>
+    <pubDate>
+      Wed, 20 Mar 2024 19:00:00 -0700 
+    </pubDate>
+    <guid>https://loveshock.xyz/blog/2024/04-27.html</guid>
+  </item>
 
   <item>
     <title>The Lost Time System's Guide to Fixing Windows 11</title>
