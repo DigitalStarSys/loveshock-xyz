@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+    <title>The Jukebox @ Loveshock.xyz</title>
+    <link rel="stylesheet" href="/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<head>
+    <body>
+        <section class="viewport">
+            <img src="/images/logo.png"></img>
+             <nav>
+                <a href="javascript:;" onclick="document.querySelector('.viewport > nav').classList.toggle('menuOpen');" id="mobileMenuToggle">MENU</a>
+                <a href="/index.html">HOME</a>
+                <a href="/about.html">ABOUT US</a>
+                <a href="/blog.html">BLOG</a>
+                <span class="dropdown-outer">
+                    <a href="#">INTERESTS</a>
+                    <div class="dropdown">
+                        <a href="/tech.html">OUR TECH</a>
+                        <a href="/music.html">OUR MUSIC</a>
+                        <a href="https://backloggd.com/u/Kiririnshi/">BACKLOGGD</a>
+                    </div>
+                </span>
+                <span class="dropdown-outer">
+                    <a href="#">DIRECTORY</a>
+                    <div class="dropdown">
+                        <a href="/directory/netaverse.html">NEOCITIES & LINK BACK</a>
+                        <a href="/directory/everyday-software.html">EVERYDAY SOFTWARE</a>
+                        <a href="/directory/apple-specific.html">APPLE-SPECIFIC</a>
+                        <a href="/directory/gaming-vr.html">GAMING & VR</a>
+                        <a href="/directory/misc.html">MISC.</a>
+                    </div>
+                </span>
+                <a href="/guestbook.html">GUESTBOOK</a>
+                <a href="/system.html">OUR SYSTEM</a>
+            </nav>
+            <section class="body">
+                <article>
+                    <h1>A Syncing Ship - The iPod vs. Modern Software</h1>
+                    <p><em>This post was written by Ichika.</em></p>
+                    <p>This is part two of a series about music collecting and listening in the modern era. You can read the first post <a href="https://loveshock.xyz/blog/2024/04-27">here</a>. </p>
+                    <p>This post is less &quot;why&quot; you should use an iPod (it&#39;s a pretty good case <em>against</em> it, all things considered), but instead a project log of the hoops we had to jump through to make ours work with our library. We love ours to death, and we will be writing a post as to why eventually, but for now, I wanted to document our pitfalls so others could avoid them.</p>
+                    <p>This is a long one, so strap in. TL;DR at the bottom if you just want to get straight to the advice.</p>
+                    <h1 id="the-flac-problem">The FLAC Problem</h1>
+                    <p>The most obvious, glaring issue is that the iPod does not support the FLAC file format.</p>
+                    <p>For some reason, Apple has never actually properly supported FLAC in any of their music software. Even though they work in the Mac&#39;s Finder, the iOS Files app, and QuickTime Player, there&#39;s never been any way to add them an iTunes/Apple Music library, and thus no way to sync them to an iPod. Instead, Apple supports their own codec, known as the Apple Lossless Audio Codec, or ALAC.</p>
+                    <p>This was the first problem - our entire library is in FLAC.</p>
+                    <p>So now, I had two options - convert our <em>entire library</em> to ALAC, or figure out how to get FLACs on an iPod.</p>
+                    <p>Luckily, the latter option was <em>technically</em> feasible - by using custom firmware.</p>
+                    <p>Rockbox is a free, open-source custom firmware for dozens of different models of music players, including all six generations of iPod, both generations of iPod mini, and the first two iPod nanos. It&#39;s very powerful, coming with <em>countless</em> features that the stock firmware doesn&#39;t have, extensive customization, and even plugins like a Game Boy emulator. For our use case, though, it&#39;s something much less exciting that drew us to it:</p>
+                    <p>FLAC support.</p>
+                    <p>Normally, to put music on an iPod, you need to sync it with your library through software like ITunes or Music.app. This worked pretty well fifteen years ago, when iTunes wasn&#39;t a bloated mess and libraries were almost entirely MP3 files. But in 2024, iTunes is slow and buggy on Windows, the new Apple Devices app for Windows barely works, and Music.app is kind of pain - and, again, our whole library is FLAC, so we can&#39;t import them, and therefore can&#39;t sync them.</p>
+                    <p>Rockbox gets around this by simply <em>reading the filesystem.</em> Instead of iTunes writing to a database, and organizing files and playlists around that, you can just plug your iPod into a computer, and drag the FLAC files to it like a flash drive. Then, you unplug the iPod, and you can browse the iPod&#39;s file system and play music files that way.</p>
+                    <p>If you don&#39;t want to deal with the hassle of iTunes or Finder, it&#39;s the best way to go. And given that I was using a PC, I figured it made sense to skip iTunes altogether and just go with Rockbox. I install it to our iPod, and after waiting <em>eight hours</em> for all ~165GB of our music to copy over USB 2, I finally take it off the charger, plug in my headphones, and pick a song.</p>
+                    <p>Unfortunately, I didn&#39;t love what I was(n&#39;t) seeing.</p>
+                    <h1 id="stuck-between-a-rock-box-and-a-hard-place">Stuck Between A Rock(box) and a Hard Place</h1>
+                    <p>Rockbox is old software.</p>
+                    <p>Very, very old software - it started development the same year as the original iPod released, 2001.</p>
+                    <p>This, unfortunately, shows, in some of its quirks. The first thing I noticed was that almost none of our songs were properly displaying their album artwork. The songs would play just fine, but the album art for 75% of our library just wouldn&#39;t load.</p>
+                    <p>So I started digging. Doing a lot of research, reading a lot of old forum posts, when I came across the problem - due to its age, Rockbox was...a bit lacking, in terms of support for newer or larger image formats. A lot of modern JPEG files, for instance, are either too big, or in too new of a format, for Rockbox to read.</p>
+                    <p>So, naturally, I had to figure out how I wanted to fix this.</p>
+                    <p>I tried a few solutions - the first was seeing if Bliss, our automatic music organizer, could convert the album artworks into the right format for us. It choked, saying a lot of files were &quot;too big to process&quot;. I still don&#39;t really understand the error - after all, I was pretty sure it&#39;s job was to <em>make the images smaller</em> in the first place - but I gave up on it pretty quick.</p>
+                    <p>The good news is that I <em>did</em> find pretty much the perfect solution - <a href="http://vcardenasblog.blogspot.com/2008/09/album-art-extracter-for-rockbox.html">the Album Art Extractor for Rockbox</a>. A nearly 15-year-old piece of Windows software that did pretty much exactly what it says on the tin - it would read the album artwork from a song&#39;s metadata, extract it to a file, and convert that file into something that Rockbox could parse - for example, 300px BMP files - without actually changing the album artwork that was embedded into the file. I configured it exactly the way I wanted - 300px by 300px images, BMP image format, named &#39;cover.bmp&#39; - and pointed it at the music files on the iPod. About an hour later, it had extracted the cover art from all of our music, and opening up Rockbox again, all of our music had the right artwork! </p>
+                    <p>Unfortunately, the joy <em>somewhat</em> stops there.</p>
+                    <p>Rockbox is really, really powerful. It can do a lot of things, but that comes at a cost - convenience, simplicity, and speed.</p>
+                    <p>It was just...really, really slow and clunky.</p>
+                    <p>Everyone&#39;s taste is different, but using Rockbox made me feel like our iPod had lost a lot of it&#39;s charm. It was slow to load our library, finicky to scroll with, harder to control, and wouldn&#39;t even properly display Japanese with the default font. I did find a theme I liked, but that wasn&#39;t enough to save it - we just <em>don&#39;t like it.</em></p>
+                    <p>In my opinion, it feels too utilitarian, and the lack of speed just made it kind of unfun to use. So, I set my sights on going back to the stock firmware.</p>
+                    <p>Unfortunately, that leads us to...</p>
+                    <h1 id="the-flac-problem-reloaded-">The FLAC Problem -Reloaded-</h1>
+                    <p><em>So how am I gonna get all of my FLAC onto this iPod?</em></p>
+                    <p>I did some thinking. The last thing I wanted to do, at the time, was to convert the entire library to a different format. After all, FLAC was a universal standard - did I really want to sacrifice the entire library for one device?</p>
+                    <p>And then, a bit of searching later, and a possible solution fell <em>right</em> into my lap.</p>
+                    <p><a href="https://www.mediamonkey.com/">MediaMonkey</a> is a media manager, in the same way that iTunes is. It can read your collection, manage metadata, build playlists, and be your default music player. It&#39;s pretty competent in that regard; I actually liked it a bit, even if the app was kinda slow. But its killer feature, for me? iPod sync support.</p>
+                    <p>So I opened up iTunes, factory-reset the iPod, and decided to give MediaMonkey a shot. As soon as I re-connect the freshly-wiped iPod to the PC, it shows up in MediaMonkey&#39;s devices tab. So far so good.</p>
+                    <p>I click into the iPod, and I see <em>exactly</em> what I want to see.</p>
+                    <p>The &quot;Sync Profile&quot; tab allows you to set custom preferences for <em>on-the-fly media conversion</em>. MediaMonkey can detect if a file is incompatible with the iPod, and using a set of rules, can determine what file format to convert it to. And then, when it&#39;s done converting the file, it copies that file to the iPod, and your library is left entirely untouched. </p>
+                    <p><em>It&#39;s everything we&#39;ve wanted,</em> we thought.</p>
+                    <p>So, I set up the profile. The real star of the show was the rule that specified that any unsupported file format above 320kbps should be converted to Apple Lossless - this would make sure that all of our FLAC was converted to ALAC, which would then be synced with the iPod with no issues.</p>
+                    <p>It was <em>perfect.</em></p>
+                    <p>So, I set MM to sync our entire library over, and I wait another eight hours for our music to copy over to the device, again.</p>
+                    <p>I come back to the iPod later that night when the sync is done. We&#39;ve now spent over 24 hours, at this point, trying to <em>use our iPod</em>. I&#39;m relieved that this should be the end of it, and that I&#39;ve found a solution to this weird problem. So, I plug my headphones back in, and I go to pick an album.</p>
+                    <p>I press play.</p>
+                    <p>It immediately skips the first song, and goes right into the second song.</p>
+                    <p>Knowing that that&#39;s not how it works, I try to go back to the first song. It skips right back to the second song again. I try to skip forward, and forward, and then on the fifth song it skips right to the sixth song again.  I try another album - it happens again, and again, and again.</p>
+                    <p>Something went wrong in the conversion process somewhere.</p>
+                    <p>After searching up our problem, reading tons of Reddit threads, and some forum posts, I came to find out that a pretty much any converter using FFMPEG under the hood causes a <em>lot</em> of problems for the iPod.</p>
+                    <p>FFMPEG is a really, really useful piece of open-source software that&#39;s sole job is basically to convert and encode media files. It&#39;s really useful, and we&#39;ve used it for a ton of things. The problem here is that, for whatever reason, FLAC files that were converted <em>from</em> FLAC to MP3, AAC, or ALAC using FFMPEG have issues on the iPod&#39;s firmware. The only solution to this, on Windows?</p>
+                    <p>Use iTunes to convert everything over again.</p>
+                    <p>Now, I <em>really</em> don&#39;t want to have to do this - using iTunes to convert things is a <em>total</em> pain, and then I have to discern the old ALAC files from the new ALAC files, and it just becomes a total mess to manage. So I do some digging as to why iTunes is the solution, and it turns out that Apple has their own AAC encoder, powered by QuickTime, given the shorthand &quot;qaac&quot;. </p>
+                    <p>FFMPEG, and by extension, MediaMonkey, can actually use qaac, but in order to use it, it requires using a custom build of FFMPEG, fiddling with a ton of command line options, and I wasn&#39;t really in the mood to deal with those. Luckily, I caught wind of a piece of software named XLD that used the QuickTime libraries.</p>
+                    <p>Reluctantly, I sighed - I knew I&#39;d have to do manual conversion on the entire library, and accepted my fate, and decided to look at XLD.</p>
+                    <p>One, tiny problem - it was Mac only.</p>
+                    <p><a href="https://tmkk.undo.jp/xld/index_e.html">XLD</a> is a program designed entirely for converting between lossless formats, and it does a really great job. It uses Apple&#39;s QuickTime libraries under the hood, too, so it&#39;s basically the same as iTunes converting the file itself. This, theoretically, would guarantee perfect iPod compatibility.</p>
+                    <p>So now, I had to make another decision - there are two Macs that we own. Which one was the right tool for the job?</p>
+                    <p>The fastest option is our M1 MacBook Air. Connectivity would be kinda difficult, since connecting our hard drive with our collection to it would be a total pain without a USB-A port; but it was an option. The easier option is the Power Mac G5 - it&#39;s period-accurate, runs iTunes, has USB 2, the whole nine yards. But it&#39;s slow - <em>really</em> slow. And really loud. And really hot.</p>
+                    <p>As fun as the Power Mac G5 option sounded, it also seemed pretty impractical. Waiting for XLD to convert everything on the G5 would take forever, use a ton of power, and turn the room into a sauna. So, using some USB hub trickery, I hook up our USB hard drive to the MacBook Air, run XLD, and convert a few test files.</p>
+                    <p>And it was a success! It spat out a few new ALAC files, that played well and sounded great. Everything was looking up...until I looked at the metadata.</p>
+                    <p>Not to seem too egotistical, but I figured a good test was on the Leo/need cover of &quot;Teo&quot;. In the artist tag, there should be &quot;Hoshino Ichika &amp; Hatsune Miku&quot;...but the artist only said &quot;Hatsune Miku&quot;. I agree that she takes priority here, but after opening the file in MusicBrainz, there was no remnant of the Hoshino Ichika tag <em>at all</em>.  I tested several other songs with multiple artists, and sure enough, XLD was scrubbing all of them. If XLD wanted to ruin our metadata, then we couldn&#39;t use it.</p>
+                    <p>I was getting kind of desperate, and honestly kind of exhausted, until a friend of ours suggested we use something called <a href="https://www.dbpoweramp.com/dmc.htm">dbPoweramp</a> to do our music conversion. I played around with it, and found out that the Mac version <em>also</em> uses the QuickTime libraries. I ran the same test files through dbPoweramp, and the resulting ALAC files seemed to have all of the metadata intact. This was a good step.</p>
+                    <p>I then, very carefully, had to consider the weight of what I was about to do. I was about to move our entire music library from our hard drive to our MacBook, convert every single FLAC to ALAC, and then delete the old FLACs, because we can&#39;t afford 340GB of space <em>just</em> for music on this laptop. I did some triple-checking that ALAC was well-supported in apps that weren&#39;t made by Apple, but it turns out ALAC was made open-source 13 years ago, which means that pretty much every piece of modern music software supports it. It became clear to me that ALAC was actually <em>more</em> compatible with our music library than regular FLAC.</p>
+                    <p>Taking a deep breath, I copied over all of the FLAC from our external hard drive to the Mac, set dbPoweramp to convert it all overnight, and went to bed.</p>
+                    <h1 id="the-great-metadata-wrangling-of-2024">The Great Metadata Wrangling Of 2024</h1>
+                    <p>I woke up the next day, ready to get back to finishing up organizing our library. I check the computer - the conversion was a total success. No errors, which was relieving, because I&#39;d have been kind of upset if we were fast asleep while it was failing and all that time was wasted. I made sure everything made the jump from FLAC to ALAC smoothly, and then deleted the old FLAC files. All that was left to do now...was figure out the metadata situation.</p>
+                    <p>See, something I didn&#39;t mention earlier is that I actually knew why XLD wouldn&#39;t properly handle multiple artists, and it has to do with <em>how</em> metadata is stored.</p>
+                    <p>See, each part of a track&#39;s metadata - title, track number, album, artist, etc. - is a field that can be filled in, and attached to the file. One thing that&#39;s supported by <em>almost</em> everything is having multiple &quot;artist&quot; tags. Using the earlier example song, the Leo/need cover of Teo, instead of there being one artist tag for &quot;Hoshino Ichika &amp; Hatsune Miku&quot;, there would be two artist tags - one for &quot;Hoshino Ichika&quot; and one for &quot;Hatsune Miku&quot;. Most music software would read these, and figure out how to properly organize them accordingly. In any other situation, this is actually probably the best way to do it. However, Apple software is weird, and behind the times, and has <em>no</em> support for multiple artist tags.</p>
+                    <p>This is why the metadata in XLD appeared to be &quot;wrong&quot; - our library was using multiple artist tags in almost every file, and XLD was scrubbing the &quot;excess&quot; artist tags during the conversion process. dbPoweramp, however, did <em>not</em> strip the metadata, and instead simply converted the metadata alongside the file, making zero changes to any metadata during the conversion process.</p>
+                    <p>This did, however, bring me to realize that <em>I&#39;d need to fix the metadata, manually, for every single song in our library.</em></p>
+                    <p>I would have to go through our entire library, and combine all of the tags, so that Music.app (and, by extension, the iPod) would read them properly. This was a procedure that could take <em>forever</em>, but it was one we decided to do. </p>
+                    <p>But first, a brief tangent for how Apple software handles artists.</p>
+                    <p>As far as iTunes is concerned, every single &#39;artist&#39; entry is it&#39;s own thing, and there no way to separate multiple artists. &quot;Porter Robinson&quot; and &quot;Madeon&quot; are their own artists. &quot;Porter Robinson &amp; Madeon&quot; is a third, entirely different artist. &quot;Porter Robinson feat. Madeon&quot; is a <em>fourth</em> artist. If the artist tag is not <em>identical</em> to another artist tag, it is treated as a unique artist. The software simply has no way to handle featured artists or collaborations uniquely. This means, that if I don&#39;t want our tags to be a total mess, I have to figure out the best way to consolidate artists. The good news is, this is pretty simple - I just move the artist tags to the title of the song. &quot;Miku&quot; by &quot;Anamanaguchi &amp; Hatsune Miku&quot; becomes &quot;Miku (feat. Hatsune Miku)&quot; by Anamanaguchi. It was a minor consistency issue, but I found this to generally work.</p>
+                    <p>Anyways, back to fixing metadata. </p>
+                    <p>So, initially, I&#39;m incredibly daunted by the task of potentially manually fixing thousands of songs&#39; worth of artist tags. I had resigned myself to the idea that I would be wasting a fair amount of our time trying to get something like this to work. The good news, however, was that I didn&#39;t need to worry about that at all, thanks to software we already had installed - <a href="https://www.mp3tag.de/en/">Mp3tag</a>.</p>
+                    <p>Mp3tag, as it turns out, is in fact very powerful software. I had heard it could do batch-editing, but I wasn&#39;t sure to what extent - I very quickly found out, though. I looked around the menu bar for options, and found the &quot;Actions&quot; menu.</p>
+                    <p>Which was <em>exactly</em> what I was looking for.</p>
+                    <p>Actions in Mp3tag are essentially automation clips, similar to Apple&#39;s Shortcuts. You can configure any amount of steps you want an Action to take, and then apply them to however many songs you want. I dragged a test file into the Mp3tag window, and created an Action to do three things - combine duplicate &#39;artist&#39; fields with &quot; &amp; &quot;, combine duplicate &#39;albumartist&#39; fields with &quot; &amp; &quot;, and remove any comments (because they waste space) and genres (because we hate them) from songs. I selected my test song in the Mp3tag window, ran the Action, and it did <em>exactly what I wanted it to do.</em> It combined the separate &quot;Hoshino Ichika&quot; and &quot;Hatsune Miku&quot; tags into just one &quot;Hoshino Ichika &amp; Hatsune Miku&quot; tag, and it scrubbed the genre from the file.</p>
+                    <p>I immediately dragged our entire library into the software, selected <em>all</em> of it, and ran the Action on every file we had.</p>
+                    <p>This saved me probably several dozen hours of work - but there was still work to be done.</p>
+                    <h1 id="consistency-is-key">Consistency Is Key</h1>
+                    <p>I figured that since I was already doing this metadata scrub, that I needed to do a consistency check for all of our music. I needed to set some metadata rules.</p>
+                    <p>The first, most important rule, was <strong><em>no &quot;Various Artists&quot; tags ANYWHERE.</em></strong> There is no situation in which a &quot;Various Artists&quot; tag makes the most sense. If I&#39;m looking for a soundtrack, &quot;Various Artists&quot; isn&#39;t going to help me. If I&#39;m looking for a specific compilation, &quot;Various Artists&quot; isn&#39;t going to help me. So, I figured out the best way to handle &quot;Various Artists&quot; tags.</p>
+                    <p>Video game soundtracks: tag the album artist as the company behind the game. For example, all of our Sonic soundtracks are tagged with &quot;SEGA&quot; as the album artist. All of our Persona soundtracks are tagged with &quot;Atlus Sound Team&quot; as the album artist. This way, it&#39;s easiest to find everything in those categories.</p>
+                    <p>Compilations: tag the album artist as the record label behind the release. This always assures that similar compilations from the same companies are always grouped together. For example, if we want to just listen to a bunch of HARDCORE TANO*C music on shuffle, we don&#39;t have to go find an album - all of the HARDCORE TANO<em>\C albums are under the same artist label. Same with things like the Exit Tunes Presents vocalsynth compilations, the Miku concerts and compilations from KARENT, etc. It means that like-sounding compilations will always be put together, which makes discovering new music in our library </em>very* easy.</p>
+                    <p>I have yet to find an edge case that doesn&#39;t work neatly under these two conditions.</p>
+                    <p>The second rule was to consolidate artist tags as <em>much as possible</em>. As mentioned earlier, it makes organization a lot neater if I move featured artists to the song title instead of the artist field. This way, instead of having five different tags for the same band - i.e., &quot;Anamanaguchi&quot;, &quot;Anamanaguchi &amp; Hatsune Miku&quot;, &quot;Anamanaguchi &amp; meesh&quot;, Anamanaguchi &amp; HANA&quot;, &quot;Anamanaguchi &amp; 8485&quot; - the featured artist is just in the title, so all of these songs would just be under &quot;Anamanaguchi&quot;. However, this doesn&#39;t cover <em>every</em> case, so it needed to be decided on a case-by-case basis. For example, &quot;Shelter&quot; is a song by both Porter Robinson &amp; Madeon. It is not &quot;Shelter (feat. Madeon)&quot; by Porter Robinson, so there are exceptions for more explicit collaborations. (A lot of music from Synthion, for example, we have exceptions for, since she often does collaborations with the same people often.)</p>
+                    <p>These were the two biggest rules, and the ones that I would focus on. Just enforcing these two rules alone for our library proved to be a major hassle, and took about five hours of fixing tags for, but it was <em>really</em> worth it. Everything felt unified.</p>
+                    <p>There was just one last thing to handle...</p>
+                    <p>...foreign music.</p>
+                    <p>It&#39;s no secret that we listen to a lot of Japanese music - I&#39;m a huge Miku fan, after all - but the Japanese music in our library was <em>very</em> inconsistent - some of it was romanized, some of it was translated, some of it was still in Japanese. I decided that this inconsistency was going to really get on my nerves after a while, so when I was done fixing the artist tag situation, I got to work consolidating everything.</p>
+                    <p>I had a bit of a hard time, at first, deciding the approach I wanted to take. I couldn&#39;t decide if I wanted to translate everything or romanize everything. I didn&#39;t really think leaving it in Japanese would really help us at all, because it would make remembering song names and searching for things kind of difficult. I didn&#39;t really want to do translations, either, since those can be kind of spotty - for example, is it &quot;The Disappearance of Hatsune Miku&quot; or &quot;The End of Hatsune Miku&quot;? Is it &quot;Inferiority Superiority&quot; or &quot;Bring It On&quot;?</p>
+                    <p>I didn&#39;t want to be the authority of any of that, so I decided to simply romanize everything. I used two sources for romanized titles, primarily - <a href="https://vocadb.net/">VocaDB</a> for most of the vocalsynth music in our library, and Apple Music for everything that VocaDB couldn&#39;t cover. This took several more hours, but at the end of it all, it really does make the whole library feel more complete.</p>
+                    <p>I did take a few liberties, though - not everything is 100% compliant. For example, in some cases, I decided to actually translate song titles fully - the song &quot;リモコン&quot; by WONDERFUL★OPPORTUNITY! is technically romanized as &quot;RemoCon&quot;, but I thought that sucked, and everyone knows it as &quot;Remote Controller&quot; anyway, so in our library, it&#39;s tagged as &quot;Remote Controller&quot;. </p>
+                    <p>At the end of the day, the compliance only really matters to me - it&#39;s our library, we answer to no one, and it&#39;s our metadata, we&#39;ll do whatever we want with it.</p>
+                    <h1 id="finalizing-everything">Finalizing Everything</h1>
+                    <p>Once I ran through the library for consistency one last time and decided all was OK, I only had one thing left to do - prepare the library for syncing to the iPod. </p>
+                    <p>The first thing I did was run Bliss on the library folder one more time, so it could change the file names for any albums or songs that got shuffled around. Once the folder structure was all fixed up and compliant, I imported everything into Music.app, and there was our library - all consistent, all organized and properly tagged exactly the way I wanted it to be.</p>
+                    <p>Honestly, it was <em>beautiful</em>.</p>
+                    <p>So, with the library the way I wanted it, there was only one thing left to do. </p>
+                    <p>I plugged the iPod into the Mac, and set it to sync the entire library to the iPod. I had it convert everything to 256kbps AAC when transferring it to the iPod, because it would be faster, take up less space, and still sounds pretty damn good. (Plus, it means our 170GB library only takes up ~45GB on the iPod&#39;s 256GB SD card, so we have plenty of room for future music.) I wait the few hours it takes to sync everything over, and then I grab the iPod and put on an album.</p>
+                    <p>...and the album data for <em>everything</em> is corrupted.</p>
+                    <p>You know how in old video games, when things would start glitching, all the sprites would get shifted around?</p>
+                    <p>Yeah. Like that.</p>
+                    <img style="height: 500px;" class="center" src="/images/blog/2024/05-10/ipod.jpg">
+                    <br>
+                    <p>So I did a <em>little bit more digging</em> - and it turns out that this is a bug pretty much specific to Apple Silicon Macs. For whatever reason, the way syncing works on Apple Silicon Macs doesn&#39;t play nice with Windows-formatted iPods, and sure enough, the iPod was still Windows-formatted. So I restored it to Macintosh format, re-synced everything, and the issue was gone.</p>
+                    <p>What a pain, but after that, I can say - the iPod works flawlessly!</p>
+                    <p>It syncs, it plays all of our music. Album art works, playlists work, everything works really, really well. All off of an M1 Mac.</p>
+                    <p>And, I have a workflow for adding new music pretty seamlessly. I have a &quot;working&quot; folder, where I can put any files that need to be converted, tagged, or organized. I can convert the files, fix the tags for consistency, and then run Bliss on that folder. Then, when that&#39;s all done, I can drag those new organized folders to the Music Collection. This prevents Bliss from messing with the pre-existing collection folder - once a folder is in there, it never gets touched again. Then, from the Music Collection, I can add the new files to Music.app, and then they sync to the iPod on the next sync.</p>
+                    <p>It&#39;s made it really easy to keep everything organized and manageable. I&#39;m really, <em>really</em> happy with the setup.</p>
+                    <h1 id="the-tl-dr-section">THE TL;DR SECTION</h1>
+                    <p>If you just want some tips &amp; tricks from me on how to make managing your iPod easier, here they are.</p>
+                    <ul>
+                        <li>If you&#39;re trying to convert a FLAC library to work with iTunes, use XLD (free) or dbPoweramp (paid). dbPoweramp works better in my experience, but YMMV.  Avoid using FFMPEG, it <em>will</em> cause playback issues. (fre:ac may also work.)</li>
+                        <li>If you&#39;re using an Apple Silicon Mac to sync your iPod, format it (restore it) on the Mac <em>before</em> syncing to avoid artwork issues.</li>
+                        <li>If you&#39;re using Rockbox, use <a href="http://vcardenasblog.blogspot.com/2008/09/album-art-extracter-for-rockbox.html">this tool</a> to make album artwork function.</li>
+                    </ul>
+                    <h1 id="conclusion">CONCLUSION</h1>
+                    <p>Managing an iPod with modern software is a bit of a labor of love. ALAC isn&#39;t a very common format, and there&#39;s no simple way to make FLAC work flawlessly with the iPod. It can be tedious, and annoying, and kind of exhausting depending on how far you want to go with things, but the payoff is <em>so</em> worth it. The iPod is an absolutely amazing little device, and my personal favorite way to listen to an offline music collection. It may take a lot of work to get to a state that you&#39;re happy with, but if you treat it and your library right, it will reward you in kind with great sound, a seamless interface, and endless amounts of joy.</p>
+                    <p>Thank you for reading this far in. This is the longest post ever put on this blog, and it was a lot of fun for me to write. Sorry if it&#39;s all over the place. </p>
+                    <p>Once again, please let me know if you have any questions! If you use the social icons on the sidebar to contact us, address your message to Ichika, and I&#39;ll get back to you as soon as I can.</p>
+                    <p>Thank you again for reading!</p>
+                    <p>- Ichika, Lost Time System</p>
+                </article>
+                <section class="leftsb">
+                    <iframe src=/sidebar/left_sb.html scrolling="no"></iframe>
+                </section>
+                <section class="rightsb">
+                    <iframe src=/sidebar/right_sb.html scrolling="no"></iframe>
+                </section>
+            </section>
+            <footer>Made with love by the Lost Time System. The site was last updated on <span id="lastupdate"></span>.</footer>
+        </section>
+        <script>
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var site_data = JSON.parse(this.responseText);
+                    var num_arr = site_data.info.views.toString().split("");
+                    var num_str = "";
+                    for (i = 0; i < num_arr.length; i++) {
+                        num_str += num_arr[i];
+                        if ( (num_arr.length-1 - i) % 3 == 0 && (num_arr.length-1 - i) != 0 ) {num_str += ",";}
+                        var date_str = site_data.info.last_updated;
+                        var date_obj = new Date(site_data.info.last_updated);
+                        document.getElementById("lastupdate").innerHTML = (date_obj.getMonth()+1) + "/" + date_obj.getDate() + "/" + date_obj.getFullYear();
+                    }
+                    document.getElementById("hitcount").innerHTML = num_str;
+                }
+            };
+            xhttp.open("GET", "https://weirdscifi.ratiosemper.com/neocities.php?sitename=loveshock", true);
+            xhttp.send();
+        </script>
+    </body>
+</html>
