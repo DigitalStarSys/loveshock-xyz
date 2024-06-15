@@ -172,7 +172,7 @@ section.viewport {
 
   /* Sidebars */
   section.leftsb, section.rightsb {
-    width: 190px;
+    width: 210px;
     height: auto;
   }
 
