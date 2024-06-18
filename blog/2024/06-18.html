@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Jukebox @ Loveshock.xyz</title>
+        <link rel="stylesheet" href="/style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+    <body>
+        <section class="viewport">
+            <img src="/images/logo.png"></img>
+             <nav>
+                <a href="javascript:;" onclick="document.querySelector('.viewport > nav').classList.toggle('menuOpen');" id="mobileMenuToggle">MENU</a>
+                <a href="/index.html">HOME</a>
+                <a href="/about.html">ABOUT US</a>
+                <a href="/blog.html">BLOG</a>
+                <span class="dropdown-outer">
+                    <a href="#">INTERESTS</a>
+                    <div class="dropdown">
+                        <a href="/tech.html">OUR TECH</a>
+                        <a href="/music.html">OUR MUSIC</a>
+                        <a href="https://backloggd.com/u/Kiririnshi/">BACKLOGGD</a>
+                    </div>
+                </span>
+                <a href="/netaverse.html">COOL SITES</a>
+                <span class="dropdown-outer">
+                    <a href="#">COOL THINGS</a>
+                    <div class="dropdown">
+                        <a href="/directory/everyday-software.html">EVERYDAY SOFTWARE</a>
+                        <a href="/directory/apple-specific.html">APPLE-SPECIFIC</a>
+                        <a href="/directory/gaming-vr.html">GAMING & VR</a>
+                        <a href="/directory/misc.html">MISC.</a>
+                    </div>
+                </span>
+                <a href="/guestbook.html">GUESTBOOK</a>
+            </nav>
+            <section class="body">
+                <article>
+                    <h1>The Loveshock Linux Experiment</h1>
+                    <p>It is not a secret to anyone that we do not like Microsoft Windows.</p>
+                    <p>We think it&#39;s bloated, it&#39;s unintuitive, it requires <a href="https://loveshock.xyz/blog/2024/04-21">too many modifications</a> out of the box, and it&#39;s slowly being squeezed for every last drop of user data by Microsoft over the past ten years. However, so many things that we do require Windows, and so, we&#39;re stuck with it.</p>
+                    <p>...right?</p>
+                    <p> Enter Linux. You&#39;re reading this, so you&#39;ve probably heard of it - we&#39;ll spare the details. The TL;DR is that it&#39;s a free OS - Windows alternative, if you will - and it&#39;s catching up.</p>
+                    <p><strong>Fast.</strong></p>
+                    <p>Linux is getting better, constantly, and it&#39;s already made great strides. Thanks to Valve and CodeWeavers and the work of many independent developers, many Windows games and apps run on Linux now, whether explicitly supported or not, and where an app may not be available, there <em>are</em> alternatives.</p>
+                    <p>Our Linux journey started a long time ago, in the spring of 2020, when we installed Ubuntu 20.04 on our desktop PC at the time. We stuck with it for <em>several</em> months, before eventually going back to Windows. This cycle repeated itself, constantly - every few months, we&#39;d decide to give it a shot, and then after a week or two, go crawling back to Windows with the same thought, every time:</p>
+                    <p><em>&quot;Desktop Linux isn&#39;t ready yet.&quot;</em></p>
+                    <p>But a lot has changed since four years ago. We&#39;ve watched it change! Our most recent Linux experience was the smoothest it&#39;s ever been, and that was on a <em>laptop</em> with <em>NVIDIA graphics!</em> Significant developments in Wine and Proton have enabled even more apps to work on Linux than ever before, more games are being built with Proton specifically in mind, and hardware vendors like NVIDIA are <em>finally</em> sort of kind of maybe starting to come around.</p>
+                    <p>When we built <a href="https://loveshock.xyz/tech/prometheus">a new PC</a> recently, we felt pained as we installed Windows 10 to its brand new NVMe SSD. With a Ryzen 7800X3D and an RTX 3080 Ti raring to go, we finally thought that this time, we&#39;ll give Linux as fair a shot as possible - and unlike every other time we&#39;ve tried this exact same thing, <em>actually properly document it</em>. So, we&#39;re giving ourselves a week, and for accountability, we&#39;ll be updating this post <em>every day</em> with a log of what we did. Keep checking in on this page for more info - but we&#39;ll also post when we update it to <a href="https://phantomthieves.net/oracle">the Fediverse</a> as well.</p>
+                    <p>So, without further ado...</p>
+                    <p>Welcome to the Loveshock System&#39;s Linux experiment.</p>
+                    <h1 id="goals">Goals</h1>
+                    <p>Obviously, anyone can install Linux, and use it. But what&#39;s the point of an experiment if we don&#39;t have anything we&#39;re trying to prove? So, we&#39;ve decided to approach this coming challenge with a list of things we want to do over the course of this experiment. These are:</p>
+                    <ul>
+                    <li><strong>Basic desktop tasks.</strong> These are the kinds of things you&#39;d do on a Chromebook, or any other computer. Web browsing, chatting via Discord, or listening to music via Apple Music. The kinds of things we do on every computer. We&#39;re currently hunting for jobs, so we&#39;ll be doing a lot of basic browsing.</li>
+                    <li><strong>Gaming.</strong> Obviously, we built a gaming computer, so we&#39;d like to play games. We really want to play more of Ubisoft&#39;s new shooter, <em>XDefiant</em>, and we need our favorite games to have working mods - these include <em>Sonic Generations</em> (via HedgeModManager), <em>Hatsune Miku: Project Diva MegaMix+</em> (via DivaModManager), and <em>Persona 5 Royal</em> (via Reloaded II). We&#39;d also like to try and get Xenia (the Xbox 360 emulator) working, so we can play <em>Sonic Unleashed</em>.</li>
+                    <li><strong>Virtual reality.</strong> This is a big one - we paid $500 for our Oculus Quest 3 - we&#39;d like to use it! On Windows, we use software called Virtual Desktop to do VR fully wirelessly from our PC to our headset. This apparently can be replicated via ALVR on Linux, so our goal is to get it (and <em>VRChat</em>, specifically) fully working with sound, good performance, and motion smoothing.</li>
+                    <li><strong>Creative work.</strong> This has <em>always</em> been the hard part. Not only is our software of choice - the Affinity suite - not supported, it doesn&#39;t work very well in Proton or Wine, either. There are apparently workarounds for this that we want to test. On top of this, OBS Studio in the past has often missed features that the Windows version has had for a while. We want to write a script, record this experiment, and edit it down into a YouTube video - all using Linux.</li>
+                    </ul>
+                    <p>There will be other small goals that we&#39;re sure we missed, but we&#39;ll fill those in as we see necessary. These are the big ones that we can think of.</p>
+                    <p>The success of these tasks <em>will</em> directly influence our willingness to stick with Linux in the long-term. If things go well enough, then maybe we&#39;ll even stay there permanently.</p>
+                    <p>Our distro of choice for this challenge will be the excellent <a href="https://nobaraproject.org/">Nobara Linux</a>, developed by GloriousEggroll of Proton-GE fame. It&#39;s a version of Fedora with <em>plenty</em> of tweaks out of the box, making it quick and easy and seamless to get up-to-speed - especially for a Windows user. We considered going Arch, just because we like it and the AUR is good, but we find Fedora much, much more stable, and much <em>less</em> susceptible to &quot;works on my machine&quot;-type issues.</p>
+                    <p>We hope you&#39;ll stay with us for this adventure. It should be a lot of fun, if not also very frustrating, too. Follow us on <a href="https://phantomthieves.net/@oracle/">fedi</a> or <a href="https://x.com/Lost_Sekai">Twitter</a> to get notified when this post updates, or subscribe to <a href="https://loveshock.xyz/blog/rss.xml">the Jukebox&#39;s RSS feed</a>, or just check back later!</p>
+                    <h1 id="day-0">Day 0</h1>
+                    <p>Day zero was the pretty basic stuff. It mostly involved just installing things and getting basic apps up and running - browser, music, that sort of thing. The bare minimum.</p>
+                    <p>In terms of success stories, installation was insanely painless - just had to tell Nobara which drive to wipe, and then it did its thing - a few minutes later and we had a clean installation of Nobara Linux, ready to be configured.</p>
+                    <p>The first thing we did was installed OBS Studio, and configured it for recording our desktop (we wanted to get footage for the YouTube version of this experiment). Once that was done, we installed Firefox and 1Password, and got those all set up. We also used Nobara&#39;s built-in &quot;fixups&quot; tool to seamlessly install Davinci Resolve Studio, which worked first try.</p>
+                    <p>The first minor hitch was Apple Music. Obviously, Spotify is a better option for most Linux users; however, we&#39;ve grown to resent it and its UI design, especially on mobile. Our first go-to was using the web version in a dedicated web-app wrapper, but both Chromium and Firefox seemed to have playback issues, so we <em>very reluctantly</em> installed the flatpak version of Cider. <strong>WE DO NOT RECOMMEND CIDER, ESPECIALLY CIDER 2.</strong> The lead dev has said some <em>insanely</em> terrible things, and we don&#39;t support giving the team money in <em>any capacity</em>. This wouldn&#39;t be an issue if Cider continued to be free and open-source, but Cider 2 very much did a rug-pull on being open-source. You can read more about the abhorrence of the Cider developers <a href="https://undelete.pullpush.io/r/AppleMusic/comments/vydyj8/i_know_everyone_likes_cider_but_the_devs_are/">here</a>, but heavy content warning for racism, transphobia, homophobia, and just other general bigotry.</p>
+                    <p>The second, slightly-less-minor hitch was iCloud Drive. We keep almost <em>all</em> of our project files in our iCloud, including our Obsidian vault, which we use to write blog posts and video scripts. iCloud Drive, however, doesn&#39;t have a sync client for Linux. Switching services <em>immediately</em> isn&#39;t really a viable option for us, so for now we&#39;re working without it, and just manually downloading what we need. It&#39;s a total pain, but it&#39;s all we can really do for now.</p>
+                    <p>When we&#39;re done writing this post, we&#39;ll quickly get Visual Studio Code installed, pull this website&#39;s repo down, and upload this blog post, and then probably go to bed, because it is <em>5 in the morning</em> here right now. It&#39;s us and our nesting partner&#39;s one-year anniversary today, and we&#39;d like to be rested for that.</p>
+                    <p>We want to tackle finishing up customization, and then either the Affinity apps or VR on day 1. Gaming will probably come on day 2, because we still need to spend some time job-hunting.</p>
+                    <p>Day 0 is over, though, so we&#39;re gonna sign off on this. Bye for now - see you soon!</p>
+
+                </article>
+                <section class="leftsb">
+                    <iframe src=/sidebar/left_sb.html scrolling="no"></iframe>
+                </section>
+                <section class="rightsb">
+                    <iframe src=/sidebar/right_sb.html scrolling="no"></iframe>
+                </section>
+            </section>
+            <footer>Made with love by the Loveshock System. The site was last updated on <span id="lastupdate"></span>.</footer>
+        </section>
+        <script>
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var site_data = JSON.parse(this.responseText);
+                    var num_arr = site_data.info.views.toString().split("");
+                    var num_str = "";
+                    for (i = 0; i < num_arr.length; i++) {
+                        num_str += num_arr[i];
+                        if ( (num_arr.length-1 - i) % 3 == 0 && (num_arr.length-1 - i) != 0 ) {num_str += ",";}
+                        var date_str = site_data.info.last_updated;
+                        var date_obj = new Date(site_data.info.last_updated);
+                        document.getElementById("lastupdate").innerHTML = (date_obj.getMonth()+1) + "/" + date_obj.getDate() + "/" + date_obj.getFullYear();
+                    }
+                    document.getElementById("hitcount").innerHTML = num_str;
+                }
+            };
+            xhttp.open("GET", "https://weirdscifi.ratiosemper.com/neocities.php?sitename=loveshock", true);
+            xhttp.send();
+        </script>
+    </body>
+</html>
