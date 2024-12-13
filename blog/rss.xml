@@ -6,9 +6,21 @@
   <link>https://loveshock.xyz/blog</link>
   <atom:link href="https://loveshock.xyz/blog/rss.xml" rel="self" type="application/rss+xml" />
   <lastBuildDate>
-    Sat, 27 Apr 2024 19:00:00 -0700 
+    Thu, 12 Dec 2024 19:15:00 -0400 
   </lastBuildDate>
   <ttl>5000</ttl>
+
+  <item>
+    <title>Self-Hosting Our Music: A HomeLab Adventure Begins</title>
+    <description>
+      We started homelabbing! As we continue to get ever-more frustrated about the current music landscape, let us walk you through our personal setup for collecting, organizing, and enjoying it all.
+    </description>
+    <link>https://loveshock.xyz/blog/2024/12-12.html</link>
+    <pubDate>
+      Thu, 12 Dec 2024 19:15:00 -0400 
+    </pubDate>
+    <guid>https://loveshock.xyz/blog/2024/12-12.html</guid>
+  </item>
 
   <item>
     <title>Spotify Wrapped is Everything Wrong With the Modern Music Industry</title>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Jukebox @ Loveshock.xyz</title>
+        <link rel="stylesheet" href="/style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+    <body>
+        <section class="viewport">
+            <img src="/images/logo.png"></img>
+             <nav>
+                <a href="javascript:;" onclick="document.querySelector('.viewport > nav').classList.toggle('menuOpen');" id="mobileMenuToggle">MENU</a>
+                <a href="/index.html">HOME</a>
+                <a href="/about.html">ABOUT US</a>
+                <a href="/blog.html">BLOG</a>
+                <span class="dropdown-outer">
+                    <a href="#">INTERESTS</a>
+                    <div class="dropdown">
+                        <a href="/tech.html">OUR TECH</a>
+                        <a href="/music.html">OUR MUSIC</a>
+                        <a href="https://backloggd.com/u/Kiririnshi/">BACKLOGGD</a>
+                    </div>
+                </span>
+                <a href="/netaverse.html">COOL SITES</a>
+                <span class="dropdown-outer">
+                    <a href="#">COOL THINGS</a>
+                    <div class="dropdown">
+                        <a href="/directory/everyday-software.html">EVERYDAY SOFTWARE</a>
+                        <a href="/directory/apple-specific.html">APPLE-SPECIFIC</a>
+                        <a href="/directory/gaming-vr.html">GAMING & VR</a>
+                        <a href="/directory/misc.html">MISC.</a>
+                    </div>
+                </span>
+                <a href="/guestbook.html">GUESTBOOK</a>
+            </nav>
+            <section class="body">
+                <article>
+                    <h1>Self-Hosting Our Music: A HomeLab Adventure Begins</h1>
+                    <p><i>This post was written by <a href="https://prns.cc/mebwbz">Ori</a> and <a href="https://prns.cc/nuwpxs">Oracle</a>, with some input from <a href="https://prns.cc/hmmjdy">Ichika</a>.</i></p>
+                    <hr>
+                    <p>After posting our rant about Spotify&#39;s algorithm, we&#39;d been thinking a lot about the ways we engage with our music. So, we figured now was as good a time as any to walk you all through our <em>current</em> music workflow. The apps we use, the hardware our services run on, the clients we interact with every day, everything.</p>
+                    <p>We&#39;ve started homelabbing for the first time, very, very recently. This has allowed us to create what we think to be a music setup <em>ripe</em> for optimization and automation. However, this means getting to the fun music stuff kinda requires some additional context, so while this blog post <em>is</em> about our music workflow, allow us to take a quick detour over into our little homelabbing journey before we get too far.</p>
+                    <h1 id="why-and-why-now-">Why, and Why Now?</h1>
+                    <p>Now, we could&#39;ve waited. Made it a Christmas gift for ourselves, maybe. But we did have a few good reasons to build one sooner rather than later:</p>
+                    <ul>
+                    <li>We wanted to build one before potential tariffs made computer hardware prohibitively expensive in a few months.</li>
+                    <li>We wanted a quick and reliable way to self-host our own media library and media streaming services.</li>
+                    <li>We <em>really</em> wanted a project, and we scored some pretty good eBay deals.</li>
+                    <li>Selfishly, our nesting partner was upgrading hers, and a close friend of ours was building their own, and we were just getting jealous.</li>
+                    </ul>
+                    <p>We&#39;re very, very big on having an offline collection of the media that matters to us. We&#39;ve written at length about the importance of preserving the things you love - <em>especially</em> music! - and we wanted to make keeping and hosting all of these things as easy and seamless as possible, making it a breeze to access from anywhere we want. Having a system designed to store this media, and make it easily accessible, was something we <em>really</em> wanted to do; up until this point, we&#39;ve been relying on servers run by partners and friends to host our media, which is great for backup reasons, but made it a bit difficult to access if their servers or networks went down. We wanted more (and by &#39;more&#39; we mean &#39;total&#39;) control over how we accessed these things. </p>
+                    <h1 id="hardware-and-software">Hardware and Software</h1>
+                    <p>Picking the hardware was, largely, down to &quot;whatever the best deal on eBay I could get&quot; was. I had a few spare parts laying around - a 500GB NVMe SSD, a 4TB HDD - so that saved a bit of cash. I knew I had a few requirements, but the real priority was getting a machine that had an Intel iGPU. Intel&#39;s iGPUs - especially their 7th/8th gen models - are <em>very competent</em> at transcoding H264 and H265 content, which is really useful for media servers. They&#39;re integrated into the CPU, so they don&#39;t take up space, or generate extra heat. So, after a bit of searching, we found the <em>perfect</em> machine for our starter use case - an old HP EliteDesk 800 G4 SFF.</p>
+                    <p>This machine, at $85, came with a Core i5-8600 (with Intel UHD 630 graphics - perfect for transcoding!), 8GB of DDR4, two NVMe slots, and two 3.5&quot; hard drive bays. The bays are a bit of a limiting factor for future upgrades, but the goal is to get as much mileage out of this machine as possible - by the time I need to upgrade, I&#39;ll probably want to just start over anyway. Good budget starter machine, but not a permanent solution by any means. I also picked up a recertified 4TB hard drive for $40, so I could run my two 4TB drives in parity. The total cost of this project was about ~$125 or so, which I&#39;d say was a pretty good deal. (I initially also picked up an extra 16GB of RAM for about $18, but that memory ended up being faulty, so it&#39;s getting returned.)</p>
+                    <p>Finding software was both <em>easy</em> and <em>difficult</em>. It was easy because we knew what we wanted to use, but it was difficult because the aforementioned &quot;bad sticks of RAM&quot; ended up causing <em>all sorts</em> of issues - Docker crashing, corrupted ZFS pools, the works. We tried using Ubuntu Server on its own, but found a lack of web UI for managing it to be a pain (and Cockpit just...wasn&#39;t for us). We tried TrueNAS, and didn&#39;t mind it, but it felt a bit limiting and required just a bit too much wrestling with to fit our needs.</p>
+                    <p>We ultimately settled on Unraid, which is unfortunately a paid and proprietary product, but it has been <em>perfect</em> for our use-case so far. It&#39;s easy to use, and to setup, and has extensive community support and documentation. And, luckily for us, we didn&#39;t have to pay for it: our license was given to us by our nesting partner, who said, and I quote, &quot;I have no plans to ever use unraid again ever, fuck that operating system&quot;.</p>
+                    <p>Rave reviews, I know. (Please bookmark this blogpost so when I tweet something like &quot;unraid is really starting to get on my nerves&quot; in a year or so, every single one of you can go &quot;I told you so&quot;.)</p>
+                    <p>Regardless, Unraid has proven to be super useful for us, because we&#39;re not very well-versed in a lot of sysadmin stuff just yet, and we didn&#39;t have the energy to learn absolutely everything from scratch. We&#39;re getting the hang of Docker (and we&#39;d already had prior experience with it <em>and</em> Docker Compose), and managing shares has been super easy as well. The app store has pretty much every app we&#39;ve ever wanted, and within a few hours, we&#39;d had pretty much every service we wanted up and running - a torrent client with a permanent VPN connection, Soulseek, file organizers, media streamers.</p>
+                    <p>All the things we need to get started...</p>
+                    <h1 id="hosting-our-music">Hosting Our Music</h1>
+                    <p>This server currently houses our entire music library. It&#39;s still pretty small - 175GB or so, consisting primarily of ALAC and FLAC - but that&#39;s where it stays. Here&#39;s how we manage it, and listen to it from anywhere.</p>
+                    <p>To get started, we use a few Docker containers for sharing and organizing our music.</p>
+                    <p>For sharing, we use <strong>binhex-nicotineplus</strong>. This is just <a href="https://nicotine-plus.org/">Nicotine+</a>, a Soulseek client, running in a Docker container, with a VNC session running to access it via web UI. It stays pointed at our music library. There&#39;s nothing particularly <em>important</em> about it, but we&#39;re a firm believer in sharing our music as much as we can, so having our Soulseek share be always available to others is nice. Keep circulating the tapes, as they say.</p>
+                    <p>For organizing, we use <a href="https://www.blisshq.com/"><strong>Bliss</strong></a>. It&#39;s set up with our particular rules to <em>just</em> organize file structure - put a tagged file in the Music folder, wait a minute or two, and it&#39;ll pull the metadata from the music and organize it in the folder accordingly. Bliss is super powerful, and has options for automatically pulling and assigning metadata, but we&#39;re too meticulous about our tags (for now), so we tag them all manually and just let Bliss handle file structure, which creates a very easy-on-the-eyes music folder, as seen below.</p>
+                    <img style="height: 500px;" class="center" src="/images/blog/2024/12-12/filestructure.png">
+                    <p>But organizing is only part of the equation. After all, what's the point of organizing all these files just to not do anything with them? Indeed, now, for the fun stuff...</p>
+                    <hr>
+                    <p>Media servers!</p>
+                    <p>The first, and the most obvious, is <a href="https://www.plex.tv/"><strong>Plex</strong></a>. Plex is a multi-media server designed primarily for TV shows and movies, but in recent years has become increasingly powerful for music. </p>
+                    <p>This is largely thanks to its dedicated music app, Plexamp, which has seen constant improvements in the past few years. Plexamp is, bar none, the best experience for listening to a self-hosted library on mobile, with a polished UI, reliable downloads, and many features built-in, such as AirPlay and CarPlay support.</p>
+                    <img style="height: 500px;" class="center" src="/images/blog/2024/12-12/plexamp.webp">
+                    <p>Unfortunately, <em>desktop</em> Plexamp is...well, <em>bad</em>, since it&#39;s basically just a mobile UI still, and the standard Plex web/desktop app isn&#39;t the best for music listening, either.</p>
+                    <img style="height: 450px;" class="center" src="/images/blog/2024/12-12/plexdeskop.png">
+                    <p>Due to Plex being a proprietary platform, there aren&#39;t very many alternative clients either, unfortunately, so despite being very powerful, Plex is a bit hard to stick with, since we do a lot of desktop listening.</p>
+                    <p>Luckily, if there&#39;s other clients we want, then we <em>do</em> have options, because we also host <a href="https://www.navidrome.org/"><strong>Navidrome</strong></a>. Navidrome is a media server focused <em>solely</em> on music. It&#39;s very, <em>very</em> lightweight, entirely open-source, and even though it does have a built-in web UI and can be used on its own, its compatibility with the Subsonic API allows for all sorts of options for clients.</p>
+                    <img style="height: 500px;" class="center" src="/images/blog/2024/12-12/navidrome.png">
+                    <p>For example, there&#39;s <a href="https://github.com/jeffvli/feishin">Feishin</a>, a cross-platform desktop app with a UI reminiscent of mainstream music platforms, and this is our client of choice. There&#39;s also <a href="https://submarinerapp.com/">Submariner</a>, an entirely-native macOS client developed by a friend of ours.</p>
+                    <img style="height: 500px;" class="center" src="/images/blog/2024/12-12/feishin.png">
+                    <img style="height: 500px;" class="center" src="/images/blog/2024/12-12/submariner.png">
+                    <p>As for mobile clients, there are a plethora of options on both iOS and Android. So far, however, our two favorites have been <a href="https://github.com/BLeeEZ/amperfy">Amperfy</a>, which also has a macOS app, and <a href="https://www.reddit.com/r/arpeggiApp">Arpeggi</a>, which is currently in beta, but is aiming to offer a very native-feeling app. Both of these clients are good, but fall flat in their own ways, whether that's responsiveness or UI design. They're still solid options, though, and Arpeggi especially looks really promising.</p>
+                    <img style="height: 500px;" class="center" src="/images/blog/2024/12-12/iosapps.webp">
+                    <p>There are still some glaring issues with both Plex <em>and</em> Navidrome, however; notably, they both <em>absolutely suck</em> at handling multiple artists. According to some GitHub posts posted in late November, Navidrome <em>should</em> be receiving a major refactor before the end of the year that properly handles multiple artists (both duplicate tags <em>and</em> separators), but as of right now, implementing them at all still feels kind of hackjobby. Hopefully these updates come soon, because we're not happy with the current state of our library & metadata.</p>
+                    <h1 id="the-end-for-now">The End, For Now</h1>
+                    <p>Now, that&#39;s pretty much our entire setup. However, we still think there is room for improvement, <em>especially</em> if automation is on the table.</p>
+                    <p>One of the real kickers is that with a system like this, we still have to do a fair amount of work manually. We download the songs ourselves, from the sources we pick, and hand-tag a lot of our music. If we <em>really</em> wanted to, we could automate a lot of this using tools like <a href="https://lidarr.audio/">Lidarr</a> for grabbing music and <a href="https://picard.musicbrainz.org/">MusicBrainz Picard</a> for automatic tagging, but that would require a kind of critical reassessment of how we handle metadata, especially after we hand-tagged everything earlier this year. We&#39;re not entirely sure what we&#39;re going to do, but we are looking into further automation. Being able to just search and add a song or album to our library in just one or two clicks would be <em>awesome</em>, but I think that&#39;s going to take a bit of work and experimentation to figure out.</p>
+                    <p>We also looked at potentially using a VM to sync our iPod directly and automatically on the server instead of doing it over SMB on our desktop, but gave up on that idea pretty quickly. Once we get more RAM in the server again, though, we&#39;ll probably look at it again. Right now we just use Foobar2k with some plugins.</p>
+                    <p>If we ever have any meaningful developments in the future, you can be sure we will write about them. We are also always looking for suggestions, pointers, and helpful tips, so feel free to ping us on one of our social media accounts if you have feedback!</p>
+                    <hr>
+                    <p>We don&#39;t normally do this, but it&#39;s the holiday season, so we feel a bit less bad about it; If you enjoyed this post, or any of our other posts, please consider supporting us over on our <a href="https://ko-fi.com/DigitalStarSys">KoFi</a> page! &lt;3 </p>
+                    <p>Until next time.</p>
+                    <p>Digital Stars out.</p>
+                </article>
+                <section class="leftsb">
+                    <iframe src=/sidebar/left_sb.html scrolling="no"></iframe>
+                </section>
+                <section class="rightsb">
+                    <iframe src=/sidebar/right_sb.html scrolling="no"></iframe>
+                </section>
+            </section>
+            <footer>Made with love by the Digital Star System. The site was last updated on <span id="lastupdate"></span>.</footer>
+        </section>
+        <script>
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var site_data = JSON.parse(this.responseText);
+                    var num_arr = site_data.info.views.toString().split("");
+                    var num_str = "";
+                    for (i = 0; i < num_arr.length; i++) {
+                        num_str += num_arr[i];
+                        if ( (num_arr.length-1 - i) % 3 == 0 && (num_arr.length-1 - i) != 0 ) {num_str += ",";}
+                        var date_str = site_data.info.last_updated;
+                        var date_obj = new Date(site_data.info.last_updated);
+                        document.getElementById("lastupdate").innerHTML = (date_obj.getMonth()+1) + "/" + date_obj.getDate() + "/" + date_obj.getFullYear();
+                    }
+                    document.getElementById("hitcount").innerHTML = num_str;
+                }
+            };
+            xhttp.open("GET", "https://weirdscifi.ratiosemper.com/neocities.php?sitename=loveshock", true);
+            xhttp.send();
+        </script>
+    </body>
+</html>
