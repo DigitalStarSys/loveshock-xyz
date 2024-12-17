@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Jukebox @ Loveshock.xyz</title>
+        <link rel="stylesheet" href="/style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+    <body>
+        <section class="viewport">
+            <img src="/images/logo.png"></img>
+             <nav>
+                <a href="javascript:;" onclick="document.querySelector('.viewport > nav').classList.toggle('menuOpen');" id="mobileMenuToggle">MENU</a>
+                <a href="/index.html">HOME</a>
+                <a href="/about.html">ABOUT US</a>
+                <a href="/blog.html">BLOG</a>
+                <span class="dropdown-outer">
+                    <a href="#">INTERESTS</a>
+                    <div class="dropdown">
+                        <a href="/tech.html">OUR TECH</a>
+                        <a href="/music.html">OUR MUSIC</a>
+                        <a href="https://backloggd.com/u/Kiririnshi/">BACKLOGGD</a>
+                    </div>
+                </span>
+                <a href="/netaverse.html">COOL SITES</a>
+                <span class="dropdown-outer">
+                    <a href="#">COOL THINGS</a>
+                    <div class="dropdown">
+                        <a href="/directory/everyday-software.html">EVERYDAY SOFTWARE</a>
+                        <a href="/directory/apple-specific.html">APPLE-SPECIFIC</a>
+                        <a href="/directory/gaming-vr.html">GAMING & VR</a>
+                        <a href="/directory/misc.html">MISC.</a>
+                    </div>
+                </span>
+                <a href="/guestbook.html">GUESTBOOK</a>
+            </nav>
+            <section class="body">
+                <article>
+                        <h1>&starf; DEVICE: ORIGIN POINT &starf;</h1>
+                        <table class="specs">
+                            <tr>
+                                <th>Component Type</th>
+                                <th>Component Name</th>
+                            </tr>
+                            <tr>
+                                <td>Processor:</td>
+                                <td>AMD Ryzen 7 7800X3D</td>
+                            </tr>
+                            <tr>
+                                <td>Motherboard:</td>
+                                <td>ASUS TUF GAMING B650-E Gaming</td>
+                            </tr>
+                            <tr>
+                                <td>Graphics Card:</td>
+                                <td>NVIDIA GeForce RTX 3080 Ti Founder's Edition</td>
+                            </tr>
+                            <tr>
+                                <td>Memory:</td>
+                                <td>32GB DDR5-6000 (2x16GB)</td>
+                            </tr>
+                            <tr>
+                                <td>Power Supply:</td>
+                                <td>PowerSpec 750W 80+ Gold Semi-Modular</td>
+                            </tr>
+                            <tr>
+                                <td>Chassis:</td>
+                                <td>Lian Li Lancool 216</td>
+                            </tr>
+                            <tr>
+                                <td>Boot Drive (Windows):</td>
+                                <td>Western Digital WD_BLACK SN770 (1TB)</td>
+                            </tr>
+                            <tr>
+                                <td>Boot Drive (Linux):</td>
+                                <td>Western Digital WD Blue SA510 (1TB)</td>
+                            </tr>
+                            <tr>
+                                <td>Steam Games Drive:</td>
+                                <td>Western Digital WD_BLACK SN850X (2TB)</td>
+                            </tr>
+                            <tr>
+                                <td>Other Games Drive:</td>
+                                <td>Western Digital WD_BLACK SN850X (2TB)</td>
+                            </tr>
+                            <tr>
+                                <td>Backup Drive:</td>
+                                <td>Western Digital WD Red Plus HDD (4TB, 5400rpm)</td>
+                            </tr>
+                            <tr>
+                                <td>Operating System</td>
+                                <td>Nobara Linux 40 & Windows 11 Pro</td>
+                            </tr>
+                        </table>
+                        <br>
+                        <h1>The Story</h1>
+                        <p>Origin Point is the reincarnation of our original gaming desktop tower. With portability no longer a concern, we decided we wanted a desktop tower again, so after selling Prominitheus, we took a shotgun trip to Micro Center and bought all of the parts to build her then and there.</p>
+                        <p>Initially, Origin Point was spec'd out with an i9-12900K and a 7800 XT. However, after some price assessment, and knowing our use case, we spent a little more and switched to the 7800X3D and a refurbished RTX 3080 Ti. The 7800X3D for VR performance, and the 3080 Ti for NVENC and better performance at 4K.</p>
+                        <p>Despite the fact that Prometheus mk. I continues to live on via the WD_BLACK SN850X and WD Red drives, Origin Point was renamed from Prometheus mk. II in November 2024.</p>
+                </article>
+                <section class="leftsb">
+                    <iframe src=/sidebar/left_sb.html scrolling="no"></iframe>
+                </section>
+                <section class="rightsb">
+                    <iframe src=/sidebar/right_sb.html scrolling="no"></iframe>
+                </section>
+            </section>
+            <footer>Made with love by the Digital Star System. The site was last updated on <span id="lastupdate"></span>.</footer>
+        </section>
+        <script>
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var site_data = JSON.parse(this.responseText);
+                    var num_arr = site_data.info.views.toString().split("");
+                    var num_str = "";
+                    for (i = 0; i < num_arr.length; i++) {
+                        num_str += num_arr[i];
+                        if ( (num_arr.length-1 - i) % 3 == 0 && (num_arr.length-1 - i) != 0 ) {num_str += ",";}
+                        var date_str = site_data.info.last_updated;
+                        var date_obj = new Date(site_data.info.last_updated);
+                        document.getElementById("lastupdate").innerHTML = (date_obj.getMonth()+1) + "/" + date_obj.getDate() + "/" + date_obj.getFullYear();
+                    }
+                    document.getElementById("hitcount").innerHTML = num_str;
+                }
+            };
+            xhttp.open("GET", "https://weirdscifi.ratiosemper.com/neocities.php?sitename=loveshock", true);
+            xhttp.send();
+        </script>
+    </body>
+</html>
