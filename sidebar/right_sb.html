@@ -12,7 +12,7 @@
                 <p><span class="test">JUKEBOX OPERATORS</span></p>
                 <img src="/images/ene.gif" style="width: 100%;">
                 <span style="text-decoration: underline; font-size: 15px;">DIGITAL STAR SYSTEM</span>
-                <span>she/it/xe &bull; <img title="genderfluid" style="image-rendering: pixelated; width:15px;" src="/images/flags/gfluid.png"> <img title="transgender" style="image-rendering: pixelated; width:15px;" src="/images/flags/trans.png"></span>
+                <span>it/its &bull; <img title="genderfluid" style="image-rendering: pixelated; width:15px;" src="/images/flags/gfluid.png"> <img title="transgender" style="image-rendering: pixelated; width:15px;" src="/images/flags/trans.png"></span>
             </section>
             <hr>
             <section class="webrings">
@@ -27,6 +27,23 @@
                         <a href="https://loveshock.xyz" target="_blank"><img src="/images/buttons/loveshock.gif"></a>
                     </section>
             </section>
+            <section id="lastfm" style="bottom: 0; position: absolute;">
+                <marquee scrollamount="5" loop="infinite" style="display: flex; align-items: center;">
+                    <span class="test" style="font-size: 14px;">LAST.FM >&nbsp;</span>
+                    <span id="song"></span>
+                </marquee>
+            </section>
         </section>
+        <script type="text/javascript">
+        let user = 'BosozokuGF';
+        let url = 'https://lastfm-last-played.biancarosa.com.br/' + user + '/latest-song';
+        let song = document.querySelector('#song');
+        fetch(url)
+            .then(function (response) {
+                return response.json()
+            }).then(function (json) {
+                song.innerHTML = json['track']['name'] + ' - ' + json['track']['artist']['#text'];
+            });
+    </script>
     </body>
 </html>
