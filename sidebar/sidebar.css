@@ -2,10 +2,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
 @font-face {
-  font-family: 'Munro';
-  src: url('/fonts/Munro.woff2') format('woff2');
-  src: url('/fonts/Munro.woff') format('woff');
-  src: url('/fonts/Munro.ttf') format('truetype');
+  font-family: 'W95fa';
+  src: url('/fonts/W95fa.woff2') format('woff2');
+  src: url('/fonts/W95fa.woff') format('woff');
+  src: url('/fonts/W95fa.ttf') format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Chicago';
+  src: url('/fonts/sysfont.woff2') format('woff2');
+  src: url('/fonts/sysfont.woff') format('woff');
+  src: url('/fonts/sysfont.otf') format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'W95fa';
+  src: url('/fonts/w95fa.woff2') format('woff2');
+  src: url('/fonts/w95fa.woff') format('woff');
+  src: url('/fonts/W95FA.otf') format('truetype');
   font-display: swap;
 }
 
@@ -116,7 +130,7 @@ section.fullsidebar {
   }
 
   span {
-    font-family: 'Munro';
+    font-family: 'W95fa';
     color: white;
     font-size: 16px;
   }
@@ -165,7 +179,7 @@ section.fullsidebar {
   /* Status.Cafe */
   #statuscafe {
     color: white;
-    font-family: 'Munro';
+    font-family: 'W95fa';
 }
 
 #statuscafe-username {

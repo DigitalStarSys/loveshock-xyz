@@ -10,6 +10,7 @@
 
   .viewport > img:first-child {
     max-width: 100%;
+    object-fit: contain;
   }
 
   /* Collapsed menu */

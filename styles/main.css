@@ -8,6 +8,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'W95fa';
+  src: url('/fonts/w95fa.woff2') format('woff2');
+  src: url('/fonts/w95fa.woff') format('woff');
+  src: url('/fonts/W95FA.otf') format('truetype');
+  font-display: swap;
+}
+
 /* Color variables; use to change site colors quickly */
 :root {
   --border: rgb(81, 78, 226);
@@ -39,8 +47,8 @@ background-size: cover;
 background-color: #000000;
 background-repeat: no-repeat;
 background-attachment: fixed;
-font-family: 'Hack', monospace;
-font-size: 18px;
+font-family: 'W95fa', monospace;
+font-size: 20px;
 margin: 0;
 }
 
