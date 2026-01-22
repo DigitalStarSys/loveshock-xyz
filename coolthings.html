@@ -1,79 +1,334 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>The Jukebox @ Loveshock.xyz</title>
-        <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
-        <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-        <link rel="shortcut icon" href="/favicon/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-        <link rel="stylesheet" href="/style.css">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-    </head>
-    <body>
-        <section class="viewport">
-            <img src="/images/logo.png"></img>
-            <nav>
-                <a href="javascript:;" onclick="document.querySelector('.viewport > nav').classList.toggle('menuOpen');" id="mobileMenuToggle">MENU</a>
-                <a href="/index.html">HOME</a>
-                <a href="/about.html">ABOUT US</a>
-                <a href="/blog.html">BLOG</a>
-                <span class="dropdown-outer">
-                    <a href="#">INTERESTS</a>
-                    <div class="dropdown">
-                        <a href="/tech.html">OUR TECH</a>
-                        <a href="/music.html">OUR MUSIC</a>
-                        <a href="https://backloggd.com/u/Kiririnshi/">BACKLOGGD</a>
-                    </div>
-                </span>
-                <a href="/netaverse.html">COOL SITES</a>
-                <a href="/coolthings.html">COOL THINGS</a>
-                <a href="/guestbook.html">GUESTBOOK</a>
-            </nav>
-            <section class="body">
-                <article>
-                        <h1>&starf; COOL THINGS &starf;</h1>
-                        <p>A collection of links to fun, useful, or interesting things on the net.</p>
-                        <ul><p><a href="https://github.com/Twig6943/AffinityOnLinux">AffinityOnLinux</a>: A repo filled with guides and files needed to get Serif's Affinity suite to work under Linux. Has been the most reliable, in our experience.</p></ul>
-                        <ul><p><a href="https://affinity.liz.pet/">Affinity Wine Docs</a>: A resource for getting the Affinity suite of apps working under Linux. More complicated than the above option, use as a backup.</p></ul>
-                        <ul><p><a href="https://yesterwebring.neocities.org/surf#">Yesterwebring Surfer</a>: A site to surf the now-defunct Yesterweb webring, which the Jukebox was a part of.</p></ul>
-                        <ul><p><a href="https://awesome-neo.neocities.org/">Awesome Neocities</a>: A site with lots of useful resources for creating and managing your own site on Neocities.</p></ul>
-                        <ul><p><a href="https://ooh.directory/">Ooh.Directory</a>: A cool place to find independent blogs for almost any interest.</p></ul>
-                        <ul><p><a href="https://melonland.net/">MelonLand</a>: A web community dedicated to preserving the style of the old web. Has a forum, wiki, useful resources, and many other links.</p></ul>
-                        <ul><p><a href="https://search.marginalia.nu/">Marginalia</a>: An independent search engine; effective if you know how to operate older search engines.</p></ul>
-                        <ul><p><a href="https://clearsky.app">ClearSky Search Tool</a>: A tool to search publicly-available information on the Bluesky network.</p></ul>
-                        <ul><p><a href="https://github.com/vexorian/dizquetv">DizqueTV</a>: Create a live TV channel from your own Plex media.</p></ul>
-                        <ul><p><a href="https://www.ignite-boost.net/">DFC Database</a>: A database for competitive Dengeki Bunko: Fighting Climax (Ignition) matches. Search by character, matchup, or supports.</p></ul>
-                        <ul><p><a href="https://archive.org/details/pldm-ml-minecraft-bukkit-archive">Minecraft & Bukkit Archive</a>: An archive of CraftBukkit (& plugins) for older versions of Minecraft, notably beta 1.7.3.</p></ul>
-                </article>
-                <section class="leftsb">
-                    <iframe src=/sidebar/left_sb.html scrolling="no"></iframe>
-                </section>
-                <section class="rightsb">
-                    <iframe src=/sidebar/right_sb.html scrolling="no"></iframe>
-                </section>
+
+<head>
+    <title>The Jukebox @ Loveshock.xyz</title>
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link rel="stylesheet" href="/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+    <section class="viewport">
+        <img src="/images/logo.png"></img>
+        <nav>
+            <a href="javascript:;" onclick="document.querySelector('.viewport > nav').classList.toggle('menuOpen');"
+                id="mobileMenuToggle">MENU</a>
+            <a href="/index.html">HOME</a>
+            <a href="/about.html">ABOUT US</a>
+            <a href="/blog.html">BLOG</a>
+            <span class="dropdown-outer">
+                <a href="#">INTERESTS</a>
+                <div class="dropdown">
+                    <a href="/tech.html">OUR TECH</a>
+                    <a href="/music.html">OUR MUSIC</a>
+                    <a href="https://backloggd.com/u/Kiririnshi/">BACKLOGGD</a>
+                </div>
+            </span>
+            <a href="/netaverse.html">COOL SITES</a>
+            <a href="/coolthings.html">COOL THINGS</a>
+            <a href="/guestbook.html">GUESTBOOK</a>
+        </nav>
+        <section class="body">
+            <article>
+                <h1>&starf; COOL THINGS &starf;</h1>
+                <div class="tab">
+                    <button class="tablinks" onclick="openGroup(event, 'essentials')">Essentials</button>
+                    <button class="tablinks" onclick="openGroup(event, 'gaming')">Gaming</button>
+                    <button class="tablinks" onclick="openGroup(event, 'apple')">Apple-specific</button>
+                    <button class="tablinks" onclick="openGroup(event, 'web')">Websites</button>
+                </div>
+                <script src="/scripts/buttons.js"></script>
+                <div id="web" class="tabcontent">
+                    <br>
+                    <table class="specs">
+                        <tr>
+                            <th>Name</th>
+                            <th>Platform</th>
+                            <th>Link</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>AffinityOnLinux</td>
+                            <td>Linux</td>
+                            <td><a href="https://github.com/Twig6943/AffinityOnLinux">GitHub</a></td>
+                            <td>A collection of tools and guides to enable the Affinity suite of apps to run on Linux.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>YesterwebRing Surfer</td>
+                            <td>Web</td>
+                            <td><a href="https://yesterwebring.neocities.org/surf#">Neocities</a></td>
+                            <td>A site to surf the now-defunct Yesterweb webring, which the Jukebox was a part of.</td>
+                        </tr>
+                        <tr>
+                            <td>Awesome Neocities</td>
+                            <td>Web</td>
+                            <td><a href="https://awesome-neo.neocities.org/">Neocities</a></td>
+                            <td>A site with lots of useful resources for creating and managing your own site on
+                                Neocities.</td>
+                        </tr>
+                        <tr>
+                            <td>Ooh Directory</td>
+                            <td>Web</td>
+                            <td><a href="https://ooh.directory/">Website</a></td>
+                            <td>A cool directory to browse independent blogs.</td>
+                        </tr>
+                        <tr>
+                            <td>MelonLand</td>
+                            <td>Web</td>
+                            <td><a href="https://melonland.net/">Website</a></td>
+                            <td>A web community dedicated to preserving the style of the old web. Has a forum, wiki,
+                                useful resources, and many other links.</td>
+                        </tr>
+                        <tr>
+                            <td>DizqueTV</td>
+                            <td>Windows, Linux, macOS</td>
+                            <td><a href="https://github.com/vexorian/dizquetv">GitHub</a></td>
+                            <td>Create a live TV channel from your own Plex media.</td>
+                        </tr>
+                    </table>
+                </div>
+                 <div id="gaming" class="tabcontent">
+                    <br>
+                    <table class="specs">
+                        <tr>
+                            <th>Name</th>
+                            <th>Platform</th>
+                            <th>Link</th>
+                            <th>Description</th>
+                        </tr>
+                         <tr>
+                            <td>DFC Database</td>
+                            <td>Web</td>
+                            <td><a href="https://www.ignite-boost.net/">Website</a></td>
+                            <td>A database for competitive Dengeki Bunko: Fighting Climax (Ignition) matches. Search by
+                                character, matchup, or supports.</td>
+                        </tr>
+                        <tr>
+                            <td>Minecraft Bukkit Archive</td>
+                            <td>Java</td>
+                            <td><a href="https://archive.org/details/pldm-ml-minecraft-bukkit-archive">Archive.org</a>
+                            </td>
+                            <td>Minecraft & Bukkit Archive</a>: An archive of CraftBukkit (& plugins) for older versions
+                                of Minecraft, notably beta 1.7.3.</td>
+                        </tr>
+                        <tr>
+                            <td>WiiLink</td>
+                            <td>Wii</td>
+                            <td><a href="https://wiilink.ca">Website</a></td>
+                            <td>A project to replace, update, and restore WiiConnect24 and other online services for the
+                                Wii.</td>
+                        </tr>
+                        <tr>
+                            <td>Beacon</td>
+                            <td>PS3, PS Vita</td>
+                            <td><a href="https://www.lbpunion.com/beacon/">LBPUnion</a></td>
+                            <td>A replacement server implementation for the LittleBigPlanet series on PlayStation 3 and PlayStation Vita systems.</td>
+                        </tr>
+                        <tr>
+                            <td>Linux VR Adventures Wiki</td>
+                            <td>Linux</td>
+                            <td><a href="https://lvra.gitlab.io">Wiki</a></td>
+                            <td>A comprehensive wiki for getting the best VR experience on Linux.</td>
+                        </tr>
+                        <tr>
+                            <td>ALVR</td>
+                            <td>Windows, Linux</td>
+                            <td><a href="https://github.com/alvr-org/ALVR">GitHub</a></td>
+                            <td>An open-source alternative to Oculus Air Link or Virtual Desktop. Also works on Linux. A good free alternative, but can be a bit of a hassle to set up.</td>
+                        </tr>
+                        <tr>
+                            <td>VRCX</td>
+                            <td>Windows, macOS, Linux</td>
+                            <td><a href="https://github.com/vrcx-team/VRCX">GitHub</a></td>
+                            <td>A VRChat player's best friend. Insanely powerful tool for managing friends, avatars, and worlds, as well as keeping track of all sorts of extra data, like world history, avatar history, and even game event logs.</td>
+                        </tr>
+                        <tr>
+                            <td>OyasumiVR</td>
+                            <td>Windows</td>
+                            <td><a href="https://store.steampowered.com/app/2538150/OyasumiVR__VR_Sleeping_Utilities/">Steam</a></td>
+                            <td>A tool that integrates with SteamVR and VRChat to make sleeping in VRChat easier and more comfortable.</td>
+                        </tr>
+                    </table>
+                 </div>
+                  <div id="essentials" class="tabcontent">
+                    <br>
+                    <table class="specs">
+                        <tr>
+                            <th>Name</th>
+                            <th>Platform</th>
+                            <th>Link</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>autounattend.xml Generator</td>
+                            <td>Windows</td>
+                            <td><a href="https://schneegans.de/windows/unattend-generator/">Website</a></td>
+                            <td>A great tool for generating autounattend.xml files for Windows 10/11 installations, which makes it incredibly easy to automate Windows installation while removing bloat like Copilot and forced MS logins. Our #1 recommendation when [re]installing Windows.</td>
+                        </tr>
+                        <tr>
+                            <td>StartAllBack</td>
+                            <td>Windows</td>
+                            <td><a href="https://www.startallback.com">Website</a></td>
+                            <td>A complete taskbar and Start Menu replacement for Windows 11. Fixes many of the issues with the default shell. <a href="https://github.com/iandiv/StartAllBack-Cleanup">Additonally, here's a script to reset the free trial.</a></td>
+                        </tr>
+                        <tr>
+                            <td>WinAero Tweaker</td>
+                            <td>Windows</td>
+                            <td><a href="https://winaero.com/winaero-tweaker/">Website</a></td>
+                            <td>A tool that makes it easy to customize and adjust various features within Windows 10 and 11.</td>
+                        </tr>
+                        <tr>
+                            <td>WinUtil</td>
+                            <td>Windows</td>
+                            <td><a href="https://github.com/ChrisTitusTech/winutil">GitHub</a></td>
+                            <td>An all-in-one PowerShell script for Windows to automate debloating, program installation, and more post-install. Safe in our experience, but YMMV. Use with caution and be careful.</td>
+                        </tr>
+                        <tr>
+                            <td>uBlock Origin</td>
+                            <td>Firefox, Chrome, Safari</td>
+                            <td><a href="https://ublockorigin.com">Website</a></td>
+                            <td>The best adblocker, period. Also available in Lite form for both <a href="https://chromewebstore.google.com/detail/ublock-origin-lite/ddkjiahejlhfcafbddmgiahcphecmpfh?hl=en">Google Chrome</a> and <a href="https://apps.apple.com/us/app/ublock-origin-lite/id6745342698">Safari for macOS and iOS</a>.</td>
+                        </tr>
+                        <tr>
+                            <td>Image Search Options</td>
+                            <td>Firefox, Chrome</td>
+                            <td><a href="https://saucenao.com/tools/">Website</a></td>
+                            <td>A browser extension giving easy access to reverse image-search tools, like SauceNAO, by adding an entry to the right-click context menu.</td>
+                        </tr>
+                        <tr>
+                            <td>Control Panel for Twitter</td>
+                            <td>Firefox, Chrome, Safari</td>
+                            <td><a href="https://soitis.dev/control-panel-for-twitter">Website</a></td>
+                            <td>An essential browser extension for anyone still using Twitter in 2025. Gets rid of almost all upsells, makes the homepage significantly less overwhelming, and allows for limitless customization.</td>
+                        </tr>
+                        <tr>
+                            <td>Control Panel for YouTube</td>
+                            <td>Firefox, Chrome, Safari</td>
+                            <td><a href="https://soitis.dev/control-panel-for-youtube">Website</a></td>
+                            <td>A browser extension that generally does the exact same thing as Control Panel for Twitter, but for YouTube instead. Makes the site much more manageable.</td>
+                        </tr>
+                    </table>
+                  </div>
+                  <div id="apple" class="tabcontent">
+                    <br>
+                    <table class="specs">
+                        <tr>
+                            <th>Name</th>
+                            <th>Platform</th>
+                            <th>Link</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>Marvis Pro</td>
+                            <td>iOS</td>
+                            <td><a href="https://apps.apple.com/us/app/marvis-pro/id1447768809">App Store</a></td>
+                            <td>A beautiful Apple Music client with an incredibly powerful set of customization tools, allowing you to create the ultimate Apple Music curating experience.</td>
+                        </tr>
+                        <tr>
+                            <td>Submariner</td>
+                            <td>macOS</td>
+                            <td><a href="https://submarinerapp.com">Website</a></td>
+                            <td>An open-source and fully Mac-native music player for Subsonic-powered servers. Built by one of our friends - hi, CB!</td>
+                        </tr>
+                        <tr>
+                            <td>Mos</td>
+                            <td>macOS</td>
+                            <td><a href="https://mos.caldis.me">Website</a></td>
+                            <td>A small app indisposable for people who use both a trackpad and a mouse. Allows for smoother mouse scrolling, as well as setting Natural Scrolling on a mouse independent from the trackpad.</td>
+                        </tr>
+                        <tr>
+                            <td>Polyphony</td>
+                            <td>Linux</td>
+                            <td><a href="https://gitlab.gnome.org/jannuary/polyphony">GitLab</a></td>
+                            <td>An incredible GTK-powered Linux client for Apple Music.</td>
+                        </tr>
+                        <tr>
+                            <td>RetroActive</td>
+                            <td>macOS</td>
+                            <td><a href="https://github.com/cormiertyshawn895/Retroactive">GitHub</a></td>
+                            <td>A tool to run older software, like iTunes, Aperture, and iWork 09, on newer versions of macOS. Unmaintained, but may still be useful.</td>
+                        </tr>
+                        <tr>
+                            <td>Doppler</td>
+                            <td>macOS, iOS</td>
+                            <td><a href="https://brushedtype.co/doppler/">Website</a></td>
+                            <td>A music player designed for those with dedicated local libraries, seamlessly integrated with your iPhone and Mac.</td>
+                        </tr>
+                        <tr>
+                            <td>NepTunes</td>
+                            <td>macOS</td>
+                            <td><a href="https://micropixels.software/apps/neptunes">Website</a></td>
+                            <td>A cute desktop companion for Apple Music and Spotify. Also enables scrobbling to last.fm.</td>
+                        </tr>
+                        <tr>
+                            <td>Sleeve 2</td>
+                            <td>macOS</td>
+                            <td><a href="https://replay.software/sleeve">Website</a></td>
+                            <td>Another companion for Apple Music and Spotify that enables scrobbling, as well as desktop and dock widgets to control and view your music.</td>
+                        </tr>
+                        <tr>
+                            <td>Vinegar</td>
+                            <td>macOS, iOS</td>
+                            <td><a href="https://apps.apple.com/us/app/vinegar-tube-cleaner/id1591303229">App Store</a></td>
+                            <td>A Safari extension that replaces the YouTube video player with a standard HTML5 video player, allowing for better OS-level integration, like PiP support, AirPlay support, and more.</td>
+                        </tr>
+                        <tr>
+                            <td>Mona 7</td>
+                            <td>macOS, iOS</td>
+                            <td><a href="https://apps.apple.com/us/app/mona-7-for-mastodon/id6755672518">App Store</a></td>
+                            <td>A beautiful fediverse/Mastodon client for iOS, iPadOS, and macOS. Simply the best in class, offering a wide selection of customization options and a Liquid Glass UI that feels perfectly at home.</td>
+                        </tr>
+                        <tr>
+                            <td>Uplock</td>
+                            <td>macOS, iOS</td>
+                            <td><a href="https://uplock.app">Website</a></td>
+                            <td>A companion to Apple Passwords, allowing for secure storage for various types of information that Apple's native Passwords app does not support, like secure notes and software licenses.</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                  </div>
+            </article>
+            <section class="leftsb">
+                <iframe src=/sidebar/left_sb.html scrolling="no"></iframe>
             </section>
-            <footer>Made with love by the Digital Star System. The site was last updated on <span id="lastupdate"></span>.</footer>
+            <section class="rightsb">
+                <iframe src=/sidebar/right_sb.html scrolling="no"></iframe>
+            </section>
         </section>
-        <script>
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    var site_data = JSON.parse(this.responseText);
-                    var num_arr = site_data.info.views.toString().split("");
-                    var num_str = "";
-                    for (i = 0; i < num_arr.length; i++) {
-                        num_str += num_arr[i];
-                        if ( (num_arr.length-1 - i) % 3 == 0 && (num_arr.length-1 - i) != 0 ) {num_str += ",";}
-                        var date_str = site_data.info.last_updated;
-                        var date_obj = new Date(site_data.info.last_updated);
-                        document.getElementById("lastupdate").innerHTML = (date_obj.getMonth()+1) + "/" + date_obj.getDate() + "/" + date_obj.getFullYear();
-                    }
-                    document.getElementById("hitcount").innerHTML = num_str;
+        <footer>Made with love by the Digital Star System. The site was last updated on <span id="lastupdate"></span>.
+        </footer>
+    </section>
+    <script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var site_data = JSON.parse(this.responseText);
+                var num_arr = site_data.info.views.toString().split("");
+                var num_str = "";
+                for (i = 0; i < num_arr.length; i++) {
+                    num_str += num_arr[i];
+                    if ((num_arr.length - 1 - i) % 3 == 0 && (num_arr.length - 1 - i) != 0) { num_str += ","; }
+                    var date_str = site_data.info.last_updated;
+                    var date_obj = new Date(site_data.info.last_updated);
+                    document.getElementById("lastupdate").innerHTML = (date_obj.getMonth() + 1) + "/" + date_obj.getDate() + "/" + date_obj.getFullYear();
                 }
-            };
-            xhttp.open("GET", "https://weirdscifi.ratiosemper.com/neocities.php?sitename=loveshock", true);
-            xhttp.send();
-        </script>
-    </body>
+                document.getElementById("hitcount").innerHTML = num_str;
+            }
+        };
+        xhttp.open("GET", "https://weirdscifi.ratiosemper.com/neocities.php?sitename=loveshock", true);
+        xhttp.send();
+    </script>
+</body>
+
 </html>

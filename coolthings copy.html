@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Jukebox @ Loveshock.xyz</title>
+        <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+        <link rel="stylesheet" href="/style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+    <body>
+        <section class="viewport">
+            <img src="/images/logo.png"></img>
+            <nav>
+                <a href="javascript:;" onclick="document.querySelector('.viewport > nav').classList.toggle('menuOpen');" id="mobileMenuToggle">MENU</a>
+                <a href="/index.html">HOME</a>
+                <a href="/about.html">ABOUT US</a>
+                <a href="/blog.html">BLOG</a>
+                <span class="dropdown-outer">
+                    <a href="#">INTERESTS</a>
+                    <div class="dropdown">
+                        <a href="/tech.html">OUR TECH</a>
+                        <a href="/music.html">OUR MUSIC</a>
+                        <a href="https://backloggd.com/u/Kiririnshi/">BACKLOGGD</a>
+                    </div>
+                </span>
+                <a href="/netaverse.html">COOL SITES</a>
+                <a href="/coolthings.html">COOL THINGS</a>
+                <a href="/guestbook.html">GUESTBOOK</a>
+            </nav>
+            <section class="body">
+                <article>
+                        <h1>&starf; COOL THINGS &starf;</h1>
+                        <p>A collection of links to fun, useful, or interesting things on the net.</p>
+                        <ul><p><a href="https://github.com/Twig6943/AffinityOnLinux">AffinityOnLinux</a>: A repo filled with guides and files needed to get Serif's Affinity suite to work under Linux. Has been the most reliable, in our experience.</p></ul>
+                        <ul><p><a href="https://affinity.liz.pet/">Affinity Wine Docs</a>: A resource for getting the Affinity suite of apps working under Linux. More complicated than the above option, use as a backup.</p></ul>
+                        <ul><p><a href="https://yesterwebring.neocities.org/surf#">Yesterwebring Surfer</a>: A site to surf the now-defunct Yesterweb webring, which the Jukebox was a part of.</p></ul>
+                        <ul><p><a href="https://awesome-neo.neocities.org/">Awesome Neocities</a>: A site with lots of useful resources for creating and managing your own site on Neocities.</p></ul>
+                        <ul><p><a href="https://ooh.directory/">Ooh.Directory</a>: A cool place to find independent blogs for almost any interest.</p></ul>
+                        <ul><p><a href="https://melonland.net/">MelonLand</a>: A web community dedicated to preserving the style of the old web. Has a forum, wiki, useful resources, and many other links.</p></ul>
+                        <ul><p><a href="https://search.marginalia.nu/">Marginalia</a>: An independent search engine; effective if you know how to operate older search engines.</p></ul>
+                        <ul><p><a href="https://clearsky.app">ClearSky Search Tool</a>: A tool to search publicly-available information on the Bluesky network.</p></ul>
+                        <ul><p><a href="https://github.com/vexorian/dizquetv">DizqueTV</a>: Create a live TV channel from your own Plex media.</p></ul>
+                        <ul><p><a href="https://www.ignite-boost.net/">DFC Database</a>: A database for competitive Dengeki Bunko: Fighting Climax (Ignition) matches. Search by character, matchup, or supports.</p></ul>
+                        <ul><p><a href="https://archive.org/details/pldm-ml-minecraft-bukkit-archive">Minecraft & Bukkit Archive</a>: An archive of CraftBukkit (& plugins) for older versions of Minecraft, notably beta 1.7.3.</p></ul>
+                </article>
+                <section class="leftsb">
+                    <iframe src=/sidebar/left_sb.html scrolling="no"></iframe>
+                </section>
+                <section class="rightsb">
+                    <iframe src=/sidebar/right_sb.html scrolling="no"></iframe>
+                </section>
+            </section>
+            <footer>Made with love by the Digital Star System. The site was last updated on <span id="lastupdate"></span>.</footer>
+        </section>
+        <script>
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var site_data = JSON.parse(this.responseText);
+                    var num_arr = site_data.info.views.toString().split("");
+                    var num_str = "";
+                    for (i = 0; i < num_arr.length; i++) {
+                        num_str += num_arr[i];
+                        if ( (num_arr.length-1 - i) % 3 == 0 && (num_arr.length-1 - i) != 0 ) {num_str += ",";}
+                        var date_str = site_data.info.last_updated;
+                        var date_obj = new Date(site_data.info.last_updated);
+                        document.getElementById("lastupdate").innerHTML = (date_obj.getMonth()+1) + "/" + date_obj.getDate() + "/" + date_obj.getFullYear();
+                    }
+                    document.getElementById("hitcount").innerHTML = num_str;
+                }
+            };
+            xhttp.open("GET", "https://weirdscifi.ratiosemper.com/neocities.php?sitename=loveshock", true);
+            xhttp.send();
+        </script>
+    </body>
+</html>
