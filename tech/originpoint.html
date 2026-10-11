@@ -41,11 +41,11 @@
                             </tr>
                             <tr>
                                 <td>Processor:</td>
-                                <td>AMD Ryzen 7 7800X3D</td>
+                                <td>AMD Ryzen 9 7950X3D</td>
                             </tr>
                             <tr>
                                 <td>Motherboard:</td>
-                                <td>ASUS TUF GAMING B650-E WiFi</td>
+                                <td>ASUS ProArt CREATOR X670E WiFi</td>
                             </tr>
                             <tr>
                                 <td>Graphics Card:</td>
@@ -65,7 +65,7 @@
                             </tr>
                             <tr>
                                 <td>Boot Drive:</td>
-                                <td>Western Digital WD_BLACK SN770 (1TB)</td>
+                                <td>SK Hynix Platinum P41 (2TB)</td>
                             </tr>
                             <tr>
                                 <td>Steam Games Drive:</td>
@@ -74,10 +74,6 @@
                             <tr>
                                 <td>Other Games Drive:</td>
                                 <td>Western Digital WD_BLACK SN850X (2TB)</td>
-                            </tr>
-                            <tr>
-                                <td>Spare Drive:</td>
-                                <td>Western Digital WD Blue SA510 (1TB)</td>
                             </tr>
                             <tr>
                                 <td>Backup Drive:</td>
@@ -92,7 +88,7 @@
                         <h1>The Story</h1>
                         <p>Origin Point is the reincarnation of our original gaming desktop tower. With portability no longer a concern, we decided we wanted a desktop tower again, so after selling Prominitheus, we took a shotgun trip to Micro Center and bought all of the parts to build her then and there.</p>
                         <p>Initially, Origin Point was spec'd out with an i9-12900K and a 7800 XT. However, after some price assessment, and knowing our use case, we spent a little more and switched to the 7800X3D and a refurbished RTX 3080 Ti. The 7800X3D for VR performance, and the 3080 Ti for NVENC and better performance at 4K.</p>
-                        <p>In June of 2025, we were gifted an RTX 5070 Ti from a friend, replacing the 3080 Ti. An undervolt was also applied to the CPU, as well as a GPU overclock (+350 core, +2000 memory).</p>
+                        <p>In June of 2025, we were gifted an RTX 5070 Ti from a friend, replacing the 3080 Ti. An undervolt was also applied to the CPU, as well as a GPU overclock (+350 core, +2000 memory). The CPU and motherboard were later upgraded as well, using hand-me-down parts. The original Origin Point board and CPU were moved to a new NAS.</p>
                         <p>Despite the fact that Prometheus mk. I continues to live on via the WD_BLACK SN850X and WD Red drives, Origin Point was renamed from Prometheus mk. II in November 2024.</p>
                 </article>
                 <section class="leftsb">
@@ -102,27 +98,7 @@
                     <iframe src=/sidebar/right_sb.html scrolling="no"></iframe>
                 </section>
             </section>
-            <footer>Made with love by the Digital Star System. The site was last updated on <span id="lastupdate"></span>.</footer>
+            <footer>Made with love by the Digital Star System. Updated 2026.</footer>
         </section>
-        <script>
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    var site_data = JSON.parse(this.responseText);
-                    var num_arr = site_data.info.views.toString().split("");
-                    var num_str = "";
-                    for (i = 0; i < num_arr.length; i++) {
-                        num_str += num_arr[i];
-                        if ( (num_arr.length-1 - i) % 3 == 0 && (num_arr.length-1 - i) != 0 ) {num_str += ",";}
-                        var date_str = site_data.info.last_updated;
-                        var date_obj = new Date(site_data.info.last_updated);
-                        document.getElementById("lastupdate").innerHTML = (date_obj.getMonth()+1) + "/" + date_obj.getDate() + "/" + date_obj.getFullYear();
-                    }
-                    document.getElementById("hitcount").innerHTML = num_str;
-                }
-            };
-            xhttp.open("GET", "https://weirdscifi.ratiosemper.com/neocities.php?sitename=loveshock", true);
-            xhttp.send();
-        </script>
     </body>
 </html>

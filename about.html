@@ -35,10 +35,9 @@
             <section class="body">
                 <article>
                     <h1>&starf; About Us =(^w^= &starf;</h1>
-                    <p>Hi! we're the Digital Star System, your new favorite 16-bit isekaijin plural system!</p>
-                    <p>You can see our system information on our <a href="https://pronouns.cc/@DigitalStarSys">pronouns.cc</a> page.</p>
+                    <p>Hi! We're the Digital Star System, something resembling a collective of anime girls in a trenchcoat.</p>
                     <p>We're a graphic designer! Our work can be seen in projects such as <a href="https://www.veryokvinyl.com/products/constant-companions-2lp?srsltid=AfmBOopjzFz6IOthA8HBZX87kPzkKPM3KyzACVLA6U9b2h987rnZleXq">Constant Companions (Deluxe Edition)</a>, <a href="https://witchs-hex.itch.io/blades-of-ether">Blades of Ether</a> and <a href="https://sonicrunners.com">Sonic Runners Revival</a>. If you're a vocal-synth fan, you may also recognize our work on <a href="https://www.redbubble.com/i/sticker/Vocaloid-Computer-Stickers-by-Lovesh0ck/53383642.EJUG5">this set of computer stickers!</a> Over the years, our work has been seen on LegalEagle, SnapCube, and more!</p>
-                    <p>We are also a content creator, under our alias K.O.D.A.! :3</p>
+                    <p>In another life, we were a content creator by the name KODA...</p>
                     <hr class="fancyline">
                     <p>We've always had an appreciation for the lightweight and simple. But as time marches on, the
                         ever-increasing bloated landscape of the modern internet continues to abandon the machines of the
@@ -62,27 +61,7 @@
                     <iframe src=sidebar/right_sb.html scrolling="no"></iframe>
                 </section>
             </section>
-            <footer>Made with love by the Digital Star System. The site was last updated on <span id="lastupdate"></span>.</footer>
+            <footer>Made with love by the Digital Star System. Updated 2026.</footer>
         </section>
-        <script>
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    var site_data = JSON.parse(this.responseText);
-                    var num_arr = site_data.info.views.toString().split("");
-                    var num_str = "";
-                    for (i = 0; i < num_arr.length; i++) {
-                        num_str += num_arr[i];
-                        if ( (num_arr.length-1 - i) % 3 == 0 && (num_arr.length-1 - i) != 0 ) {num_str += ",";}
-                        var date_str = site_data.info.last_updated;
-                        var date_obj = new Date(site_data.info.last_updated);
-                        document.getElementById("lastupdate").innerHTML = (date_obj.getMonth()+1) + "/" + date_obj.getDate() + "/" + date_obj.getFullYear();
-                    }
-                    document.getElementById("hitcount").innerHTML = num_str;
-                }
-            };
-            xhttp.open("GET", "https://weirdscifi.ratiosemper.com/neocities.php?sitename=loveshock", true);
-            xhttp.send();
-        </script>
     </body>
 </html>
